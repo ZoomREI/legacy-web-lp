@@ -286,13 +286,12 @@
 	}
 }
 
-.lc-hero .gfield--input-type-html {
-	grid-row: 8;
-	display: flex;
-	gap: 0.5rem;
-	justify-content: center;
-	align-items: center;
-	order: 99;
+.lc-hero .gfield_html  {
+	display: flex !important;
+	gap: 0.5rem !important;
+	justify-content: center !important;
+	align-items: center !important;
+	order: 99 !important;
 }
 
 .lc-hero .gform_footer {
