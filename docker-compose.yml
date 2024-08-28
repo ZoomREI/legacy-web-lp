@@ -1,0 +1,80 @@
+services:
+  db:
+    image: mariadb:10.6.18
+    container_name: ${ENV_NAME}_db
+    volumes:
+      - db_data_${ENV_NAME}:/var/lib/mysql
+      - ./db/backup:/db_backup
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - legacy_network
+
+  wordpress:
+    image: wordpress:6.6.1-fpm
+    container_name: ${ENV_NAME}_wordpress
+    volumes:
+      - wordpress_data_${ENV_NAME}:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DEBUG: 'true'
+      WORDPRESS_DEBUG_LOG: 'true'
+      SCRIPT_DEBUG: 'true'
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+      CRM_WEBHOOK_URL: ${CRM_WEBHOOK_URL}
+    depends_on:
+      - db
+    networks:
+      - legacy_network
+
+  nginx:
+    image: nginx:latest
+    container_name: ${ENV_NAME}_nginx
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/snippets:/etc/nginx/snippets
+      - ./ssl:/etc/ssl
+      - wordpress_data_${ENV_NAME}:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+    ports:
+      - "${NGINX_PORT_HTTP:-80}:80"
+      - "${NGINX_PORT_HTTPS:-443}:443"
+    depends_on:
+      - wordpress
+    networks:
+      - legacy_network
+
+  wp-cli:
+    image: wordpress:cli
+    container_name: ${ENV_NAME}_wp_cli
+    volumes:
+      - wordpress_data_${ENV_NAME}:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./db/backup:/db_backup
+    entrypoint: [ "sh", "-c", "while :; do sleep 2073600; done" ]
+    depends_on:
+      - wordpress
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - legacy_network
+
+volumes:
+  db_data_legacy:
+  wordpress_data_legacy:
+
+
+networks:
+  legacy_network:
+    driver: bridge

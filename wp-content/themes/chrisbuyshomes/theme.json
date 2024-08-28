@@ -1,0 +1,114 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "primary-blue1",
+          "color": "#2B3849",
+          "name": "Primary Blue 1"
+        },
+        {
+          "slug": "primary-blue2",
+          "color": "#3C4B5F",
+          "name": "Primary Blue 2"
+        },
+        {
+          "slug": "primary-gray",
+          "color": "#CED3D9",
+          "name": "Primary Gray"
+        },
+        {
+          "slug": "secondary-yellow",
+          "color": "#DFA01F",
+          "name": "Secondary Yellow"
+        },
+        {
+          "slug": "secondary-beige",
+          "color": "#F1F1E6",
+          "name": "Secondary Beige"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Ruddy, sans-serif",
+          "name": "Ruddy",
+          "slug": "ruddy"
+        },
+        {
+          "fontFamily": "Proxima Nova, sans-serif",
+          "name": "Proxima Nova",
+          "slug": "proxima"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "12px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "16px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "24px",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "32px",
+          "name": "X-Large"
+        },
+        {
+          "slug": "xx-large",
+          "size": "48px",
+          "name": "XX-Large"
+        }
+      ]
+    },
+    "spacing": {
+      "customPadding": true,
+      "customMargin": true,
+      "units": ["px", "em", "rem", "%"],
+      "padding": [
+        {
+          "slug": "small",
+          "size": "8px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "16px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "32px",
+          "name": "Large"
+        }
+      ],
+      "margin": [
+        {
+          "slug": "small",
+          "size": "8px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "16px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "32px",
+          "name": "Large"
+        }
+      ]
+    }
+  }
+}

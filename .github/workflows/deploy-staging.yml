@@ -1,0 +1,43 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - stg
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Install dependencies and build theme
+        working-directory: ./wp-content/themes/doctorhomes
+        run: |
+          npm install
+          npm run build
+
+      - name: Sync wp-content to Staging
+        run: |
+          rsync -avz --delete --exclude 'wp-content/cache/*' --exclude 'wp-content/upgrade/*' ./wp-content/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content
+
+      - name: Run Database Migrations in Staging
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp core update-db --path=/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com"

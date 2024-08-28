@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "carrot-blocks/never-lowball",
+	"version": "0.1.0",
+	"title": "Never Lowball",
+	"category": "widgets",
+	"icon": "",
+	"description": "A block to display the 'Never Lowball' section",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "carrot-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"selectedMarket": {
+			"type": "string",
+			"default": "St. Louis"
+		},
+		"brandName": {
+			"type": "string",
+			"default": "Chris Buys Homes in St. Louis"
+		},
+		"brandArea": {
+			"type": "string",
+			"default": "Saint Louis and the surrounding areas"
+		}
+	}
+}

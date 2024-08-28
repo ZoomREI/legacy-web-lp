@@ -1,0 +1,10 @@
+.wp-block-chris-buys-lc-virtue-carousel {
+	padding-block: 1.5rem !important;
+	background-color: #004C8D;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin-block: 1rem !important;
+}

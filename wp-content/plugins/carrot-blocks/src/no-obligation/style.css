@@ -1,0 +1,22 @@
+.no-obligation {
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	padding: 1rem;
+  }
+  
+  .no-obligation::before,
+  .no-obligation::after {
+	content: "";
+	display: block;
+	width: 100%;
+	border: 1px solid #808080;
+	background-color: currentColor;
+	margin-bottom: 2rem;
+  }
+  
+  .no-obligation::after {
+	margin-top: 2rem;
+	margin-bottom: 0;
+  }

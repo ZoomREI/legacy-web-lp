@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "chris-buys/lc-fresh-start",
+  "version": "0.1.0",
+  "title": "Life Changes Fresh Start",
+  "category": "widgets",
+  "icon": "admin-comments",
+  "description": "A Fresh Start block.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "chris-buys-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "selectedName": {
+      "type": "string",
+      "default": "Chris"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.wp-block-carrot-blocks-carrot-header {
+	padding-block: 1.5rem !important;
+	background-color: #006cbf;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin-block: 1rem !important;
+}
+
+.wp-block-carrot-blocks-carrot-header .c-header {
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.wp-block-carrot-blocks-carrot-header img {
+	max-width: 10rem !important;
+}

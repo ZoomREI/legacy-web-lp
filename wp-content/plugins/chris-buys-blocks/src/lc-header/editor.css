@@ -1,0 +1,17 @@
+.wp-block-chris-buys-lc-header {
+	padding-block: 1.5rem !important;
+	background-color: #004c8d;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin-block: 1rem !important;
+}
+
+.wp-block-chris-buys-lc-header .cw-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}

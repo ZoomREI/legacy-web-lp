@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "chris-buys/number-one",
+	"version": "0.1.0",
+	"title": "Life Chages Number One",
+	"category": "widgets",
+	"icon": "align-center",
+	"description": "A number one block.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "chris-buys-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {}
+}

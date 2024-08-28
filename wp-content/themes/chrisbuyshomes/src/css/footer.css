@@ -1,0 +1,115 @@
+/* ==========================================
+   ============== FOOTER STYLES =============
+   ========================================== */
+
+#doctor-homes-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: var(--primaryBlue1);
+  padding: 3.5rem 2.5rem;
+  color: white;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  #doctor-homes-footer {
+    padding: 3.5rem;
+  }
+}
+
+.footer-logo img {
+  max-width: 8.75rem;
+}
+
+.back-to-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.625rem;
+  max-width: max-content;
+  color: var(--primaryGray);
+}
+
+@media (min-width: 1024px) {
+  .back-to-top {
+    order: 1;
+  }
+}
+
+.back-to-top-icon {
+  padding: 1rem 0.75rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.back-to-top-icon img {
+  width: 1.75rem;
+  height: auto;
+}
+
+.footer-content {
+  display: flex;
+  gap: 2.5rem 3.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .footer-content {
+    flex-direction: row;
+    gap: 6rem;
+    align-items: start;
+  }
+}
+
+.footer-menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.625rem;
+}
+
+@media (min-width: 1024px) {
+  .footer-menus {
+    gap: 1rem;
+    justify-content: space-between;
+    flex: 1;
+  }
+}
+
+.footer-menu,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1.625rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* .footer-disclaimer hr {
+  margin: 1rem 0;
+} */
+
+.footer-disclaimer p {
+  font-size: 0.625em;
+  line-height: 1rem;
+  /* text-align: center; */
+}

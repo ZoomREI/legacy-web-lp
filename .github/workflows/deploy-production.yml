@@ -1,0 +1,56 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Install dependencies and build theme
+        working-directory: ./wp-content/themes/doctorhomes
+        run: |
+          npm install
+          npm run build
+
+      - name: Sync wp-content to Production
+        run: |
+          rsync -avz --delete --exclude 'wp-content/cache/*' --exclude 'wp-content/upgrade/*' ./wp-content/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/prod.chrisbuyshomes.com/wp-content
+
+      - name: Export wp_options and wp_postmeta from Staging
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/legacy.chrisbuyshomes.com/partial_backup.sql --tables=wp_options,wp_postmeta --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
+
+      - name: Transfer and Import SQL Dump to Production
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "cp /home/rootadmin/public_html/legacy.chrisbuyshomes.com/partial_backup.sql /home/rootadmin/public_html/prod.chrisbuyshomes.com/partial_backup.sql"
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db import /home/rootadmin/public_html/prod.chrisbuyshomes.com/partial_backup.sql --path=/home/rootadmin/public_html/prod.chrisbuyshomes.com"
+
+      - name: Set Site Title (blogname) in Production
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update blogname 'Doctor Homes' --path=/home/rootadmin/public_html/prod.chrisbuyshomes.com"
+
+      - name: Run Database Migrations in Production
+        run: |
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp core update-db --path=/home/rootadmin/public_html/prod.chrisbuyshomes.com"

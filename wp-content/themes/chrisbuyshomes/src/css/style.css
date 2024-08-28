@@ -1,0 +1,324 @@
+@import "./reset.css";
+@import "./fonts.css";
+@import "./block-editor.css";
+
+/* 
+@import "./header.css";
+@import "./footer.css";
+@import "./page.css";
+@import "./post.css";
+@import "./legal.css"; */
+
+:root {
+  --primaryBlue1: #004c8d;
+  --primaryBlue2: #e2f2ff;
+  --primaryGreen: #00b43d;
+  --secondaryYellow: #ffb039;
+  --warningColor: #ff0000;
+
+  --font-inter: "Poppins", sans-serif;
+
+  /* --font-h1: clamp(2.25rem, 10vw, 4rem);
+  --line-height-h1: 1.2;
+  --font-h2: 2.25rem;
+  --line-height-h2: 1.1;
+  --font-h3: 1.375rem;
+  --line-height-h3: 1.4;
+  --font-subtitle: 1.375rem;
+  --line-height-subtitle: 1.2;
+  --font-p: 1.125rem;
+  --line-height-p: 1.2; */
+}
+/* 
+@media (min-width: 1024px) {
+  :root {
+    --font-h1: 4rem;
+    --line-height-h1: 1.2;
+    --font-h2: 3rem;
+    --line-height-h2: 1.2;
+    --font-h3: 1.375rem;
+    --line-height-h3: 1.4;
+    --font-subtitle: 1.5rem;
+    --line-height-subtitle: 1.2;
+    --font-p: 1.375rem;
+    --line-height-p: 1.2;
+  }
+} */
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+/* 
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: var(--font-ruddy);
+  font-size: var(--font-h1);
+  line-height: var(--line-height-h1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: var(--line-height-h2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: var(--line-height-h3);
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: var(--font-subtitle);
+  line-height: var(--line-height-subtitle);
+}
+
+p {
+  font-size: var(--font-p);
+  line-height: var(--line-height-p);
+}
+
+.sub-menu {
+  display: none;
+}
+.sub-menu.visible {
+  display: block;
+}
+
+.btn {
+  padding: 1.25rem 3.75rem;
+  background-color: var(--secondaryYellow);
+  border-radius: 100vmax;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.wp-block-separator {
+  width: 10rem !important;
+  margin-bottom: 3.75rem;
+  background-color: var(--primaryBlue1);
+}
+
+@media (min-width: 1024px) {
+  .wp-block-separator {
+    display: none;
+  }
+} */
+
+/* :root {
+  --primary-color: #ea4a00;
+  --primary-color-darker: #d14200;
+  --text-color: #1d1d1d;
+  --dark-color: #212529;
+  --background-image: url("https://kc.chrisbuyshomes.com/wp-content/uploads/2021/06/We-Buy-Houses-in-Kansas-City-1.jpg");
+} */
+
+/* 
+#page {
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+main {
+  background-color: white !important;
+  margin: 0 !important;
+}
+
+.inside-article {
+  padding: 0 !important;
+}
+
+.entry-content {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.entry-content > * {
+  width: 100%;
+  max-width: 67.5rem;
+}
+
+.entry-content:has(.kc-hero) > * {
+  max-width: none;
+} */
+
+/* .is-logo-image {
+  max-width: 16.25rem;
+}
+
+.site-branding {
+  display: none;
+}
+
+.entry-header {
+  display: none;
+}
+
+#primary-menu ul li:last-child a strong {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+} */
+
+/* .gform_heading {
+  display: none !important;
+}
+
+.address_city,
+.address_state,
+.address_zip,
+.gform_heading,
+.gform-field-label--type-sub {
+  display: none !important;
+}
+
+.fixed-tel {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 50%);
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: 1.2em;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: end;
+  padding: 1rem 0.5rem 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .fixed-tel {
+    display: none;
+  }
+} */
+
+/* footer {
+  padding: 2rem;
+  background-color: var(--primary-color-darker) !important;
+  color: white;
+}
+
+footer h3 {
+  margin-buttom: 1em;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+footer li {
+  width: 100%;
+}
+
+footer a {
+  color: currentColor;
+}
+
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+footer .contact-info {
+  text-align: left;
+  align-self: start;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-column {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.footer-row-3 .footer-column {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5rem;
+  font-size: 1.5rem;
+}
+
+.page-content > * {
+  max-width: 67.5rem;
+}
+
+.back-page {
+  margin-top: -12.5rem !important;
+  /* width: max-content; */
+/* margin-inline: auto; */
+/* background-color: white; 
+} */
+
+/* .full-width {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .full-width {
+    padding: 2rem;
+  }
+}
+
+.full-width > * {
+  max-width: 67.5rem;
+}
+
+.banner {
+  color: white;
+  background-color: var(--primary-color-darker);
+}
+
+.dark-banner {
+  color: white;
+  background-color: var(--dark-color);
+}
+
+.small-text {
+  font-size: 1.125rem;
+}
+
+.large-text {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.fast-cash-offer__text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none !important;
+} */

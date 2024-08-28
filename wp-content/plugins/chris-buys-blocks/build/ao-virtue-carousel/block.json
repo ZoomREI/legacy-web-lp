@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "chris-buys/ao-virtue-carousel",
+  "version": "0.1.0",
+  "title": "Absentee Owners Virtue Carousel ",
+  "category": "widgets",
+  "icon": "megaphone",
+  "description": "Virtue Carousel for the AO Design",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "chris-buys-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "attributes": {}
+}

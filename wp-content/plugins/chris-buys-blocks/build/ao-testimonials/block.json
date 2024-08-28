@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "chris-buys/ao-testimonials",
+  "version": "0.1.0",
+  "title": "Absentee Owners Testimonials",
+  "category": "widgets",
+  "icon": "testimonial",
+  "description": "A Testimonials block.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "chris-buys-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "selectedName": {
+      "type": "string",
+      "default": "Chris"
+    }
+  }
+}

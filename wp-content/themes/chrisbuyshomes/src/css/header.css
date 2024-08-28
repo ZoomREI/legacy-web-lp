@@ -1,0 +1,314 @@
+#doctor-homes-header {
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+}
+
+/* @media (min-width: 1024px) {
+  header {
+    top: 0;
+    position: sticky;
+  }
+} */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.125rem 1.5rem;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .header-content {
+    padding: 0 6.5rem;
+    gap: 2rem;
+  }
+}
+
+.main-nav,
+.contact-actions,
+.mobile-menu-button {
+  flex: 1;
+}
+
+.main-nav {
+  color: var(--primaryBlue2);
+  font-weight: 600;
+  display: none;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  width: 84vw;
+  height: 100%;
+  background-color: white;
+  padding: 5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+}
+
+.close-mobile-menu {
+  position: absolute;
+  z-index: 102;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.mobile-nav-menu > li {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--primaryBlue1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-menu > li > .menu-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.625rem;
+}
+
+.mobile-nav-menu > li > .menu-item-title:hover {
+  background-color: var(--secondaryBeige);
+}
+
+.mobile-nav-menu > li > .sub-menu {
+  display: none;
+}
+
+.mobile-nav-menu > li:hover > .sub-menu {
+  display: block;
+}
+
+.mobile-nav-menu > li > .sub-menu > li {
+  font-size: 0.875rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: white;
+}
+
+.polygon-icon {
+  display: flex;
+  width: 1rem;
+  height: auto;
+  transform: rotate(90deg); /* Facing right by default */
+  transition: transform 0.3s ease;
+}
+
+.menu-item-title:hover > .polygon-icon,
+.menu-item-title:focus > .polygon-icon {
+  transform: rotate(180deg); /* Facing down when submenu is open */
+}
+
+.sub-menu > li:hover {
+  font-weight: bold;
+}
+
+.mobile-menu .get-offer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  padding: 1.875rem 3.75rem;
+  font-size: 1.25rem;
+  align-self: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 1024px) {
+  .main-nav {
+    display: block;
+  }
+
+  .main-nav > .nav-menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .main-nav > .nav-menu > li {
+    height: 100%;
+    padding: 2.375rem 1rem;
+    position: relative;
+  }
+
+  .main-nav .nav-menu > li:hover {
+    background-color: var(--secondaryBeige);
+  }
+
+  .main-nav .nav-menu > li:hover > .sub-menu {
+    display: flex;
+    z-index: 102;
+  }
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-actions {
+    flex-direction: row;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 5rem;
+}
+
+.custom-logo {
+  max-height: 2.75rem;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    position: static;
+    transform: none;
+    max-width: none;
+  }
+
+  .custom-logo {
+    max-width: 6.25rem;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
+
+.contact-phone {
+  position: fixed;
+  right: 1rem;
+  bottom: 20vh;
+  z-index: 99;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.125rem;
+}
+
+.contact-phone img {
+  width: 3rem;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .contact-phone img {
+    width: 2.25rem;
+    height: auto;
+  }
+}
+
+.contact-phone span {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .contact-phone span {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-phone {
+    display: flex;
+    position: static;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: transparent;
+    color: var(--primaryBlue1);
+    font-weight: bold;
+    gap: 0.75rem;
+    pointer-events: none;
+  }
+}
+
+.get-offer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  font-size: clamp(0.65rem, 3.25vw, 0.875rem);
+  background-color: var(--secondaryYellow);
+  border-radius: 100vmax;
+  color: white;
+  font-weight: bold;
+  max-width: max-content;
+  align-self: end;
+  transition: all 0.2s ease;
+}
+
+.get-offer-button:hover,
+.get-offer-button:active {
+  background-color: var(--primaryBlue2);
+}
+
+@media (min-width: 1024px) {
+  .get-offer-button {
+    padding: 0.875rem 1.75rem;
+    align-self: center;
+  }
+}
+
+/* Desktop Submenu */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: white;
+  top: 100%;
+  left: -2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+nav ul li:hover ul {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .sub-menu {
+    gap: 2.875rem;
+    padding: 2.5rem 3.125rem;
+  }
+
+  .sub-menu > li {
+    display: flex;
+  }
+
+  .sub-menu > li > a {
+    width: max-content;
+  }
+
+  .sub-menu > li:hover {
+    font-weight: bold;
+  }
+
+  .sub-menu > li:active {
+    text-decoration: underline;
+  }
+}
