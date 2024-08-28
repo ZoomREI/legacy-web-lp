@@ -36,9 +36,8 @@ jobs:
 
       - name: Sync Plugins and Themes to Staging
         run: |
-          rsync -avz --delete \
-            ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/themes \
-            ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/plugins
+          rsync -avz --delete ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/themes
+          rsync -avz --delete ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/plugins
 
       - name: Run Database Migrations in Staging
         run: |
