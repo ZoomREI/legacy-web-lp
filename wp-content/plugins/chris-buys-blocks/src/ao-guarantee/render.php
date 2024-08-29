@@ -3,6 +3,12 @@ $select_url = plugins_url('src/ao-guarantee/assets/select.svg', dirname(__FILE__
 $no_money_url = plugins_url('src/ao-guarantee/assets/no-money.svg', dirname(__FILE__, 2));
 $house_url = plugins_url('src/ao-guarantee/assets/house.svg', dirname(__FILE__, 2));
 $calendar_url = plugins_url('src/ao-guarantee/assets/calendar.svg', dirname(__FILE__, 2));
+
+
+$star_icon_url = plugins_url('src/ao-fresh-start/assets/star.svg', dirname(__FILE__, 2));
+
+$arrow_icon_url = plugins_url('src/ao-fresh-start/assets/cta-arrow.svg', dirname(__FILE__, 2));
+
 ?>
 
 <section class="ao-guarantee">
@@ -55,5 +61,20 @@ $calendar_url = plugins_url('src/ao-guarantee/assets/calendar.svg', dirname(__FI
                 <p>We’ll work with you to find a timeline that suits your needs.</p>
             </div>
         </div>
+    </div>
+    <div class="ao-guarantee__footer">
+       <a class="ao-fresh-start__cta" href="#ao-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+       <div class="ao-hero__reviews">
+           <div class="ao-hero__reviews-stars-wrapper">
+               <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+               <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+               <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+               <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+               <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+           </div>
+           <div class="ao-hero__reviews-text">
+               <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
+           </div>
+       </div>
     </div>
 </section>

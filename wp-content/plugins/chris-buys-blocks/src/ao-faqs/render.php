@@ -1,6 +1,6 @@
 <?php
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
-$brandName = ($selectedName == "Chris") ? "Chris Buys Homes" : "John Buys Bay Area Houses";
+$brandName = ($selectedName == "Chris") ? "Chris Buys Homes" : "John Buys Houses";
 
 $faqs = array(
     array(
@@ -9,16 +9,20 @@ $faqs = array(
     ),
     array(
         "question" => "How are you different from a real estate agent?",
-        "answer" => "Agents list your house, charge fees, and you handle costs and showings. We buy your house directly or connect you with buyers. Skip the hassle – get a quick offer, close on your timeline."
+        "answer" => "Agents list your property, charge fees, and you handle costs and showings. We buy your property directly or connect you with buyers. Skip the hassle – get a quick offer, close on your timeline."
     ),
     array(
         "question" => "My property is in terrible condition, will you still buy it?",
         "answer" => "We buy huses AS-IS in any condition. The more the fix-ups, the better for us! Absolutely, we’ll buy your house even if it’s rough. You might be surprised by our offer."
     ),
     array(
-        "question" => "I'm going through a major life change and need to sell my home quickly. Can you help me?",
-        "answer" => "We understand that life changes like relocation, divorce, medical issueas, or unexpected events can make selling your home urgent. We offer a fast purchase process, fair pricing, and a straightforward approach, avoiding traditional real estate hurdles."
-    )
+        "question" => "I'm a rental property owner, dealing with property management issues. Can you help me?",
+        "answer" => "We understand the challenges landlords face: problematic tenants, high maintenance costs, or poor financial returns. We offer a fast purchase process, fair pricing, and a straightforward approach, avoiding traditional real estate hurdles."
+    ),
+    array(
+        "question" => "I need to sell my inherited property quickly and move - Are You the best choice?",
+        "answer" => "We specialize in fast and flexible property sales for inherited property owners. No repairs needed, no commissions, and a flexible timeline that suits your needs."
+    ),
 );
 ?>
 

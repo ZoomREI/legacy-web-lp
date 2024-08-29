@@ -1,0 +1,141 @@
+.cw-header {
+	display: flex;
+	flex-direction: column;
+	font-family: "Inter", sans-serif;
+}
+
+.cw-header__content {
+	display: flex;
+	justify-content: space-between;
+	/* flex-direction: column-reverse; */
+	align-items: center;
+	padding: 0.75rem 0.5rem;
+	
+	flex-direction: row;
+}
+
+@media (min-width: 1024px) {
+	.cw-header__content {
+		/* padding: 1.125rem 7.75rem; */
+
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1260px;
+		padding: 1.125rem 1rem;
+		/* flex-direction: row; */
+		/* flex-direction: column-reverse; */
+	}
+}
+.cw-header__logo {
+	width: auto;
+	max-width: 45%;
+	-o-object-fit: contain;
+	object-fit: contain;
+	height: 60px;
+}
+
+.cw-header__logo img {
+	width: 100%;
+	object-fit: contain;
+	height: 100%;
+}
+
+.cw-header__menu {
+display: none;
+}
+.cw-header__menu--link {
+	font-size: 1.125rem;
+	line-height: 1.2;
+	font-family: "Inter";
+	color: #000000;
+	text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+	.cw-header__menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		
+	}
+	.cw-header__menu--link {
+		font-size: 1.125rem;
+		line-height: 1.2;
+		font-family: "Inter";
+		color: #000000;
+		text-decoration: none;
+	}
+	.cw-header__logo {
+		max-width: 230px;
+	}
+}
+
+.cw-header__phone-number {
+	padding: 0.5rem;
+	font-size: 0.9rem;
+	font-family: "Inter";
+	font-weight: bold;
+	color: #004C8D;
+	display: block;
+	text-align: right;
+}
+.cw-header__phone-text{
+	display: inline;
+}
+@media (min-width: 1024px) {
+	.cw-header__phone-number {
+		font-size: 1.125rem;
+		text-align: center;
+	display: flex !important;
+	align-items: center;
+	flex-direction: row;
+	}
+	.cw-header__phone-text{
+		display: flex;
+	}
+}
+
+.cw-header__phone-icon {
+display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.cw-header__phone-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+	.cw-header__phone-icon {
+		/* padding: 0.625rem; */
+		flex: 0 0 40px;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.cw-header__phone-icon img {
+		width: 60%;
+		height: 60%;
+		object-fit: contain;
+	}
+}
+
+.cw-header__phone-number a {
+	text-decoration: unset;
+	font-weight: bold;
+	color: #000;
+	margin-left: 0;
+	margin-top: 0.5rem;
+	display: block;
+}
+@media (min-width: 1024px) {
+	.cw-header__phone-number a {
+		margin-left: 0.2rem;
+		margin-top:0px;
+	}
+}

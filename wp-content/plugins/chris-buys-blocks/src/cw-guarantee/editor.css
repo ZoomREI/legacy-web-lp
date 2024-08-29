@@ -1,0 +1,10 @@
+.wp-block-chris-buys-lc-guarantee {
+	padding-block: 1.5rem !important;
+	background-color: #004c8d;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin-block: 1rem !important;
+}

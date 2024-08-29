@@ -1,0 +1,68 @@
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cw-blockquote/style.css ***!
+  \*********************************************************************************************************************************************************************************/
+.cw-blockquote {
+	
+
+	padding: 2rem;
+
+	background-color: #00294C;
+}
+.cw-blockquote__wrapper{
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+
+	max-width: 1060px;
+	margin: 0 auto;
+}
+.cw-blockquote p{
+	margin: 0;
+	padding: 0;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 1rem;
+color: #FFFFFF;
+
+
+
+}
+.cw-blockquote__logo {
+	/* flex:0 0 12rem; */
+	width: 45%;
+	height: auto;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	margin-bottom: 2rem;
+}
+.cw-blockquote blockquote {
+	margin: 0;
+}
+
+@media (min-width: 1024px) {
+	.cw-blockquote {
+		padding: 7.85rem 2rem;
+	
+	}
+	.cw-blockquote__wrapper{
+		flex-direction: row;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+	}
+	.cw-blockquote__logo {
+		flex:0 0 16rem;
+		width: 16rem;
+		margin: 0;
+		margin-left: 2rem;
+	}
+	.cw-blockquote p{
+
+	font-size: 1.3rem;
+	text-align: right;
+	}
+}

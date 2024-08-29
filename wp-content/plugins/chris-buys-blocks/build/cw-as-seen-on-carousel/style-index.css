@@ -1,0 +1,210 @@
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cw-as-seen-on-carousel/style.css ***!
+  \******************************************************************************************************************************************************************************************/
+.cw-as-seen-on-carousel-wrapper {
+	position: relative;
+	background-color: #004C8D;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+}
+
+
+@media (min-width: 1024px) {
+	.cw-as-seen-on-carousel-wrapper {
+		padding: 1.125rem 0;
+	}
+}
+
+.cw-as-seen-on-carousel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	height: auto;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.cw-as-seen-on-carousel {
+		justify-content: center;
+		/* max-width: 1260px; */
+	}
+}
+
+.cw-as-seen-on-carousel__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.cw-as-seen-on-carousel__container {
+		justify-content: center;
+		flex-direction: row;
+	}
+}
+
+ .cw-as-seen-on-carousel__text {
+	font-family: "Inter", sans-serif;
+	width: 100%;
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	z-index: 3;
+	margin: 0;
+	font-weight: 600;
+	font-size: 1rem;
+	color: #fff;
+	text-transform: uppercase;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+	.cw-as-seen-on-carousel__text {
+		justify-content: flex-end;
+		 flex: 0 0 25%;
+		 padding-right: 2rem;
+	    width: 25%;
+		 margin-bottom: 0;
+	}
+} 
+
+/* .cw-as-seen-on-carousel__logos-wrapper {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+} */
+
+@media (min-width: 1024px) {
+	.cw-as-seen-on-carousel__logos-wrapper {
+		flex: 0 0 80%;
+		width: 80%;
+	}
+}
+
+
+.cw-as-seen-on-carousel__logos-wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	height: 2rem;
+ }
+
+ ._carousel-wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+ }
+ 
+ ._carousel-controls {
+	/* padding: 10px;   */
+	/* display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 90%; */
+	/* width: 100%;
+	max-width: 1260px; */
+
+	    /* padding: 10px; */
+		 display: flex;
+		 align-items: center;
+		 justify-content: space-between;
+		 position: absolute;
+		 /* top: 50%; */
+		 bottom: -2.5rem;
+		 left: 50%;
+		 transform: translate(-50%,100%);
+		 width: 90%;
+ }
+ 
+ .cw-as-seen-on-carousel__logos {
+	position: relative;
+	overflow: hidden;  
+	display: flex;
+	height: 100%;
+	width: 100%;
+	flex: 1;
+ }
+ .cw-as-seen-on-carousel__logo {
+	position: absolute;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	/* height: 100%; */
+	height: -moz-max-content;
+	height: max-content;
+	width: calc(100% / 3);
+	transition: linear;
+ }
+
+
+ 
+/* .cw-as-seen-on-carousel__logos {
+	display: flex;
+	align-items: center;
+	gap: 2.75rem;
+	white-space: nowrap;
+	margin: auto;
+} */
+
+@media (min-width: 1024px) {
+	/* .cw-as-seen-on-carousel__logos {
+		gap: 4.75rem;
+		padding: 1rem 0;
+  } */
+  .cw-as-seen-on-carousel__logo {
+	width: calc(100% / 6);
+ }
+}
+
+/* .cw-as-seen-on-carousel__logo {
+	flex: 0 0 max-contnet;
+	width: max-contnet;
+	display: flex;
+	align-items: center;
+} */
+
+/* .cw-as-seen-on-carousel__logo img {
+	height: 2rem;
+	width: auto;
+	object-fit: contain;
+} */
+.cw-as-seen-on-carousel__logo img {
+	max-width: 30vw;
+	height: 1.5rem;
+	width: auto;
+	-o-object-fit: contain;
+	object-fit: contain;
+}
+@media (min-width: 1024px) {
+	.cw-as-seen-on-carousel__logo img {
+		height: 2.75rem;
+		max-width: unset;
+	}
+	.cw-as-seen-on-carousel__logos-wrapper {
+		height: 2.75rem;
+	 }
+}
+
+
+/*# sourceMappingURL=style-index.css.map*/

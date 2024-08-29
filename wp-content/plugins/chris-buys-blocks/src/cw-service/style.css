@@ -1,0 +1,302 @@
+
+.cw-service {
+	font-family: "Inter", sans-serif;
+	padding: 4rem 1rem;
+	background-color: #00294C;
+	display: flex;
+	flex-direction: column;
+	/* gap: 2rem; */
+}
+.cw-service .cw-hero__reviews-text p{
+	color: #fff;
+}
+.cw-service__subtitle {
+	font-size: 1.1rem;
+	font-weight: 700;
+	font-family: 'Inter';
+	font-style: normal;
+	line-height: 1.4;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: #00B43D;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 0.8rem;
+}
+.cw-service__title {
+	margin: 0;
+	margin-bottom: 1rem;
+}
+.cw-service__title h2{
+	margin: 0;
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1.2;
+
+	color: #fff;
+}
+.cw-service__text {
+	text-align: center;
+	line-height: 1.4;
+	margin: 0;
+	color: #fff;
+	font-weight: bold;
+}
+@media (min-width: 1024px) {
+	.cw-service {
+			padding: 6.25rem 1rem;
+			/* gap: 4rem; */
+	  
+	}
+	.cw-service__subtitle {
+		font-size: 0.9rem;
+	}
+	.cw-service__title {
+		margin: 0;
+		margin-bottom: 0.8rem;
+	}
+	.cw-service__title h2{
+		font-size: 3.125rem;
+	}
+	.cw-service__text {
+		font-size: 1.375rem;
+		margin: 0;
+	}
+}
+
+.cw-service__table {
+	max-width: 1060px;
+	margin: 0 auto;
+	margin: 4rem auto;
+	width: 100%;
+}
+.cw-service__row {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+.cw-service__row--left-item{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	flex: 0 0 40%;
+	width:40%;
+	min-height: 4rem;
+}
+
+.cw-service__row--right-item,
+.cw-service__row--centr-item{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	flex: 0 0 30%;
+	width: 30%;
+	min-height: 4rem;
+}
+@media (min-width: 1024px) {
+	.cw-service__row--right-item,
+.cw-service__row--left-item,
+.cw-service__row--centr-item{
+	min-height: 7rem;
+}
+.cw-service__table {
+	max-width: 1060px;
+	margin: 8rem auto;
+}
+
+.cw-service__row--right-item,
+.cw-service__row--left-item,
+.cw-service__row--centr-item{
+	position: relative;
+	flex: 0 0 33.33%;
+	width: 33.33%;
+	min-height: 7rem;
+}
+}
+.cw-service__row--centr-item {
+	background-color: #D2E2F2;
+	
+}
+.cw-service__row--right-item,
+.cw-service__row--left-item {
+	background-color: #063F6F;
+}
+.cw-service__row--header .cw-service__row--centr-item {
+	border-radius: 10px 10px 0px 0px;
+}
+.cw-service__row--header .cw-service__row--centr-item,
+.cw-service__row:nth-child(2n +1) .cw-service__row--centr-item {
+	background-color: #fff;
+}
+.cw-service__row:nth-child(2n +1) .cw-service__row--right-item,
+.cw-service__row:nth-child(2n +1) .cw-service__row--left-item {
+	background-color: #0F62A9;
+}
+.cw-service__row:nth-child(2) .cw-service__row--right-item{
+
+border-radius: 0px 10px 0px 0px;
+}
+.cw-service__row:nth-child(2) .cw-service__row--left-item{
+	border-radius: 10px 0px 0px 0px;
+}
+.cw-service__row:last-child .cw-service__row--right-item{
+	border-radius: 0px 0px 10px 0px;
+}
+.cw-service__row:last-child .cw-service__row--left-item{
+	border-radius: 0px 0px 0px 10px;
+}
+.cw-service__row:last-child .cw-service__row--centr-item{
+	position: relative;
+}
+.cw-service__row:last-child .cw-service__row--centr-item ::after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 30%;
+	background-color: #fff;
+	top: 100%;
+	left: 0;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.cw-service__row--text {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 0.8rem;
+line-height: 1.2;
+color: #FFFFFF;
+padding: 0.5rem;
+}
+.cw-service__row--header .cw-service__row--icon{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%,-50%);
+	height: 3rem;
+	margin: 0;
+}
+
+@media (min-width: 1024px) {
+	.cw-service__row--header .cw-service__row--icon{
+		height: 5rem;
+	}
+	.cw-service__row--text {
+		font-size: 1.125rem;
+		padding: 0;
+		}
+}
+.cw-service__row--icon {
+	width: auto;
+	height: 1rem;
+
+	object-fit: contain;
+	margin: 0.5rem;
+}
+.cw-service__row--centr-item .cw-service__row--text {
+	color: #000;
+text-align: center;
+	}
+
+.cw-service__row--right-item .cw-service__row--text {
+font-size: 0.7rem;
+padding: 5px;
+text-align: center;
+	}
+.cw-service__row--left-item .cw-service__row--text {
+/* text-align: left; */
+align-self: flex-start;
+padding: 0 0.5rem;
+	}
+
+
+
+.cw-service__cta-text {
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1.4;
+	margin: 0;
+	text-align: center;
+	color: #fff;
+}
+.cw-service__row--header .cw-service__row--text {
+	font-size: 0.8rem;
+	line-height:1.2;
+	font-weight: bold;
+	text-align: center;
+	padding: 2rem 0.5rem 1rem;
+	}
+	.cw-service__row--header .cw-service__row--right-item,
+.cw-service__row--header .cw-service__row--left-item{
+	background-color: transparent !important;
+}
+@media (min-width: 1024px) {
+	.cw-service__cta-text {
+		font-size: 1.5rem;
+	}
+	.cw-service__row--left-item .cw-service__row--text {
+		padding: 0 2rem;
+			}
+	.cw-service__table {
+		margin: 4rem auto;
+	}
+
+		.cw-service__row--icon {
+			height: 2rem;
+			margin: 0;
+			margin-bottom: 0.5rem;
+		}
+		.cw-service__row--right-item .cw-service__row--text {
+			font-size: 0.9rem;
+			text-align: left;
+				}
+				.cw-service__row--header .cw-service__row--text {
+					font-weight: bold;
+					font-size: 1.4rem;
+					padding: 3rem 4rem 1.5rem;
+					}
+}
+.cw-service__footer-block{
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.cw-service__cta {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding-block: 1.25rem;
+	background-color: #00b43d;
+	color: white;
+	border-radius: 70px;
+	width: 100%;
+	max-width: 20rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	margin: 1rem auto;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.cw-service__footer-block .cw-hero__reviews {
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	gap: 0.4rem;
+}
+
+@media (min-width: 1024px) {
+	.cw-service__cta {
+		font-size: 1.25rem;
+	}
+}

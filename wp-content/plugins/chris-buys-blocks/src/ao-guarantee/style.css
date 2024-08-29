@@ -149,7 +149,16 @@
 	gap: 0.875rem;
 	width: 100%;
 }
+.ao-guarantee__footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
+.ao-guarantee__footer .ao-fresh-start__cta {
+	margin: 0 auto;
+}
 @media (min-width: 1024px) {
 	.ao-guarantee .guarantee__heading {
 		/* flex-direction: column; */

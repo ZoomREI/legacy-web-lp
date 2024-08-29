@@ -22,8 +22,10 @@ $checkmark_icon_url = plugins_url('src/ao-hero/assets/check-circle.svg', dirname
                 </div>
             </div>
             <div class="ao-hero__titles">
-                <h1>Are You An Absentee Owner Or Landlord?
-                    Get A Cash Offer On Your Property in 7 Minutes
+                <h1>Are You An Absentee 
+                    <br>Owner Or Landlord?
+                    <br>Get A Cash Offer On Your 
+                    <br>Property in 7 Minutes
                 </h1>
                 <p>Looking for a stress-free property sale? Get an immediate cash offer on your property. No commissions and no repairs are needed.</p>
             </div>
