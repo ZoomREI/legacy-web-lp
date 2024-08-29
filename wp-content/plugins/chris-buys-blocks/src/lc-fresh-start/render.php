@@ -14,19 +14,19 @@ $army_url = plugins_url('src/lc-fresh-start/assets/army.svg', dirname(__FILE__, 
 
 <section class="lc-fresh-start">
     <div class="lc-fresh-start__container">
-        <div class="lc-fresh-start__intro">
-            <div class="lc-hero__reviews">
-                <div class="lc-hero__reviews-stars-wrapper">
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                </div>
-                <div class="lc-hero__reviews-text">
-                    <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
-                </div>
+        <div class="lc-hero__reviews">
+            <div class="lc-hero__reviews-stars-wrapper">
+                <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
             </div>
+            <div class="lc-hero__reviews-text">
+                <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
+            </div>
+        </div>
+        <div class="lc-fresh-start__intro">
             <h2>Do You Need A Fresh Start?</h2>
             <p class="lc-fresh-start__intro-p">Our discreet, efficient sales are ideal for people going through changes in their lives.</p>
         </div>
