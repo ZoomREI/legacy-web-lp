@@ -25,6 +25,15 @@
 .lc-steps__text {
 	text-align: center;
 	max-width: 61.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+}
+
+@media (min-width: 1024px) {
+	.lc-steps__text {
+		gap: 1.5rem;
+	}
 }
 
 .lc-steps__text h2 {
@@ -131,6 +140,7 @@
 	.lc-steps__steps .step__title {
 		flex-direction: row;
 		align-items: start;
+		justify-content: center;
 	}
 }
 

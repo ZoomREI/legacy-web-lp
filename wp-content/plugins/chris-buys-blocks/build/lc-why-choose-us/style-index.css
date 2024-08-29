@@ -30,6 +30,18 @@
 	}
 }
 
+.lc-why-choose-us__heading {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+}
+
+@media (min-width: 1024px) {
+	.lc-why-choose-us__heading {
+		gap: 1.5rem;
+	}
+}
+
 .lc-why-choose-us__title {
 	text-align: center;
 	font-size: 1.75rem;
@@ -258,6 +270,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1.125rem;
+	align-items: start;
 }
 
 .lc-why-choose-us__testimonial blockquote p {

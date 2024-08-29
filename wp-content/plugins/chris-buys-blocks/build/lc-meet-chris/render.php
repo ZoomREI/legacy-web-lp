@@ -52,7 +52,7 @@ $fox_logo_url = plugins_url('src/lc-meet-chris/assets/fox.svg', dirname(__FILE__
 
     <div class="lc-featured-in">
         <div class="lc-featured-in__container">
-            <span class="lc-featured-in__text">Featured in:</span>
+            <span class="lc-featured-in__text">AS SEEN ON:</span>
             <div class="lc-featured-in__logos-wrapper">
                 <div class="lc-featured-in__logos">
                     <div class="lc-featured-in__logo"><img src="<?php echo esc_url($cbs_logo_url); ?>" alt="CBS"></div>
