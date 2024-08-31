@@ -1,4 +1,4 @@
-.cw-footer {
+.cw-footer-v2 {
 	font-family: "Inter", sans-serif;
 	display: flex;
 	background-color: #004c8d;
@@ -6,12 +6,12 @@
 }
 
 @media (min-width: 1024px) {
-	.cw-footer {
+	.cw-footer-v2 {
 		padding: 2.5rem 5rem;
 	}
 }
 
-.cw-footer__content {
+.cw-footer-v2__content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -22,7 +22,7 @@
 }
 
 @media (min-width: 1024px) {
-	.cw-footer__content {
+	.cw-footer-v2__content {
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 1.125rem 7.75rem;
@@ -31,15 +31,15 @@
 	}
 }
 
-.cw-footer__logo {
+.cw-footer-v2__logo {
 	flex-shrink: 0;
 }
 
-.cw-footer__logo img {
+.cw-footer-v2__logo img {
 	width: 14.5rem;
 }
 
-.cw-footer__text {
+.cw-footer-v2__text {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;

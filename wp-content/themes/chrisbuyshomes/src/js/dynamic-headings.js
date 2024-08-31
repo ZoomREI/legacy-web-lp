@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Check if the cw-hero-wrapper element is present
+  const heroWrapper = document.querySelector(".cw-hero-wrapper");
+  if (!heroWrapper) {
+    // Abort if the hero wrapper is not found
+    return;
+  }
+
+  // Function to get query parameters from the URL
   function getQueryParams() {
     let params = {};
     let queryString = window.location.search.substring(1);
@@ -10,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return params;
   }
 
+  // Get the parameters from the URL
   let params = getQueryParams();
 
   // Extract and normalize keywords from the content and kw parameters
@@ -59,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
+  // Function to find the matching keyword
   function findMatchingKeyword(originalKeywords) {
     // Split the keywords and handle special case for "as is"
     let keywordArray = originalKeywords.split(" ");
@@ -99,9 +109,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let h3Text = keywordMappings[keyword].h3;
     let h4Text = keywordMappings[keyword].h4;
 
-    // Update the HTML elements
-    document.querySelector("h1").innerHTML = h1Text;
-    document.querySelector("h3").innerHTML = h3Text;
-    document.querySelector("h4").innerHTML = h4Text;
+    // Update the HTML elements if they exist within the cw-hero-wrapper
+    let h1Element = heroWrapper.querySelector("h1");
+    let h3Element = heroWrapper.querySelector("h3");
+    let h4Element = heroWrapper.querySelector("h4");
+
+    if (h1Element) h1Element.innerHTML = h1Text;
+    if (h3Element) h3Element.innerHTML = h3Text;
+    if (h4Element) h4Element.innerHTML = h4Text;
   }
 });

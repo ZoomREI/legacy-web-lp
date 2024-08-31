@@ -8,6 +8,7 @@ function chris_buys_homes_enqueue_assets()
     wp_enqueue_style('chrisbuyshomes-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
     // wp_enqueue_script('scripts', get_template_directory_uri() . '/src/js/script.js', array(), true);
     wp_enqueue_script('gf-full-address', get_template_directory_uri() . '/src/js/full-address-field.js', array(), true);
+    wp_enqueue_script('dynamic-headings', get_template_directory_uri() . '/src/js/dynamic-headings.js', array(), true);
     // wp_enqueue_script('doctor-homes-menu', get_template_directory_uri() . '/src/js/menu.js', array(), null, true);
     // wp_enqueue_script('doctor-homes-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
 

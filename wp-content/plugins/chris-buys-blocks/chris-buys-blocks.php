@@ -59,7 +59,7 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		'lc-faqs',
 		'lc-cta',
 		'lc-number-one',
-		'footer',
+		'cw-footer-v2',
 		
 		// 'ao-header',
 		// 'ao-hero',
@@ -74,7 +74,6 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		// 'ao-property-management',
 		// 'ao-faqs',
 		// 'ao-cta',
-		// 'ao-footer',
 	];
 
 	foreach ($blocks as $block) {

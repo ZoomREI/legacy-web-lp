@@ -17,13 +17,9 @@
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js",
 	"attributes": {
-		"logoUrl": {
+		"selectedMarket": {
 			"type": "string",
-			"default": ""
-		},
-		"selectedName": {
-			"type": "string",
-			"default": "Chris"
+			"default": "St. Louis"
 		}
 	}
 }

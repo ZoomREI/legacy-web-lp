@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "chris-buys/footer",
+	"name": "chris-buys/footer-v2",
 	"version": "0.1.0",
-	"title": "CW Footer ",
+	"title": "CW Footer #2",
 	"category": "widgets",
 	"icon": "align-center",
 	"description": "Dynamic Footer for the CW Design",
@@ -17,13 +17,9 @@
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js",
 	"attributes": {
-		"logoUrl": {
+		"selectedMarket": {
 			"type": "string",
-			"default": ""
-		},
-		"selectedName": {
-			"type": "string",
-			"default": "Chris"
+			"default": "St. Louis"
 		}
 	}
 }
