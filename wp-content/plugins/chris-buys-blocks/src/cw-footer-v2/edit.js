@@ -5,7 +5,7 @@ import "./editor.css";
 
 // Static base path for logos relative to the plugin directory
 const logosBasePath =
-	"/wp-content/plugins/chris-buys-blocks/src/footer-v2/assets/";
+	"/wp-content/plugins/chris-buys-blocks/src/cw-footer-v2/assets/";
 
 export default function Edit({ attributes, setAttributes }) {
 	const { selectedMarket } = attributes;

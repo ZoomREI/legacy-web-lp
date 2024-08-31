@@ -1,11 +1,11 @@
 <?php
 $logos = [
-    "Kansas City" => plugins_url('src/footer-v2/assets/kc-footer-logo.svg', dirname(__FILE__, 2)),
-    "San Francisco Bay Area" => plugins_url('src/footer-v2/assets/sf-footer-logo.svg', dirname(__FILE__, 2)),
-    "St. Louis" => plugins_url('src/footer-v2/assets/stl-footer-logo.svg', dirname(__FILE__, 2)),
-    "Metro Detroit" => plugins_url('src/footer-v2/assets/det-footer-logo.svg', dirname(__FILE__, 2)),
-    "Cleveland" => plugins_url('src/footer-v2/assets/cle-footer-logo.svg', dirname(__FILE__, 2)),
-    "Indianapolis" => plugins_url('src/footer-v2/assets/ind-footer-logo.svg', dirname(__FILE__, 2)),
+    "Kansas City" => plugins_url('src/cw-footer-v2/assets/kc-footer-logo.svg', dirname(__FILE__, 2)),
+    "San Francisco Bay Area" => plugins_url('src/cw-footer-v2/assets/sf-footer-logo.svg', dirname(__FILE__, 2)),
+    "St. Louis" => plugins_url('src/cw-footer-v2/assets/stl-footer-logo.svg', dirname(__FILE__, 2)),
+    "Metro Detroit" => plugins_url('src/cw-footer-v2/assets/det-footer-logo.svg', dirname(__FILE__, 2)),
+    "Cleveland" => plugins_url('src/cw-footer-v2/assets/cle-footer-logo.svg', dirname(__FILE__, 2)),
+    "Indianapolis" => plugins_url('src/cw-footer-v2/assets/ind-footer-logo.svg', dirname(__FILE__, 2)),
 ];
 
 $selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis';

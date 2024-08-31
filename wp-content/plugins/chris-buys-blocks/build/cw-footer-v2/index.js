@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Static base path for logos relative to the plugin directory
-const logosBasePath = "/wp-content/plugins/chris-buys-blocks/src/footer-v2/assets/";
+const logosBasePath = "/wp-content/plugins/chris-buys-blocks/src/cw-footer-v2/assets/";
 function Edit({
   attributes,
   setAttributes
