@@ -42,7 +42,7 @@ $checkmark_icon_url = plugins_url('src/lc-hero/assets/check-circle.svg', dirname
             </ul>
         </div>
         <div id="lc-form" class="lc-hero__form">
-            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
+            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="false"]'); ?>
         </div>
     </div>
 </section>
