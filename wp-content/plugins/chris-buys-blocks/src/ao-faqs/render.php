@@ -36,7 +36,7 @@ $faqs = array(
             <div class="ao-faqs__item">
                 <div class="ao-faqs__question">
                     <?php echo esc_html($faq['question']); ?>
-                    <span class="faq-indicator">+</span>
+                    <span class="ao-faq-indicator">+</span>
                 </div>
                 <div class="ao-faqs__answer">
                     <?php echo wp_kses_post($faq['answer']); ?>

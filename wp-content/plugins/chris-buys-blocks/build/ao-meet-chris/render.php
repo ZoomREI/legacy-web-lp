@@ -15,12 +15,12 @@ $arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(
     <div class="ao-meet-chris__container">
         <div class="ao-meet-chris__content">
             <div class="ao-meet-chris__text">
-                <span class="ao-meet-chris__hi">Hi, I'm <?php echo esc_html($selectedName); ?></span>
+                <span class="ao-meet-chris__hi">Hi, I'm <?php echo esc_html($selectedName); ?>!</span>
                 <h2 class="ao-meet-chris__title">Have A House You Need To Sell FAST In the Bay Area?</h2>
                 <h3 class="ao-meet-chris__subtitle">Let me help! We are genuine homebuyers, and we buy ANY house!</h3>
                 <div class="ao-meet-chris__description">
-                    <p>Sometimes the unexpected happens and our plans need to change. Maybe you’re working through a divorce, need to relocate for work, or are just looking for a fresh start.</p>
-                    <p>Whatever your circumstances and whatever state your home is in – it doesn’t matter to us. <strong>We’ll buy it, quickly and discreetly.</strong></p>
+                    <p>Maybe you’ve inherited a house, don’t want to spend money on repairs, or are having trouble managing your tenants.</p>
+                    <p>Whatever your circumstances and whatever state your home is in – it doesn’t matter to us. <br><strong>We’ll buy it, and fast!</strong></p>
                     <p>All this, <strong>without the hassle.</strong> No real estate agents. No repairs or cleaning. Plus, we always make you a fair offer.</p>
                 </div>
                 <h3 class="ao-meet-chris__cta-text">Ready to sell your house right now?</h3>

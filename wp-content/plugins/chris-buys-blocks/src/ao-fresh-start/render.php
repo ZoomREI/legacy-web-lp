@@ -21,39 +21,39 @@ $home_url = plugins_url('src/ao-fresh-start/assets/home.svg', dirname(__FILE__, 
            <p class="ao-fresh-start__intro-p">Many people find it difficult and time-consuming to inherit a property.</p>
        </div>
        <div class="ao-fresh-start__reasons">
-           <div class="reason">
-               <div class="reason__icon">
+           <div class="ao-reason">
+               <div class="ao-reason__icon">
                    <img src="<?php echo esc_url($emotional_url); ?>" alt="Emotional Burden">
                </div>
-               <div class="reason__content">
+               <div class="ao-reason__content">
                    <h3>Emotional Burden</h3>
                    <p>Inheriting a property after the passing of a family member can be emotionally challenging and stressful and it may prevent you from moving on.</p>
                </div>
            </div>
-           <div class="reason">
-               <div class="reason__icon">
+           <div class="ao-reason">
+               <div class="ao-reason__icon">
                    <img src="<?php echo esc_url($home_url); ?>" alt="Maintenance Challenges">
    
                </div>
-               <div class="reason__content">
+               <div class="ao-reason__content">
                    <h3>Maintenance Challenges</h3>
                    <p>If the property isn’t local, it can be difficult and impractical for you to manage it from a distance.</p>
                </div>
            </div>
-           <div class="reason">
-               <div class="reason__icon">
+           <div class="ao-reason">
+               <div class="ao-reason__icon">
                    <img src="<?php echo esc_url($select_url); ?>" alt="Financial Strain">
                </div>
-               <div class="reason__content">
+               <div class="ao-reason__content">
                    <h3>Financial Strain</h3>
                    <p>There are numerous costs associated with owning and maintaining an extra property, including taxes, insurance, and repair costs. This can place an unwanted financial burden on you.</p>
                </div>
            </div>
-           <div class="reason">
-               <div class="reason__icon">
+           <div class="ao-reason">
+               <div class="ao-reason__icon">
                    <img src="<?php echo esc_url($time_url); ?>" alt="Time Constraints">
                </div>
-               <div class="reason__content">
+               <div class="ao-reason__content">
                    <h3>Time Constraints</h3>
                    <p>You may lack the time to deal with property management, tenant issues, or even preparing the property for sale.</p>
                </div>

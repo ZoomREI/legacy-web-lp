@@ -12,7 +12,7 @@
 	justify-content: flex-start;
 	flex-direction: column;
 
-	max-width: 1060px;
+	max-width: 320px;
 	margin: 0 auto;
 }
 .cw-blockquote p{
@@ -22,15 +22,16 @@
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 1rem;
+/* font-size: 1rem; */
 color: #FFFFFF;
-
+font-size: 16px;
+line-height: 1.4;
 
 
 }
 .cw-blockquote__logo {
 	/* flex:0 0 12rem; */
-	width: 45%;
+	width: 120px;
 	height: auto;
 	object-fit: contain;
 	margin-bottom: 2rem;
@@ -40,6 +41,10 @@ color: #FFFFFF;
 }
 
 @media (min-width: 1024px) {
+	.cw-blockquote__wrapper{
+		max-width: 1060px;
+		margin: 0 auto;
+	}
 	.cw-blockquote {
 		padding: 7.85rem 2rem;
 	
@@ -51,14 +56,15 @@ color: #FFFFFF;
 		align-items: center;
 	}
 	.cw-blockquote__logo {
-		flex:0 0 16rem;
-		width: 16rem;
+		flex:0 0 200px;
+		width: 200px;
 		margin: 0;
 		margin-right: 2rem;
 	}
 	.cw-blockquote p{
 
-	font-size: 1.3rem;
+	/* font-size: 1.3rem; */
+	font-size: 25px;
 	text-align: left;
 	}
 }

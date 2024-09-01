@@ -1,4 +1,6 @@
 <?php
+$selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
+
 $background_image_url = plugins_url('src/cw-hero/assets/life-changes-hero-background.webp', dirname(__FILE__, 2));
 $testimonee_url = plugins_url('src/cw-hero/assets/hero-testimoniels.webp', dirname(__FILE__, 2));
 $star_icon_url = plugins_url('src/cw-hero/assets/star.svg', dirname(__FILE__, 2));
@@ -25,7 +27,7 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
             </div>
             <ul class="cw-hero__bullet-points">
                 <li class="cw-hero__bullet-point"><img src="<?php echo esc_url($checkmark_icon_url); ?>" alt="checkmark">
-                    <span>No need for you to clean <strong>or make repairs</strong></span>
+                    <span><strong>No need for you to clean</strong> or make repairs</span>
                 </li>
                 <li class="cw-hero__bullet-point"><img src="<?php echo esc_url($checkmark_icon_url); ?>" alt="checkmark">
                     <span>No realtors, <strong>fees, banks, commissions,</strong> or inspectors</span>
@@ -56,22 +58,23 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
                <ul class="cw-hero__statistic--list">
                    <li class="cw-hero__statistic--item">
                        <div class="cw-hero__statistic--amunt">36M+</div>
-                       <div class="cw-hero__statistic--text">Saved Fees</div>
+                       <div class="cw-hero__statistic--text">Saved <span>Fees</span></div>
                    </li>
                    <li class="cw-hero__statistic--item">
                        <div class="cw-hero__statistic--amunt">1,500+</div>
-                       <div class="cw-hero__statistic--text">HOUSES BOUGHT</div>
+                       <div class="cw-hero__statistic--text">HOUSES <span>BOUGHT</span></div>
                    </li>
                    <li class="cw-hero__statistic--item">
                        <div class="cw-hero__statistic--amunt">96%</div>
-                       <div class="cw-hero__statistic--text">SATISFIED CUSTOMERS</div>
+                       <div class="cw-hero__statistic--text">SATISFIED <span>CUSTOMERS</span></div>
                    </li>
                </ul>
             </div>
             
         </div>
         <div id="cw-form" class="cw-hero__form">
-            [gravityform id="4" title="false" ajax="false"]
+            <!-- <?php echo do_shortcode('[doctor_homes_lead-form]'); ?> -->
+            [gravityform id="1" title="false" ajax="true"]
         </div>
     </div>
 </section>

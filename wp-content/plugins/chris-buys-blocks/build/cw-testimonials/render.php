@@ -190,7 +190,7 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                      </div>
                      <cite>
-                        1 Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                        Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
                      </cite>
                 </div>
             </div>
@@ -200,30 +200,6 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 </blockquote>
             </div>
         </div>
-      </div>
-      <div class="_carousel-slide">
-          <div class="cw-testimonials__testimonial">
-              <div class="cw-testimonials__person">
-                  <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_3_url); ?>" alt="Liv Skyler">
-                  <div class="cw-testimonials__person--about">
-                       <div class="cw-hero__reviews-stars-wrapper">
-                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                       </div>
-                       <cite>
-                       Liv Skyler<span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                       </cite>
-                  </div>
-              </div>
-              <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
-                </blockquote>
-              </div>
-          </div>
       </div>
       <div class="_carousel-slide">
            <div class="cw-testimonials__testimonial">
@@ -244,34 +220,10 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 </div>
                 <div class="cw-testimonials__testimonial--content">
                     <blockquote>
-                        <p>"I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. He made a reasonable offer and the sale went quickly with prompt payment."</p>
+                        <p>"I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. <br><br>He made a reasonable offer and the sale went quickly with prompt payment."</p>
                     </blockquote>
                 </div>
             </div>
-      </div>
-      <div class="_carousel-slide">
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_1_url); ?>" alt="Nataly Lebedev">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                         Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>“In a day and age where professionals in the service industry never seem to answer their phones or return calls, <?php echo esc_html($selectedName) ?> promptly responded to my initial call, and was always available during the entire selling process."</p>
-                </blockquote>
-            </div>
-        </div>
       </div>
       <div class="_carousel-slide">
           <div class="cw-testimonials__testimonial">
@@ -292,34 +244,83 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
               </div>
               <div class="cw-testimonials__testimonial--content">
                 <blockquote>
-                    <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
+                    <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <br><br><?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
                 </blockquote>
               </div>
           </div>
       </div>
+   
+      <div class="_carousel-slide ">
+        <div class="cw-testimonials__testimonial">
+            <div class="cw-testimonials__person">
+                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_1_url); ?>" alt="Nataly Lebedev">
+                <div class="cw-testimonials__person--about">
+                     <div class="cw-hero__reviews-stars-wrapper">
+                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                     </div>
+                     <cite>
+                        Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                     </cite>
+                </div>
+            </div>
+            <div class="cw-testimonials__testimonial--content">
+                <blockquote>
+                    <p>“In a day and age where professionals in the service industry never seem to answer their phones or return calls, <?php echo esc_html($selectedName) ?> promptly responded to my initial call, and was always available during the entire selling process."</p>
+                </blockquote>
+            </div>
+        </div>
+      </div>
       <div class="_carousel-slide">
-            <div class="cw-testimonials__testimonial">
-                  <div class="cw-testimonials__person">
-                      <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_2_url); ?>" alt="Darren Pilch">
-                      <div class="cw-testimonials__person--about">
-                           <div class="cw-hero__reviews-stars-wrapper">
-                               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                           </div>
-                           <cite>
-                             Darren Pilch <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                           </cite>
-                      </div>
-                  </div>
-                  <div class="cw-testimonials__testimonial--content">
-                      <blockquote>
-                          <p>"I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. He made a reasonable offer and the sale went quickly with prompt payment."</p>
-                      </blockquote>
+           <div class="cw-testimonials__testimonial">
+                <div class="cw-testimonials__person">
+                    <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_2_url); ?>" alt="Darren Pilch">
+                    <div class="cw-testimonials__person--about">
+                         <div class="cw-hero__reviews-stars-wrapper">
+                             <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                             <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                             <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                             <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                             <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                         </div>
+                         <cite>
+                           Darren Pilch <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                         </cite>
+                    </div>
+                </div>
+                <div class="cw-testimonials__testimonial--content">
+                    <blockquote>
+                        <p>"I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. <br><br>He made a reasonable offer and the sale went quickly with prompt payment."</p>
+                    </blockquote>
+                </div>
+            </div>
+      </div>
+      <div class="_carousel-slide">
+          <div class="cw-testimonials__testimonial">
+              <div class="cw-testimonials__person">
+                  <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_3_url); ?>" alt="Liv Skyler">
+                  <div class="cw-testimonials__person--about">
+                       <div class="cw-hero__reviews-stars-wrapper">
+                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                           <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                       </div>
+                       <cite>
+                       Liv Skyler<span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                       </cite>
                   </div>
               </div>
+              <div class="cw-testimonials__testimonial--content">
+                <blockquote>
+                    <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <br><br><?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
+                </blockquote>
+              </div>
+          </div>
       </div>
     </div>
   </div>

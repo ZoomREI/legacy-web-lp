@@ -133,7 +133,7 @@ $arrow_icon_url = plugins_url('src/cw-service/assets/cta-arrow.svg', dirname(__F
             </div>
         </div>
     </div>
-    <h3 class="cw-service__cta-text">Ready to sell your house right now?</h3>
+    <h3 class="cw-service__cta-text">Ready to sell your house to us?</h3>
     <div class="cw-service__footer-block">
        <a class="cw-service__cta" href="#cw-form">Get my offer<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
        <div class="cw-hero__reviews">
@@ -145,7 +145,7 @@ $arrow_icon_url = plugins_url('src/cw-service/assets/cta-arrow.svg', dirname(__F
                <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
            </div>
            <div class="cw-hero__reviews-text">
-               <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
+               <p>Rated <strong>4.7/5</strong> Based on <strong>100+</strong> reviews</p>
            </div>
        </div>
     </div>

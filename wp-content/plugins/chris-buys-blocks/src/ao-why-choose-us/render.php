@@ -16,7 +16,7 @@ $verified_check_url = plugins_url('src/ao-why-choose-us/assets/verified-check-ci
 <section class="ao-why-choose-us">
     <div class="ao-why-choose-us__heading">
         <h2 class="ao-why-choose-us__title">Why Choose Us?</h2>
-        <p class="ao-why-choose-us__subtitle">We make every step as simple as possible – and we do the hard work for you.</p>
+        <p class="ao-why-choose-us__subtitle">We make every step as simple as possible - we do the hard work for you.</p>
     </div>
 
     <div class="ao-why-choose-us__carousel">
@@ -65,10 +65,10 @@ $verified_check_url = plugins_url('src/ao-why-choose-us/assets/verified-check-ci
             <div class="ao-why-choose-us__item">
                 <div class="ao-why-choose-us__content">
                     <h3>You Get An Immediate Cash Offer For Your Property</h3>
-                    <p>We’re <strong></strong>experts in closing fast property sales</strong> but we pride ourselves on making fair, competitive offers.<strong> We won’t ‘low-ball’ you and we’ll even cover the closing costs.</strong></p>
+                    <p>We’re <strong>experts in closing fast property sales</strong> but we pride ourselves on making fair, competitive offers.<strong> We won’t ‘low-ball’ you and we’ll even cover the closing costs.</strong></p>
                     <ul>
                         <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span>Get an <strong>instant, competitive cash offer</strong></span></li>
-                        <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span>We buy properties in <strong>as-is condition with no repricing</strong></span></li>
+                        <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span>We buy properties in <strong>as-is condition </strong>with<strong> no repricing</strong></span></li>
                         <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span><strong>We cover all typical closing costs</strong></span></li>
                     </ul>
                 </div>

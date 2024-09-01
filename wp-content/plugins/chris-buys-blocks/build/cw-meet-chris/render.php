@@ -22,7 +22,7 @@ $arrow_icon_url = plugins_url('src/cw-meet-chris/assets/cta-arrow.svg', dirname(
     <div class="cw-meet-chris__container">
         <div class="cw-meet-chris__content"> 
             <div class="cw-meet-chris__text">
-                <span class="cw-meet-chris__hi">Hi, I'm <?php echo esc_html($selectedName); ?></span>
+                <span class="cw-meet-chris__hi">Hi, I'm <?php echo esc_html($selectedName); ?>!</span>
                 <h2 class="cw-meet-chris__title">Got A House You Need To Sell In St. Louis?</h2>
                 <h3 class="cw-meet-chris__subtitle">Let me help! We are genuine homebuyers, and we buy ANY house!</h3>
                 <div class="cw-meet-chris__description">
@@ -42,7 +42,7 @@ $arrow_icon_url = plugins_url('src/cw-meet-chris/assets/cta-arrow.svg', dirname(
                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                    </div>
                    <div class="cw-hero__reviews-text">
-                       <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
+                       <p>Rated <strong>4.7/5</strong> Based on <strong>100+</strong> reviews</p>
                    </div>
                </div>
             </div>

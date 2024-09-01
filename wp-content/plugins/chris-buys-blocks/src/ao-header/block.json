@@ -23,7 +23,7 @@
 		},
 		"phoneNumber": {
 			"type": "string",
-			"default": "(510) 945-3588"
+			"default": "(314) 887-8043"
 		}
 	}
 }

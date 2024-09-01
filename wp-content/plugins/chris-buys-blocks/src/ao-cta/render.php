@@ -34,9 +34,9 @@ $verified_check_url = plugins_url('src/ao-cta/assets/verified-check-circle.svg',
             <h2>Get A Cash Offer In Under 7 Minutes</h2>
             <p class="ao-cta__content--description">Fill out our form and we’ll get back to you in a few minutes.</p>
             <ul>
-                <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark">Get an instant&nbsp;<strong>competitive, cash offer</strong></li>
+                <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark">Get an instant <strong>competitive, cash offer</strong></li>
                 <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark">We’ll buy your house in&nbsp;<strong>any condition</strong></li>
-                <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><strong>No agent fees,</strong>&nbsp;commissions, or hidden costs</li>
+                <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><strong>No agent fees,</strong>commissions, or hidden costs</li>
             </ul>
             <a class="ao-cta__cta--button" href="#ao-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
         </div>

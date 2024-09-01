@@ -41,7 +41,7 @@ $checkmark_icon_url = plugins_url('src/cw-sell-today/assets/check-circle.svg', d
                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                    </div>
                    <div class="cw-hero__reviews-text">
-                       <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
+                       <p>Rated <strong>4.7/5</strong> Based on <strong>100+</strong> reviews</p>
                    </div>
                </div>
             </div>
@@ -50,15 +50,15 @@ $checkmark_icon_url = plugins_url('src/cw-sell-today/assets/check-circle.svg', d
             <ul class="cw-hero__statistic--list">
                 <li class="cw-hero__statistic--item">
                     <div class="cw-hero__statistic--amunt">36M+</div>
-                    <div class="cw-hero__statistic--text">Saved Fees</div>
+                    <div class="cw-hero__statistic--text">Saved <br>Fees</div>
                 </li>
                 <li class="cw-hero__statistic--item">
                     <div class="cw-hero__statistic--amunt">1,500+</div>
-                    <div class="cw-hero__statistic--text">HOUSES BOUGHT</div>
+                    <div class="cw-hero__statistic--text">HOUSES <br>BOUGHT</div>
                 </li>
                 <li class="cw-hero__statistic--item">
                     <div class="cw-hero__statistic--amunt">96%</div>
-                    <div class="cw-hero__statistic--text">SATISFIED CUSTOMERS</div>
+                    <div class="cw-hero__statistic--text">SATISFIED <br>CUSTOMERS</div>
                 </li>
             </ul>
         </div>

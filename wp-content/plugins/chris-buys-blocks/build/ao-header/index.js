@@ -211,7 +211,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"chris-buys/ao-header","version":"0.1.0","title":"Absentee Owners Header ","category":"widgets","icon":"align-center","description":"Dynamic Header for the AO Design","supports":{"html":false},"textdomain":"chris-buys-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis"},"phoneNumber":{"type":"string","default":"(510) 945-3588"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"chris-buys/ao-header","version":"0.1.0","title":"Absentee Owners Header ","category":"widgets","icon":"align-center","description":"Dynamic Header for the AO Design","supports":{"html":false},"textdomain":"chris-buys-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis"},"phoneNumber":{"type":"string","default":"(314) 887-8043"}}}');
 
 /***/ })
 

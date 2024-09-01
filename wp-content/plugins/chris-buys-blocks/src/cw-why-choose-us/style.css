@@ -1,6 +1,6 @@
 .cw-why-choose-us {
 	font-family: "Inter", sans-serif;
-	padding: 4rem 1rem;
+	padding: 4rem 0;
 	/* background-color: #fff; */
 	display: flex;
 	flex-direction: column;
@@ -20,7 +20,11 @@
 .cw-why-choose-us  .cw-fresh-start__testimonial blockquote p{
 	text-align: left;
 }
-
+.cw-why-choose-us__carousel,
+.cw-why-choose-us__heading {
+	margin: 0 auto;
+	max-width: 320px;
+}
 @media (min-width: 1024px) {
 	.cw-why-choose-us {
 		padding: 6.25rem 1rem;
@@ -33,7 +37,7 @@
   }
 }
 .cw-why-choose-us__prevtitle {
-	font-size: 1.1rem;
+	font-size: 14px;
 	font-weight: 700;
 	font-family: 'Inter';
 	font-style: normal;
@@ -47,20 +51,21 @@
 }
 .cw-why-choose-us__title {
 	text-align: center;
-	font-size: 1.75rem;
+	font-size: 24px;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
 	color: #000D17;
-
+padding: 0 40px;
 }
 
 @media (min-width: 1024px) {
 	.cw-why-choose-us__prevtitle{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	.cw-why-choose-us__title {
-		font-size: 3.125rem;
+		font-size: 40px;
+		padding: 0;
 		margin: 0;
 		margin-bottom: 0.8rem;
 	}
@@ -72,11 +77,12 @@
 	margin: 0;
 	color: #004C8D;
 	font-weight: bold;
+	font-size: 16px;
 }
 
 @media (min-width: 1024px) {
 	.cw-why-choose-us__subtitle {
-		font-size: 1.375rem;
+		font-size: 18px;
 		margin: 0;
 	}
 }
@@ -141,8 +147,8 @@
 }
 
 .cw-why-choose-us__content h3 {
-	font-size: 1.35rem;
-	font-weight: 700;
+	font-size: 20px;
+	font-weight: 600;
 	line-height: 1.2;
 
 	margin: 0;
@@ -151,11 +157,12 @@
 
 @media (min-width: 1024px) {
 	.cw-why-choose-us__content {
-		flex: 0 0 48%;
-		width: 48%;
+		flex: 0 0 43%;
+		width: 43%;
 	}
 	.cw-why-choose-us__content h3 {
-		font-size: 1.875rem;
+		padding-right: 5%;
+		font-size: 30px;
 	}
 	.cw-why-choose-us__content {
 		gap: 1.8rem;
@@ -167,17 +174,19 @@
 .cw-why-choose-us__content ul li {
 	line-height: 1.4;
 	margin: 0;
+	font-size: 14px;
 }
 
 @media (min-width: 1024px) {
 	.cw-why-choose-us__content p,
 	.cw-why-choose-us__content ul li,
 	.cw-why-choose-us__content blockquote {
-		font-size: 1.25rem;
+		font-size: 16px;
 	}
 }
 .cw-why-choose-us__content blockquote{
 	gap: 0.6rem;
+	font-size: 14px;
 }
 .cw-why-choose-us__content ul {
 	display: flex;
@@ -194,7 +203,7 @@
 }
 
 .cw-why-choose-us__content ul li img {
-	margin-right: 1rem;
+	margin-right: 10px;
 }
 
 .cw-why-choose-us__content ul li strong {
@@ -203,9 +212,11 @@
 
 .cw-why-choose-us__image {
 	position: relative;
-	width: 20.75rem;
-	height: 20.75rem;
+	width: 100%;
+	height: 262px;
 
+border-radius: 5px;
+overflow: hidden;
 }
 
 .cw-why-choose-us__image::before {
@@ -226,9 +237,13 @@
 		/* border-radius: 30px; */
 
 		/* width: 32rem; */
-		height: 32rem;
+		/* height: 32rem; */
+		height: 480px;
 		flex: 0 0 48%;
 		width: 48%;
+	}
+	.cw-why-choose-us__content ul li img {
+		margin-right: 15px;
 	}
 }
 

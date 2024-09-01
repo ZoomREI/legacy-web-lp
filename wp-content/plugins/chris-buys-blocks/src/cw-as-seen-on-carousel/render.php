@@ -11,6 +11,9 @@ $fox_logo_url = plugins_url('src/cw-as-seen-on-carousel/assets/fox.svg', dirname
             <span class="cw-as-seen-on-carousel__text">As Seen On</span>
             <div class="cw-as-seen-on-carousel__logos-wrapper">
                 <div class="cw-as-seen-on-carousel__logos">
+                    <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($nbc_logo_url); ?>" alt="NBC"></div>
+                    <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($forbes_logo_url); ?>" alt="Forbes"></div>
+                    <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($fox_logo_url); ?>" alt="FOX"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($cbs_logo_url); ?>" alt="CBS"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($nbc_logo_url); ?>" alt="NBC"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($forbes_logo_url); ?>" alt="Forbes"></div>
@@ -18,10 +21,12 @@ $fox_logo_url = plugins_url('src/cw-as-seen-on-carousel/assets/fox.svg', dirname
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($cbs_logo_url); ?>" alt="CBS"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($nbc_logo_url); ?>" alt="NBC"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($forbes_logo_url); ?>" alt="Forbes"></div>
+                    <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($fox_logo_url); ?>" alt="FOX"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($cbs_logo_url); ?>" alt="CBS"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($nbc_logo_url); ?>" alt="NBC"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($forbes_logo_url); ?>" alt="Forbes"></div>
                     <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($fox_logo_url); ?>" alt="FOX"></div>
+                    <div class="cw-as-seen-on-carousel__logo"><img src="<?php echo esc_url($cbs_logo_url); ?>" alt="CBS"></div>
                 </div>
             </div>
         </div>

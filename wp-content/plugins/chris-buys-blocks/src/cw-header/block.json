@@ -17,13 +17,13 @@
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js",
 	"attributes": {
-		"logoUrl": {
+		"selectedMarket": {
 			"type": "string",
-			"default": ""
+			"default": "St. Louis"
 		},
 		"phoneNumber": {
 			"type": "string",
-			"default": "(510) 945-3588"
+			"default": "(314) 887-8043"
 		}
 	}
 }

@@ -6277,7 +6277,7 @@ document.addEventListener("DOMContentLoaded", () => {
   faqs.forEach(faq => {
     const question = faq.querySelector(".cw-faqs__question");
     const answer = faq.querySelector(".cw-faqs__answer");
-    const indicator = question.querySelector(".faq-indicator");
+    const indicator = question.querySelector(".cw-faq-indicator");
 
     // Ensure answers are hidden by default
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(answer, {
@@ -6295,7 +6295,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (otherFaq !== faq) {
           const otherQuestion = otherFaq.querySelector(".cw-faqs__question");
           const otherAnswer = otherFaq.querySelector(".cw-faqs__answer");
-          const otherIndicator = otherFaq.querySelector(".faq-indicator");
+          const otherIndicator = otherFaq.querySelector(".cw-faq-indicator");
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(otherAnswer, {
             height: 0,
             opacity: 0,
@@ -6350,7 +6350,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstFaq = faqs[0];
     const firstQuestion = firstFaq.querySelector(".cw-faqs__question");
     const firstAnswer = firstFaq.querySelector(".cw-faqs__answer");
-    const firstIndicator = firstFaq.querySelector(".faq-indicator");
+    const firstIndicator = firstFaq.querySelector(".cw-faq-indicator");
     firstAnswer.style.height = "auto";
     const fullHeight = firstAnswer.scrollHeight + 48; // Add padding top and bottom
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(firstAnswer, {

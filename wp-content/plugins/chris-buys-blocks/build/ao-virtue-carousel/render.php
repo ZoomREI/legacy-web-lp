@@ -25,7 +25,7 @@ $arrowRightUrl = plugins_url('src/ao-virtue-carousel/assets/arrow-right.svg', di
             <div class="ao-carousel-item">
                 <img src="<?php echo esc_html($happyUrl); ?>" alt="Happy Icon">
                 <div class="ao-carousel-item__content">
-                    <h3>100+ Happy Customers</h3>
+                    <h3>1,500+ Happy Customers</h3>
                 </div>
             </div>
             <div class="ao-carousel-item">

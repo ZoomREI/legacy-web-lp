@@ -42,7 +42,7 @@ $checkmark_icon_url = plugins_url('src/ao-hero/assets/check-circle.svg', dirname
             </ul>
         </div>
         <div id="ao-form" class="ao-hero__form">
-            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="false"]'); ?>
+            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
         </div>
     </div>
 </section>

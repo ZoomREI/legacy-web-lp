@@ -17,7 +17,7 @@
 		flex-direction: row;
 	}
 }
-.cw-sell-today-wrapper  .cw-fresh-start__testimonee {
+.cw-sell-today-wrapper .cw-fresh-start__testimonee {
 	width: 5rem;
 	height: 5rem;
 	overflow: hidden;
@@ -37,11 +37,11 @@
 	align-items: flex-start;
 	margin: 0;
 }
-.cw-sell-today-wrapper  .cw-fresh-start__testimonial cite {
+.cw-sell-today-wrapper .cw-fresh-start__testimonial cite {
 	font-weight: bold;
 	font-style: normal;
 }
-.cw-sell-today-wrapper  .cw-fresh-start__testimonial blockquote {
+.cw-sell-today-wrapper .cw-fresh-start__testimonial blockquote {
 	line-height: 1.4;
 }
 .cw-sell-today-wrapper::before {
@@ -133,8 +133,8 @@ z-index: 1;
 	.cw-sell-today {
 		/* padding: 2rem 7.75rem; */
 		flex-direction: row;
-		padding: 9.25rem 1rem;
-		max-width: 1260px;
+		padding:6rem 1rem;
+		max-width: 1040px;
 		background-color: transparent;
 		justify-content: flex-start;
 		/* gap: 3rem; */
@@ -178,7 +178,8 @@ transform: translateX(-50%);
 	z-index: 1;
 	color: white;
 	gap: 1.5rem;
-	width: 90%;
+	width: 100%;
+	max-width: 320px;
 	margin-bottom: 2rem;
 	/* max-width: 40.25rem; */
 }
@@ -187,16 +188,17 @@ transform: translateX(-50%);
 	.cw-sell-today-wrapper .cw-hero__content {
 		align-items: start;
 		gap: 2rem;
-		flex: 0 0 55%;
-		width: 55%;
+		flex: 0 0 51%;
+		width: 51%;
 		margin: 0;
+		max-width: unset;
 	}
 	.cw-sell-today__foto {
 		position: absolute;
 		display: flex;
 z-index: 2;
 
-width: 25%;
+width: 27%;
 height: auto;
 object-fit: contain;
 bottom: 0;
@@ -206,7 +208,7 @@ left: 65%;
 }
 
 
-.cw-sell-today-wrapper  .cw-hero__reviews {
+.cw-sell-today-wrapper .cw-hero__reviews {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -214,55 +216,55 @@ left: 65%;
 }
 
 @media (min-width: 1024px) {
-	.cw-sell-today-wrapper  .cw-hero__reviews {
+	.cw-sell-today-wrapper .cw-hero__reviews {
 		justify-content: start;
 		align-items: center;
 		display: flex;
 	}
 }
 
-.cw-sell-today-wrapper  .cw-hero__reviews-text {
+.cw-sell-today-wrapper .cw-hero__reviews-text {
 	margin-left: 0.25rem;
 }
 
-.cw-sell-today-wrapper  .cw-hero__reviews-text p {
+.cw-sell-today-wrapper .cw-hero__reviews-text p {
 	font-size: 0.75rem;
 	margin: 0;
 }
 
 @media (min-width: 1024px) {
-	.cw-sell-today-wrapper  .cw-hero__reviews-text p {
+	.cw-sell-today-wrapper .cw-hero__reviews-text p {
 		font-size: 1rem;
 		text-align: left;
 	}
 }
 
-.cw-sell-today-wrapper  .cw-hero__reviews-stars-wrapper {
+.cw-sell-today-wrapper .cw-hero__reviews-stars-wrapper {
 	display: flex;
 }
 
-.cw-sell-today-wrapper  .cw-hero__titles {
+.cw-sell-today-wrapper .cw-hero__titles {
 	text-align: left;
 	display: flex;
 	flex-direction: column;
 	gap: 1.125rem;
 }
 
-.cw-sell-today-wrapper  .cw-hero__titles h1 {
+.cw-sell-today-wrapper .cw-hero__titles h1 {
 	font-family: "Inter", sans-serif;
-	font-size: clamp(24px, 3vw + 1rem, 40px);
+	font-size: 24px;
 	line-height: 1.2;
 	margin: 0;
 	/* margin-block-end: 0.83em; */
 }
-.cw-sell-today-wrapper  .cw-hero__titles span{
+.cw-sell-today-wrapper .cw-hero__titles span{
 
 		font-size: clamp(20px, 3vw + 0.5rem, 34px);
 		display: block;
 
 }
-.cw-sell-today-wrapper  .cw-hero__subtitle{
-	font-size: 1.1rem;
+.cw-sell-today-wrapper .cw-hero__subtitle{
+	font-size: 14px;
 	font-weight: 700;
 	font-family: 'Inter';
 	font-style: normal;
@@ -272,21 +274,24 @@ left: 65%;
 	color: #00B43D;
 	/* margin-bottom: 0.8rem; */
 }
-.cw-sell-today-wrapper  .cw-hero__titles p {
+.cw-sell-today-wrapper .cw-hero__titles p {
 	line-height: 1.4;
+	font-size: 16px;
 	margin: 0;
 	/* margin-block-end: 1em; */
 }
 
 @media (min-width: 1024px) {
-	.cw-sell-today-wrapper  .cw-hero__titles {
+	.cw-sell-today-wrapper .cw-hero__titles {
 		gap: 1.5rem;
 	}
-
-	.cw-sell-today-wrapper  .cw-hero__titles p {
-		font-size: 1.125rem;
+	.cw-sell-today-wrapper .cw-hero__titles h1 {
+		font-size: 45px;
 	}
-	.cw-sell-today-wrapper  .cw-hero__subtitle{font-size: 0.9rem;}
+	/* .cw-sell-today-wrapper .cw-hero__titles p {
+		font-size: 1.125rem;
+	} */
+	/* .cw-sell-today-wrapper .cw-hero__subtitle{font-size: 0.9rem;} */
 }
 
 .cw-sell-today-wrapper .cw-hero__bullet-points {
@@ -299,7 +304,7 @@ left: 65%;
 }
 
 @media (min-width: 1024px) {
-	.cw-sell-today-wrapper  .cw-hero__bullet-points {
+	.cw-sell-today-wrapper .cw-hero__bullet-points {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
@@ -354,7 +359,7 @@ left: 65%;
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: 25px;
 	line-height: 1.2;
 	text-transform: uppercase;
 	color: #FFFFFF;
@@ -364,7 +369,7 @@ left: 65%;
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 0.8rem;
+	font-size: 12px;
 	line-height: 1.5;
 	text-transform: uppercase;
 	color: #FFFFFF;
@@ -373,14 +378,14 @@ left: 65%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
+	gap: 0.5rem;
 	padding-block: 1.25rem;
 	background-color: #00b43d;
 	color: white;
 	border-radius: 70px;
 	width: 100%;
 	max-width: 100%;
-	font-size: 1.125rem;
+	font-size: 18px;
 	font-weight: 700;
 	/* margin-right: 1rem; */
 	text-transform: uppercase;
@@ -392,15 +397,18 @@ left: 65%;
 		justify-content: flex-start;
 		gap: 3rem;
 	}
+	.cw-sell-today-wrapper .cw-hero__statistic--text {
+		font-size: 16px;
+		line-height: 1.5;
+	}
 .cw-sell-today-wrapper .cw-hero__statistic--amunt {
-	font-size: 2.5rem;
+	font-size: 40px;
 }
 .cw-sell-today-wrapper .cw-hero__statistic--item{
 	flex: 0 0 max-content;
 	width: max-content;
 	max-width: 31%;
 }
-
 
 .cw-sell-today-wrapper .cw-hero__footer-block{
 	display: flex;
@@ -424,7 +432,12 @@ left: 65%;
 
 @media (min-width: 1024px) {
 	.cw-sell-today-wrapper .cw-hero__cta {
-		font-size: 1.25rem;
+		font-size: 18px;
+		max-width: 220px;
+	}
+	.cw-sell-today-wrapper .cw-hero__cta img{
+		width: 15px;
+		height: auto;
 	}
 }
 

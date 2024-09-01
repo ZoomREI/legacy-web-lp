@@ -6,6 +6,8 @@
 }
 .cw-footer p {
 	margin: 0;
+	font-size: 14px;
+	line-height: 1.4;
 }
 @media (min-width: 1024px) {
 	.cw-footer {
@@ -23,6 +25,8 @@
 	gap: 1.75rem;
 	text-align: center;
 	width: 100%;
+	max-width: 320px;
+	margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
@@ -43,11 +47,17 @@
 }
 
 .cw-footer__logo img {
-	width: 14.5rem;
+	width: 170px;
 }
 
 .cw-footer__text {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
+}
+@media (min-width: 1024px) {
+	.cw-footer__logo img {
+		width: 230px;
+	}
+	
 }
