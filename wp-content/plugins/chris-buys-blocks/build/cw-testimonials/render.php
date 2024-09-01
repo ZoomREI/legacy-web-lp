@@ -180,7 +180,6 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
 
         <div class="_carousel-container">
             <div class="_carousel-inner">
-
                 <div class="_carousel-slide">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
@@ -301,32 +300,33 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="_carousel-slide ">
-            <div class="cw-testimonials__testimonial">
-                <div class="cw-testimonials__person">
-                    <img class="cw-testimonials__testimonee" src="<?php echo esc_url($gregory_marks_url); ?>" alt="Gregory Marks">
-                    <div class="cw-testimonials__person--about">
-                        <div class="cw-hero__reviews-stars-wrapper">
-                            <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                            <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                            <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                            <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                            <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                <div class="_carousel-slide ">
+                    <div class="cw-testimonials__testimonial">
+                        <div class="cw-testimonials__person">
+                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($gregory_marks_url); ?>" alt="Gregory Marks">
+                            <div class="cw-testimonials__person--about">
+                                <div class="cw-hero__reviews-stars-wrapper">
+                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                </div>
+                                <cite>
+                                    Gregory Marks <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                </cite>
+                            </div>
                         </div>
-                        <cite>
-                            Gregory Marks <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                        </cite>
+                        <div class="cw-testimonials__testimonial--content">
+                            <blockquote>
+                                <p>”Managing a property from out of state became too much, and I needed to sell quickly. <strong><?php echo esc_html($selectedName) ?> handled everything seamlessly</strong>, and I couldn't be happier with how smoothly the sale went. They truly made it effortless."</p>
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
-                <div class="cw-testimonials__testimonial--content">
-                    <blockquote>
-                        <p>”Managing a property from out of state became too much, and I needed to sell quickly. <strong><?php echo esc_html($selectedName) ?> handled everything seamlessly</strong>, and I couldn't be happier with how smoothly the sale went. They truly made it effortless."</p>
-                    </blockquote>
-                </div>
             </div>
         </div>
+
 
         <div class="_carousel-controls">
             <button id="prevButton">

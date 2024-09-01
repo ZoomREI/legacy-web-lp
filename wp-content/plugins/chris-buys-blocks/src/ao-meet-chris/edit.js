@@ -4,24 +4,28 @@ import { PanelBody, SelectControl } from "@wordpress/components";
 import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
-	const { selectedName } = attributes;
+	const { selectedMarket } = attributes;
 
-	const onChangeName = (newName) => {
-		setAttributes({ selectedName: newName });
+	const onChangeMarket = (newMarket) => {
+		setAttributes({ selectedMarket: newMarket });
 	};
 
 	return (
 		<div {...useBlockProps()}>
 			<InspectorControls>
-				<PanelBody title={__("Select Name", "custom-blocks")}>
+				<PanelBody title={__("Select Market", "custom-blocks")}>
 					<SelectControl
-						label={__("Choose a Name", "custom-blocks")}
-						value={selectedName}
+						label={__("Choose a Market", "custom-blocks")}
+						value={selectedMarket}
 						options={[
-							{ label: "Chris", value: "Chris" },
-							{ label: "John", value: "John" },
+							{ label: "Kansas City", value: "Kansas City" },
+							{ label: "San Francisco", value: "The Bay Area" },
+							{ label: "St. Louis", value: "St. Louis" },
+							{ label: "Metro Detroit", value: "Detroit" },
+							{ label: "Cleveland", value: "Cleveland" },
+							{ label: "Indianapolis", value: "Indianapolis" },
 						]}
-						onChange={onChangeName}
+						onChange={onChangeMarket}
 					/>
 				</PanelBody>
 			</InspectorControls>

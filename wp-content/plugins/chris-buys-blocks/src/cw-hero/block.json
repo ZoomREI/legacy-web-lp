@@ -17,9 +17,9 @@
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js",
 	"attributes": {
-		"selectedName": {
+		"selectedMarket": {
 			"type": "string",
-			"default": "Chris"
+			"default": "St. Louis"
 		},
 		"formId": {
 			"type": "string",

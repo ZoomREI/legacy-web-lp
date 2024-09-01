@@ -1,6 +1,13 @@
 <?php
 $formId = isset($attributes['formId']) ? esc_html($attributes['formId']) : '1';
-$selectedName = isset($attributes['selectedName']) ? esc_html($attributes['selectedName']) : 'Chris';
+$selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis, Missouri';
+
+// Determine the name based on the selected market
+if ($selectedMarket === "the Bay Area") {
+    $selectedName = "John";
+} else {
+    $selectedName = "Chris";
+}
 
 $background_image_url = plugins_url('src/cw-hero/assets/life-changes-hero-background.webp', dirname(__FILE__, 2));
 $testimonee_url = plugins_url('src/cw-hero/assets/hero-testimoniels.webp', dirname(__FILE__, 2));
@@ -22,8 +29,8 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
                 </div>
             </div>
             <div class="cw-hero__titles">
-                <h1>We Buy ANY House In <span>ANY Condition, On YOUR Timescale</span></h1>
-                <p>House to sell in St Louis, Missouri? <strong>Get a cash offer in just 7 minutes</strong>, and get the sale closed as soon as you want to.</p>
+                <h1>We Buy ANY House In <span>ANY Condition, On YOUR Timeline</span></h1>
+                <p>House to sell in <?php echo esc_html($selectedMarket); ?>? <strong>Get a cash offer in just 7 minutes</strong>, and get the sale closed as soon as you want to.</p>
             </div>
             <ul class="cw-hero__bullet-points">
                 <li class="cw-hero__bullet-point"><img src="<?php echo esc_url($checkmark_icon_url); ?>" alt="checkmark">

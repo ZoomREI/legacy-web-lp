@@ -1,11 +1,12 @@
 <?php
-$selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
+$selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis';
+
+$selectedName = ($selectedMarket === 'The Bay Area') ? 'John' : 'Chris';
 
 $chris_url = plugins_url('src/ao-meet-chris/assets/chris-buys.webp', dirname(__FILE__, 2));
 $john_url = plugins_url('src/ao-meet-chris/assets/john-buys.webp', dirname(__FILE__, 2));
 
-$image_url_variable = strtolower($selectedName) . "_url";
-$image_url = $$image_url_variable;
+$image_url = ($selectedName === 'John') ? $john_url : $chris_url;
 
 $star_icon_url = plugins_url('src/ao-meet-chris/assets/star.svg', dirname(__FILE__, 2));
 $arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(__FILE__, 2));
@@ -16,7 +17,7 @@ $arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(
         <div class="ao-meet-chris__content">
             <div class="ao-meet-chris__text">
                 <span class="ao-meet-chris__hi">Hi, I'm <?php echo esc_html($selectedName); ?>!</span>
-                <h2 class="ao-meet-chris__title">Have A House You Need To Sell FAST In the Bay Area?</h2>
+                <h2 class="ao-meet-chris__title">Have A House You Need To Sell FAST In <?php echo esc_html($selectedMarket); ?>?</h2>
                 <h3 class="ao-meet-chris__subtitle">Let me help! We are genuine homebuyers, and we buy ANY house!</h3>
                 <div class="ao-meet-chris__description">
                     <p>Maybe you’ve inherited a house, don’t want to spend money on repairs, or are having trouble managing your tenants.</p>

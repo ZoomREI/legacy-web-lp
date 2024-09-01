@@ -56,7 +56,7 @@ export default function Edit({ attributes, setAttributes }) {
 					</div>
 				</PanelBody>
 			</InspectorControls>
-			<div className="cw-footer">
+			<div className="cw-footer-edit">
 				<div className="cw-footer__logo">
 					<img src={logoUrl} alt={__("Logo", "chris-buys-blocks")} />
 				</div>

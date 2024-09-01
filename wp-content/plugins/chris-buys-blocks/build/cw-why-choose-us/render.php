@@ -1,5 +1,12 @@
 <?php
-$selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
+$selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis, Missouri';
+
+// Determine the name based on the selected market
+if ($selectedMarket === "the Bay Area") {
+    $selectedName = "John";
+} else {
+    $selectedName = "Chris";
+}
 
 $we_bay_url = plugins_url('src/cw-why-choose-us/assets/why-choose-foto--1.webp', dirname(__FILE__, 2));
 $hassle_free_url = plugins_url('src/cw-why-choose-us/assets/why-choose-foto--2.webp', dirname(__FILE__, 2));
@@ -19,7 +26,7 @@ $verified_check_url = plugins_url('src/cw-why-choose-us/assets/verified-check-ci
     <div class="cw-why-choose-us__heading">
         <p class="cw-why-choose-us__prevtitle">benefits</p>
         <h2 class="cw-why-choose-us__title">Choosing Us Is A No-Brainer</h2>
-        <p class="cw-why-choose-us__subtitle">We make selling your house in St. Louis insanely easy</p>
+        <p class="cw-why-choose-us__subtitle">We make selling your house in <?php echo esc_html($selectedMarket); ?> insanely easy</p>
     </div>
     <div class="cw-why-choose-us__carousel">
         <div class="cw-why-choose-us__items">
@@ -33,23 +40,23 @@ $verified_check_url = plugins_url('src/cw-why-choose-us/assets/verified-check-ci
                         <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span><strong>No cleaning </strong>or work required</span></li>
                     </ul>
                     <div class="cw-fresh-start__testimonial">
-                          <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_1_url); ?>" alt="Darren Pilch">
-                          <div class="cw-fresh-start__testimonial--content">
-                              <blockquote>
-                                  <p>“I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. They made a reasonable offer and the sale went quickly with prompt payment.”</p>
-                                 <cite>
-                                     <span>Darren Pilch</span>
-                                     <div class="cw-hero__reviews-stars-wrapper">
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                      </div>
-                                 </cite>
-                              </blockquote>
-                          </div>
-                     </div>
+                        <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_1_url); ?>" alt="Darren Pilch">
+                        <div class="cw-fresh-start__testimonial--content">
+                            <blockquote>
+                                <p>“I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName); ?>. I needed to rehab this property that sat vacant too long. They made a reasonable offer and the sale went quickly with prompt payment.”</p>
+                                <cite>
+                                    <span>Darren Pilch</span>
+                                    <div class="cw-hero__reviews-stars-wrapper">
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    </div>
+                                </cite>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
                 <div class="cw-why-choose-us__image">
                     <img src="<?php echo esc_html($we_bay_url); ?>" alt="Buy Houses In All Price Ranges & Conditions">
@@ -65,23 +72,23 @@ $verified_check_url = plugins_url('src/cw-why-choose-us/assets/verified-check-ci
                         <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span><strong>Cash offers </strong>with no financing risks</span></li>
                     </ul>
                     <div class="cw-fresh-start__testimonial">
-                          <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_2_url); ?>" alt="Leigh Williams">
-                          <div class="cw-fresh-start__testimonial--content">
-                              <blockquote>
-                                  <p> “Great experience working with <?php echo esc_html($selectedName) ?> and the team. They were incredibly professional and sold our home quickly for a price we were satisfied with."</p>
-                                 <cite>
-                                     <span>Shaked Elnatan</span>
-                                     <div class="cw-hero__reviews-stars-wrapper">
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                      </div>
-                                 </cite>
-                              </blockquote>
-                          </div>
-                     </div>
+                        <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_2_url); ?>" alt="Leigh Williams">
+                        <div class="cw-fresh-start__testimonial--content">
+                            <blockquote>
+                                <p> “Great experience working with <?php echo esc_html($selectedName); ?> and the team. They were incredibly professional and sold our home quickly for a price we were satisfied with."</p>
+                                <cite>
+                                    <span>Shaked Elnatan</span>
+                                    <div class="cw-hero__reviews-stars-wrapper">
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    </div>
+                                </cite>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
                 <div class="cw-why-choose-us__image">
                     <img src="<?php echo esc_html($hassle_free_url); ?>" alt="Hassle-Free Solution">
@@ -97,29 +104,29 @@ $verified_check_url = plugins_url('src/cw-why-choose-us/assets/verified-check-ci
                         <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span>All typical<strong> closing costs covered by us</strong></span></li>
                     </ul>
                     <div class="cw-fresh-start__testimonial">
-                          <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_3_url); ?>" alt="Leigh Williams">
-                          <div class="cw-fresh-start__testimonial--content">
-                              <blockquote>
-                                  <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
-                                 <cite>
-                                     <span>Liv Skyler</span>
-                                     <div class="cw-hero__reviews-stars-wrapper">
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                          <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                      </div>
-                                 </cite>
-                              </blockquote>
-                          </div>
-                     </div>
+                        <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_3_url); ?>" alt="Leigh Williams">
+                        <div class="cw-fresh-start__testimonial--content">
+                            <blockquote>
+                                <p>"We are very grateful for <?php echo esc_html($selectedName); ?> and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName); ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
+                                <cite>
+                                    <span>Liv Skyler</span>
+                                    <div class="cw-hero__reviews-stars-wrapper">
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                        <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    </div>
+                                </cite>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
                 <div class="cw-why-choose-us__image">
                     <img src="<?php echo esc_html($pay_all_url); ?>" alt="Pay All Closing Costs">
                 </div>
             </div>
-        
+
         </div>
     </div>
 </section>

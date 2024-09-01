@@ -1,17 +1,17 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, SelectControl, TextControl } from "@wordpress/components"; // Import TextControl
+import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
-	const { formId, selectedName } = attributes; // Combined destructuring
+	const { formId, selectedMarket } = attributes;
 
 	const onChangeFormId = (newFormId) => {
 		setAttributes({ formId: newFormId });
 	};
 
-	const onChangeName = (newName) => {
-		setAttributes({ selectedName: newName });
+	const onChangeMarket = (newMarket) => {
+		setAttributes({ selectedMarket: newMarket });
 	};
 
 	return (
@@ -28,15 +28,19 @@ export default function Edit({ attributes, setAttributes }) {
 						placeholder={__("Enter Form ID", "chris-buys-blocks")}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Select Name", "chris-buys-blocks")}>
+				<PanelBody title={__("Select Market", "chris-buys-blocks")}>
 					<SelectControl
-						label={__("Choose a Name", "chris-buys-blocks")}
-						value={selectedName}
+						label={__("Choose a Market", "chris-buys-blocks")}
+						value={selectedMarket}
 						options={[
-							{ label: "Chris", value: "Chris" },
-							{ label: "John", value: "John" },
+							{ label: "St. Louis", value: "St. Louis, Missouri" },
+							{ label: "San Francisco", value: "the Bay Area" },
+							{ label: "Kansas City", value: "Kansas City" },
+							{ label: "Detroit", value: "Metro Detroit" },
+							{ label: "Cleveland", value: "Cleveland" },
+							{ label: "Indianapolis", value: "Indianapolis" },
 						]}
-						onChange={onChangeName}
+						onChange={onChangeMarket}
 					/>
 				</PanelBody>
 			</InspectorControls>

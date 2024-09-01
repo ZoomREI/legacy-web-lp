@@ -86,7 +86,7 @@ function Edit({
     }],
     onChange: onChangeMarket
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cw-footer"
+    className: "cw-footer-edit"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cw-footer__logo"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {

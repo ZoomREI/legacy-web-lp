@@ -31,28 +31,40 @@ function Edit({
   setAttributes
 }) {
   const {
-    selectedName
+    selectedMarket
   } = attributes;
-  const onChangeName = newName => {
+  const onChangeMarket = newMarket => {
     setAttributes({
-      selectedName: newName
+      selectedMarket: newMarket
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Name", "custom-blocks")
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Market", "custom-blocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a Name", "custom-blocks"),
-    value: selectedName,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a Market", "custom-blocks"),
+    value: selectedMarket,
     options: [{
-      label: "Chris",
-      value: "Chris"
+      label: "Kansas City",
+      value: "Kansas City"
     }, {
-      label: "John",
-      value: "John"
+      label: "San Francisco",
+      value: "The Bay Area"
+    }, {
+      label: "St. Louis",
+      value: "St. Louis"
+    }, {
+      label: "Metro Detroit",
+      value: "Detroit"
+    }, {
+      label: "Cleveland",
+      value: "Cleveland"
+    }, {
+      label: "Indianapolis",
+      value: "Indianapolis"
     }],
-    onChange: onChangeName
+    onChange: onChangeMarket
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("AO Meet Chris", "chris-buys")));
 }
 
@@ -160,7 +172,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"chris-buys/ao-meet-chris","version":"0.1.0","title":"Absentee Owners Meet Chris","category":"widgets","icon":"admin-users","description":"A Meet Chris block.","supports":{"html":false},"textdomain":"chris-buys-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedName":{"type":"string","default":"Chris"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"chris-buys/ao-meet-chris","version":"0.1.0","title":"Absentee Owners Meet Chris","category":"widgets","icon":"admin-users","description":"A Meet Chris block.","supports":{"html":false},"textdomain":"chris-buys-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis"}}}');
 
 /***/ })
 

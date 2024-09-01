@@ -16,5 +16,10 @@
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js",
-	"attributes": {}
+	"attributes": {
+		"selectedName": {
+			"type": "string",
+			"default": "Chris"
+		}
+	}
 }

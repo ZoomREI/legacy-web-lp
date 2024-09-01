@@ -1,35 +1,42 @@
 <?php
-$selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
-$brandName = ($selectedName == "Chris") ? "Chris Buys Homes" : "John Buys Bay Area Houses";
+$selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis';
+
+// Determine the brand name and individual based on the selected market
+if ($selectedMarket === "San Francisco Bay Area") {
+    $selectedName = "John";
+    $brandName = "John Buys Bay Area Houses";
+} else {
+    $selectedName = "Chris";
+    $brandName = "Chris Buys Homes in " . $selectedMarket;
+}
 
 $faqs = array(
-     array(
-        "question" => "Why should I choose Doctor Homes?",
-        "answer" => "We’re top-rated on Google because we deliver on our promises. Our customers in Detroit love us. We’ll get you the best cash offer for your property, even if it means connecting you with other trusted buyers."
-     ),
     array(
-        "question" => "How are you different from a real estate agent in Detroit?",
-        "answer" => "Agents list your property, charge fees, and you handle costs and showings. We buy your property in Detroit directly or connect you with buyers. Skip the hassle – get a quick offer, close on your timeline."
+        "question" => "Is a “cash home buying” company right for me?",
+        "answer" => "Believe it or not, most sellers we’ve helped in " . $selectedMarket . " weren’t desperate or facing foreclosure.</br>They come to us because, well, who wants repair headaches or endless showings?</br>We buy houses as they are, no hassle. Get a free, no-obligation cash offer quick and easy!"
     ),
     array(
-        "question" => "My property in Detroit is in terrible condition, will you still buy it?",
-        "answer" => "We buy properties AS-IS in any condition. The more the fix-ups, the better for us! We’ll buy your Detroit house even if it’s rough. You might be surprised by our offer."
+        "question" => "Why should I choose " . $brandName . "?",
+        "answer" => "We’re the top home buyers in " . $selectedMarket . ", found right at the top of Google for a reason. Our customers love us because we deliver what we promise.</br>We’re dedicated to getting you the best cash offer for your house, even if it means connecting you with other trusted buyers.</br>We genuinely care and go the extra mile without expecting anything back."
     ),
     array(
-        "question" => "I'm going through a major life change and need to sell my home quickly. Can you help me?",
-        "answer" => "We understand that life changes like relocation, divorce, medical issues, or unexpected events can make selling your home urgent. We offer a fast purchase process, fair pricing, and a straightforward approach, avoiding traditional real estate hurdles."
+        "question" => "How are you different from a real estate agent?",
+        "answer" => "Agents don’t buy your house; they list it, charge fees, and you deal with costs and showings.</br>We’re cash buyers, directly purchasing your house or connecting you with others who do. Skip the agent hassle – get a quick offer and sale in " . $selectedMarket . ".</br>We cover selling expenses."
     ),
     array(
-        "question" => "I'm a rental property owner in Detroit, dealing with property management issues. Can you help me?",
-        "answer" => "We understand the challenges landlords in Detroit face: problematic tenants, high maintenance costs, or poor financial returns. We offer a fast purchase process, fair pricing, and a straightforward approach, avoiding traditional real estate hurdles."
+        "question" => "Do I need to clean before I move out?",
+        "answer" => "Don’t stress. Take what you need, leave the rest. Fridge food, clothes, furniture – we’ve seen it all.</br>Simplify your move – keep what you want, and we’ll handle the rest hassle-free.</br>Anything decent? We donate to local charities."
     ),
     array(
-        "question" => "I need to sell my inherited property in Detroit quickly and move - Are You the best choice?",
-        "answer" => "We specialize in fast and flexible property sales for inherited property owners in Detroit. No repairs needed, no commissions, and a flexible timeline that suits your needs."
+        "question" => "Will I get a fair price for my property?",
+        "answer" => "Great question! We pay fair prices, but not always full market value.</br>For houses needing repairs, we calculate fair prices by subtracting repair costs.</br>Sometimes, we offer market value but might explore seller financing if an all-cash deal doesn’t fit."
+    ),
+    array(
+        "question" => "My house is in terrible condition, will you still buy it?",
+        "answer" => "We buy homes AS-IS in any condition in " . $selectedMarket . ".</br>The more the fix-ups, the better for us! Absolutely, we’ll buy your house even if it’s rough. You might be surprised by our offer.</br>Fill out our form and see what cash we’re offering for your house!"
     ),
 );
 ?>
-
 
 <section id='faq' class="cw-faqs">
     <div class="cw-faqs__header">
