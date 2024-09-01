@@ -2,7 +2,7 @@
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
 
 $chris_url = plugins_url('src/cw-meet-chris/assets/meet-cris-foto.webp', dirname(__FILE__, 2));
-$john_url = plugins_url('src/cw-meet-chris/assets/john-buys.webp', dirname(__FILE__, 2));
+$john_url = plugins_url('src/cw-meet-chris/assets/meet-john-foto.webp', dirname(__FILE__, 2));
 
 $image_url_variable = strtolower($selectedName) . "_url";
 $image_url = $$image_url_variable;

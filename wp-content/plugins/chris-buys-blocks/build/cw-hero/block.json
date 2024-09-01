@@ -20,6 +20,10 @@
     "selectedName": {
       "type": "string",
       "default": "Chris"
+    },
+    "formId": {
+      "type": "string",
+      "default": "1"
     }
   }
 }

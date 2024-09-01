@@ -24,15 +24,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // Import TextControl
 
 function Edit({
   attributes,
   setAttributes
 }) {
   const {
+    formId,
     selectedName
-  } = attributes;
+  } = attributes; // Combined destructuring
+
+  const onChangeFormId = newFormId => {
+    setAttributes({
+      formId: newFormId
+    });
+  };
   const onChangeName = newName => {
     setAttributes({
       selectedName: newName
@@ -41,9 +48,17 @@ function Edit({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Name", "custom-blocks")
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Form Settings", "chris-buys-blocks"),
+    initialOpen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Form ID", "chris-buys-blocks"),
+    value: formId,
+    onChange: onChangeFormId,
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Form ID", "chris-buys-blocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Name", "chris-buys-blocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a Name", "custom-blocks"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose a Name", "chris-buys-blocks"),
     value: selectedName,
     options: [{
       label: "Chris",
@@ -53,7 +68,7 @@ function Edit({
       value: "John"
     }],
     onChange: onChangeName
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("cw Hero Placeholder", "chris-buys")));
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("cw Hero Placeholder", "chris-buys-blocks")));
 }
 
 /***/ }),
@@ -160,7 +175,7 @@ module.exports = window["wp"]["i18n"];
   \********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"chris-buys/cw-hero","version":"0.1.0","title":"cw Hero","category":"widgets","icon":"superhero-alt","description":"The Hero Section of the cw landing-page.","supports":{"html":false},"textdomain":"chris-buys-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedName":{"type":"string","default":"Chris"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"chris-buys/cw-hero","version":"0.1.0","title":"cw Hero","category":"widgets","icon":"superhero-alt","description":"The Hero Section of the cw landing-page.","supports":{"html":false},"textdomain":"chris-buys-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedName":{"type":"string","default":"Chris"},"formId":{"type":"string","default":"1"}}}');
 
 /***/ })
 

@@ -60,7 +60,7 @@ $verified_check_url = plugins_url('src/lc-testimonials/assets/verified-check-cir
                         <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                     </div>
                     <blockquote>
-                        <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, </br></br><strong><?php echo esc_html($selectedName) ?> answered my first call right away</strong> and kept me updated throughout the whole selling process.”</p>
+                        <p>"We are very grateful for <?php echo esc_html($selectedName) ?> and his team's work. They were always professional and reliable, </br></br><strong><?php echo esc_html($selectedName) ?> answered my first call right away</strong> and kept me updated throughout the whole selling process.”</p>
                     </blockquote>
                 </div>
                 <div class="lc-testimonials__person">
