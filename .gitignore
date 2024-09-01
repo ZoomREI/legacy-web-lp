@@ -15,6 +15,7 @@ wp-content/upgrade/
 wp-content/cache/
 wp-content/uploads/
 wp-content/updraft/
+wp-content/mu-plugins/
 wp-content/wp-rocket-config/
 wp-content/advanced-cache.php
 
