@@ -436,7 +436,7 @@
 	border-radius: 20px;
 }
 
-.cw-hero-wrapper .gfield--input-type-address {
+.cw-hero .gfield--input-type-address {
 	display: none !important;
 }
 
