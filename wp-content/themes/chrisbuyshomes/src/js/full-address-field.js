@@ -93,7 +93,7 @@ function initAutocomplete() {
       // Populate the hidden fields
       streetAddressField.value = streetAddress;
       cityField.value = city;
-      stateField.value = stateShort;
+      stateField.value = stateLong;
       zipcodeField.value = zipcode;
 
       // Update the autocomplete field with the full address
