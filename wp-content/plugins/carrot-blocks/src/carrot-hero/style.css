@@ -142,14 +142,6 @@
 	display: none !important;
 }
 
-.kc-hero .address_city,
-.kc-hero .address_state,
-.kc-hero .address_zip,
-.kc-hero .gform_heading,
-.kc-hero .gform-field-label--type-sub {
-	display: none !important;
-}
-
 /* ------------------------------------------- */
 /* ------------ COPIED FORM STYLES ---------- */
 /* ----------------------------------------- */
@@ -193,6 +185,6 @@
 	width: 100%;
 }
 
-.kc-hero .gfield--input-type-address {
+.kc-hero .gfield--type-address {
 	display: none !important;
 }

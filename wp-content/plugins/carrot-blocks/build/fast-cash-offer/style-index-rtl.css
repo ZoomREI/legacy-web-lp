@@ -205,6 +205,7 @@
 	display: none !important;
 }
 
-.fast-cash-offer .gfield--input-type-address {
-    display: none !important;
+.fast-cash-offer .gfield--type-address {
+	display: none !important;
 }
+
