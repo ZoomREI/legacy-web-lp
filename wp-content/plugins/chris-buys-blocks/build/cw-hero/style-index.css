@@ -3,76 +3,85 @@
   \***************************************************************************************************************************************************************************/
 @font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-Regular.bd097cef.woff2) format("woff2"),
-	  url(../fonts/Inter-Regular.0d6f7c99.woff) format("woff");
+	src:
+		url(../fonts/Inter-Regular.bd097cef.woff2) format("woff2"),
+		url(../fonts/Inter-Regular.0d6f7c99.woff) format("woff");
 	font-weight: normal;
 	font-style: normal;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-Italic.53edad7f.woff2) format("woff2"),
-	  url(../fonts/Inter-Italic.bb913868.woff) format("woff");
+	src:
+		url(../fonts/Inter-Italic.53edad7f.woff2) format("woff2"),
+		url(../fonts/Inter-Italic.bb913868.woff) format("woff");
 	font-weight: normal;
 	font-style: italic;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-Bold.c08e6108.woff2) format("woff2"),
-	  url(../fonts/Inter-Bold.1e547cd0.woff) format("woff");
+	src:
+		url(../fonts/Inter-Bold.c08e6108.woff2) format("woff2"),
+		url(../fonts/Inter-Bold.1e547cd0.woff) format("woff");
 	font-weight: bold;
 	font-style: normal;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-BoldItalic.3c65c4b4.woff2) format("woff2"),
-	  url(../fonts/Inter-BoldItalic.66cf4b9f.woff) format("woff");
+	src:
+		url(../fonts/Inter-BoldItalic.3c65c4b4.woff2) format("woff2"),
+		url(../fonts/Inter-BoldItalic.66cf4b9f.woff) format("woff");
 	font-weight: bold;
 	font-style: italic;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-Semibold.90f5c90f.woff2) format("woff2"),
-	  url(../fonts/Inter-Semibold.7f6c3678.woff) format("woff");
+	src:
+		url(../fonts/Inter-Semibold.90f5c90f.woff2) format("woff2"),
+		url(../fonts/Inter-Semibold.7f6c3678.woff) format("woff");
 	font-weight: 600;
 	font-style: normal;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-SemiboldItalic.84090ea7.woff2) format("woff2"),
-	  url(../fonts/Inter-SemiboldItalic.958558a5.woff) format("woff");
+	src:
+		url(../fonts/Inter-SemiboldItalic.84090ea7.woff2) format("woff2"),
+		url(../fonts/Inter-SemiboldItalic.958558a5.woff) format("woff");
 	font-weight: 600;
 	font-style: italic;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-Regular.bd097cef.woff2) format("woff2"),
-	  url(../fonts/Inter-Regular.0d6f7c99.woff) format("woff");
+	src:
+		url(../fonts/Inter-Regular.bd097cef.woff2) format("woff2"),
+		url(../fonts/Inter-Regular.0d6f7c99.woff) format("woff");
 	font-weight: normal;
 	font-style: normal;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-Medium.01f03178.woff2) format("woff2"),
-	  url(../fonts/Inter-Medium.44e343ff.woff) format("woff");
+	src:
+		url(../fonts/Inter-Medium.01f03178.woff2) format("woff2"),
+		url(../fonts/Inter-Medium.44e343ff.woff) format("woff");
 	font-weight: 500;
 	font-style: normal;
- }
- 
- @font-face {
+}
+
+@font-face {
 	font-family: "Inter";
-	src: url(../fonts/Inter-MediumItalic.da38ec7a.woff2) format("woff2"),
-	  url(../fonts/Inter-MediumItalic.fe273e07.woff) format("woff");
+	src:
+		url(../fonts/Inter-MediumItalic.da38ec7a.woff2) format("woff2"),
+		url(../fonts/Inter-MediumItalic.fe273e07.woff) format("woff");
 	font-weight: 500;
 	font-style: italic;
- }
- 
+}
+
 .cw-hero-wrapper {
 	position: relative;
 	background-image: var(--background-image);
@@ -84,7 +93,7 @@
 	display: flex;
 	justify-content: center;
 }
-.cw-hero-wrapper  .cw-fresh-start__testimonee {
+.cw-hero-wrapper .cw-fresh-start__testimonee {
 	width: 50px;
 	height: 50px;
 	overflow: hidden;
@@ -106,14 +115,14 @@
 	margin: 0;
 	text-align: left;
 }
-.cw-hero-wrapper  .cw-fresh-start__testimonial cite {
+.cw-hero-wrapper .cw-fresh-start__testimonial cite {
 	font-weight: bold;
 	font-style: normal;
 	margin: 0;
 	align-items: flex-start;
 	font-size: 12px;
 }
-.cw-hero-wrapper  .cw-fresh-start__testimonial blockquote {
+.cw-hero-wrapper .cw-fresh-start__testimonial blockquote {
 	line-height: 1.4;
 }
 .cw-hero-wrapper::before {
@@ -142,18 +151,18 @@
 			rgba(0, 21, 37, 1) 100%
 		); */
 	}
-	.cw-hero-wrapper  .cw-fresh-start__testimonee {
+	.cw-hero-wrapper .cw-fresh-start__testimonee {
 		width: 70px;
 		height: 70px;
 		flex: 0 0 70px;
 	}
-	.cw-hero-wrapper .cw-fresh-start__testimonial{
+	.cw-hero-wrapper .cw-fresh-start__testimonial {
 		width: 75%;
 	}
 	.cw-hero-wrapper .cw-fresh-start__testimonial {
 		font-size: 16px;
 	}
-	.cw-hero-wrapper  .cw-fresh-start__testimonial cite {
+	.cw-hero-wrapper .cw-fresh-start__testimonial cite {
 		font-size: 14px;
 	}
 }
@@ -171,7 +180,7 @@
 	width: 100%;
 	height: 100%;
 }
-.cw-hero .cw-fresh-start__testimonial blockquote p{
+.cw-hero .cw-fresh-start__testimonial blockquote p {
 	text-align: left;
 	padding-right: 10px;
 }
@@ -183,7 +192,7 @@
 		max-width: 1260px;
 		/* gap: 3rem; */
 	}
-	.cw-hero .cw-fresh-start__testimonial blockquote p{
+	.cw-hero .cw-fresh-start__testimonial blockquote p {
 		padding-right: 0;
 	}
 }
@@ -258,9 +267,9 @@
 	/* margin-block-end: 0.83em; */
 }
 
-.cw-hero__titles h1 span{
+.cw-hero__titles h1 span {
 	font-size: 18px;
-display: block;
+	display: block;
 }
 .cw-hero__titles p {
 	line-height: 1.4;
@@ -279,7 +288,7 @@ display: block;
 		font-size: 18px;
 	}
 
-	.cw-hero__titles h1 span{
+	.cw-hero__titles h1 span {
 		font-size: 34px;
 		margin-top: 12px;
 	}
@@ -294,7 +303,7 @@ display: block;
 	flex-direction: column;
 	gap: 0.25rem;
 	color: #fff;
-	
+
 	padding: 0;
 }
 
@@ -339,7 +348,7 @@ display: block;
 		gap: 1rem;
 	}
 }
-.cw-hero__content--footer{
+.cw-hero__content--footer {
 	display: flex;
 	flex-direction: column-reverse;
 	width: 100%;
@@ -348,7 +357,7 @@ display: block;
 	gap: 1.5rem;
 }
 @media (min-width: 1024px) {
-	.cw-hero__content--footer{
+	.cw-hero__content--footer {
 		flex-direction: column;
 	}
 }
@@ -361,34 +370,34 @@ display: block;
 	padding: 0;
 	margin: 0;
 }
-.cw-hero__statistic--item{
+.cw-hero__statistic--item {
 	flex: 0 0 30%;
 	width: 30%;
 }
 .cw-hero__statistic--amunt {
-	font-family: 'Inter';
+	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
 	/* font-size: 1rem; */
 	font-size: 25px;
 	line-height: 1.2;
 	text-transform: uppercase;
-	color: #FFFFFF;
+	color: #ffffff;
 	margin-bottom: 0.4rem;
 	text-align: left;
 }
 .cw-hero__statistic--text {
-	font-family: 'Inter';
+	font-family: "Inter";
 	font-style: normal;
 	font-weight: 400;
 	/* font-size: 0.8rem; */
 	font-size: 12px;
 	line-height: 1.5;
 	text-transform: uppercase;
-	color: #FFFFFF;
+	color: #ffffff;
 	text-align: left;
 }
-.cw-hero__statistic--text span{
+.cw-hero__statistic--text span {
 	display: block;
 }
 @media (min-width: 1024px) {
@@ -396,22 +405,22 @@ display: block;
 		justify-content: flex-start;
 		gap: 2rem;
 	}
-.cw-hero__statistic--amunt {
-	/* font-size: 2rem; */
-	font-size: 40px;
-}
-.cw-hero__statistic--text {
-	font-size: 16px;
-}
-.cw-hero__statistic--text span{
-	display: inline;
-}
-.cw-hero__statistic--item{
-	flex: 0 0 max-content;
-	width: -moz-max-content;
-	width: max-content;
-	max-width: 25%;
-}
+	.cw-hero__statistic--amunt {
+		/* font-size: 2rem; */
+		font-size: 40px;
+	}
+	.cw-hero__statistic--text {
+		font-size: 16px;
+	}
+	.cw-hero__statistic--text span {
+		display: inline;
+	}
+	.cw-hero__statistic--item {
+		flex: 0 0 max-content;
+		width: -moz-max-content;
+		width: max-content;
+		max-width: 25%;
+	}
 }
 .cw-hero__form {
 	flex: 0 0 45%;
@@ -419,7 +428,7 @@ display: block;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+
 	background-color: white;
 	border-radius: 20px;
 	z-index: 1;
@@ -433,32 +442,30 @@ display: block;
 	border-radius: 20px;
 }
 
-/* just for development */
-#field_1_4 {
+.ao-hero-wrapper .gfield--input-type-address {
 	display: none !important;
 }
 
-
 @media (max-width: 1024px) {
-	.cw-hero__star{
+	.cw-hero__star {
 		width: 15px;
 		height: 15px;
 		display: flex;
 	}
- .cw-hero__star img{
+	.cw-hero__star img {
 		width: 100%;
 		height: 100%;
 		-o-object-fit: contain;
 		   object-fit: contain;
 	}
 
-	.cw-hero__bullet-point:nth-child(1){
+	.cw-hero__bullet-point:nth-child(1) {
 		order: 0;
 	}
-	.cw-hero__bullet-point:nth-child(2){
+	.cw-hero__bullet-point:nth-child(2) {
 		order: 2;
 	}
-	.cw-hero__bullet-point:nth-child(3){
+	.cw-hero__bullet-point:nth-child(3) {
 		order: 1;
 	}
 }
