@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Check if the cw-hero-wrapper element is present
-  const heroWrapper = document.querySelector(".cw-hero-wrapper");
-  if (!heroWrapper) {
-    // Abort if the hero wrapper is not found
+  // Check if the cw-hero__titles element is present
+  const titleWrapper = document.querySelector(".cw-hero__titles");
+  if (!titleWrapper) {
+    // Abort if the title wrapper is not found
     return;
   }
 
@@ -32,39 +32,47 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mapping of keywords to corresponding texts
   let keywordMappings = {
     cash: {
-      h1: "Turn Your House Into Cash",
-      h3: "Quick, Easy, and On Your Terms",
-      h4: "Don’t worry about repairs or timing. Get a fair cash offer and close on your schedule. Discover hassle-free home selling!",
+      mainTitle: "Turn Your House Into Cash",
+      subtitle: "ANY Condition, On YOUR Timeline",
+      paragraph:
+        "Don’t worry about repairs or timing. Get a fair cash offer and close on your schedule. Discover hassle-free home selling!",
     },
     fast: {
-      h1: "Need to Sell Your House Quickly?",
-      h3: "We Will Buy It Fast, In Any Condition, With No Complications!",
-      h4: "Say goodbye to long waiting periods and complex processes. We’re your quick, reliable solution for selling your home effortlessly.",
+      mainTitle: "Need to Sell Your House Quickly?",
+      subtitle: "ANY Condition, With No Complications!",
+      paragraph:
+        "Say goodbye to long waiting periods and complex processes. We’re your quick, reliable solution for selling your home effortlessly.",
     },
     quick: {
-      h1: "Need to Sell Your House Quickly?",
-      h3: "We Will Buy It Fast, In Any Condition, With No Complications!",
-      h4: "Say goodbye to long waiting periods and complex processes. We’re your quick, reliable solution for selling your home effortlessly.",
+      mainTitle: "Need to Sell Your House Quickly?",
+      subtitle: "ANY Condition, With No Complications!",
+      paragraph:
+        "Say goodbye to long waiting periods and complex processes. We’re your quick, reliable solution for selling your home effortlessly.",
     },
     sell: {
-      h1: "Selling Your House Has Never Been Easier - We Will Buy it Today!",
-      h3: "Ready to move on? We’re here to help.",
-      h4: "Sell your house now, on your timeline. Our quick process ensures you can sell your home fast and get on with your life.",
+      mainTitle:
+        "Selling Your House Has Never Been Easier - We Will Buy it Today!",
+      subtitle: "Ready to move on?",
+      paragraph:
+        "Sell your house now, on your timeline. Our quick process ensures you can sell your home fast and get on with your life.",
     },
     how: {
-      h1: "Wondering How to Sell Your House?",
-      h3: "We Will Buy It Fast, In Any Condition, With No Complications!",
-      h4: "Get a cash offer with no fees and sell with confidence.",
+      mainTitle: "Wondering How to Sell Your House?",
+      subtitle: "ANY Condition, With No Complications!",
+      paragraph: "Get a cash offer with no fees and sell with confidence.",
     },
     "as is": {
-      h1: "Sell Your House ‘As Is’ – Hassle-Free, Immediate Cash Offers!",
-      h3: "Forget repairs and renovations; we buy your house as it stands.",
-      h4: "Get a fair cash offer and sell your property on your terms, quickly and effortlessly.",
+      mainTitle:
+        "Sell Your House ‘As Is’ – Hassle-Free, Immediate Cash Offers!",
+      subtitle: "ANY Condition, On YOUR Timeline",
+      paragraph:
+        "Get a fair cash offer and sell your property on your terms, quickly and effortlessly.",
     },
     foreclosure: {
-      h1: "Stop Foreclosure in Its Tracks – Sell Your Home Fast!",
-      h3: "Don’t let foreclosure take away your peace of mind.",
-      h4: "Act now and sell your house before it’s too late. We provide a quick sale solution to help you avoid foreclosure.",
+      mainTitle: "Stop Foreclosure in Its Tracks – Sell Your Home Fast!",
+      subtitle: "ANY Condition, With No Complications!",
+      paragraph:
+        "Act now and sell your house before it’s too late. We provide a quick sale solution to help you avoid foreclosure.",
     },
   };
 
@@ -105,17 +113,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (keyword && Object.keys(keywordMappings).includes(keyword)) {
-    let h1Text = keywordMappings[keyword].h1;
-    let h3Text = keywordMappings[keyword].h3;
-    let h4Text = keywordMappings[keyword].h4;
+    let mainTitleText = keywordMappings[keyword].mainTitle;
+    let subtitleText = keywordMappings[keyword].subtitle;
+    let paragraphText = keywordMappings[keyword].paragraph;
 
-    // Update the HTML elements if they exist within the cw-hero-wrapper
-    let h1Element = heroWrapper.querySelector("h1");
-    let h3Element = heroWrapper.querySelector("h3");
-    let h4Element = heroWrapper.querySelector("h4");
+    // Update the HTML elements if they exist within the cw-hero__titles
+    let mainTitleElement = titleWrapper.querySelector("h1");
+    let subtitleElement = titleWrapper.querySelector("h1 span");
+    let paragraphElement = titleWrapper.querySelector("p");
 
-    if (h1Element) h1Element.innerHTML = h1Text;
-    if (h3Element) h3Element.innerHTML = h3Text;
-    if (h4Element) h4Element.innerHTML = h4Text;
+    if (mainTitleElement)
+      mainTitleElement.firstChild.textContent = mainTitleText;
+    if (subtitleElement) subtitleElement.textContent = subtitleText;
+    if (paragraphElement) paragraphElement.textContent = paragraphText;
   }
 });

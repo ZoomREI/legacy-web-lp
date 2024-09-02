@@ -8,7 +8,7 @@
     <?php
     // Map page IDs to market identifiers
     $market_map = array(
-        'sf'  => array('page_ids' => array(26, 39, 74, 86), 'gtm_id' => 'GTM-NJ6LP74', 'favicon' => 'sf-favicon.svg'),
+        'sf'  => array('page_ids' => array(26, 39, 74, 86, 123), 'gtm_id' => 'GTM-NJ6LP74', 'favicon' => 'sf-favicon.svg'),
         'stl' => array('page_ids' => array(9, 14, 18, 21), 'gtm_id' => 'GTM-PQTW9BQ', 'favicon' => 'stl-favicon.svg'),
         'kc'  => array('page_ids' => array(27, 63, 75, 87), 'gtm_id' => 'GTM-K4Q5CKB', 'favicon' => 'kc-favicon.svg'),
         'det' => array('page_ids' => array(28, 60, 76, 88), 'gtm_id' => 'GTM-T75JTFR', 'favicon' => 'det-favicon.svg'),
