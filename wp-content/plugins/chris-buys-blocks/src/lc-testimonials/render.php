@@ -40,7 +40,7 @@ $verified_check_url = plugins_url('src/lc-testimonials/assets/verified-check-cir
                         <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                     </div>
                     <blockquote>
-                        <p>“In a day and age where professionals in the service industry never seem to answer their phones or return calls, <strong><?php echo esc_html($selectedName) ?> promptly responded to my initial call, and was always available during the entire selling process."</strong></p>
+                        <p>“In a day and age where professionals in the service industry never seem to answer their phones or return calls, <strong>Chris promptly responded to my initial call,</strong> and was always available during the entire selling process."</p>
                     </blockquote>
                 </div>
                 <div class="lc-testimonials__person">
@@ -60,7 +60,7 @@ $verified_check_url = plugins_url('src/lc-testimonials/assets/verified-check-cir
                         <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                     </div>
                     <blockquote>
-                        <p>"We are very grateful for <?php echo esc_html($selectedName) ?> and his team's work. They were always professional and reliable, </br></br><strong><?php echo esc_html($selectedName) ?> answered my first call right away</strong> and kept me updated throughout the whole selling process.”</p>
+                        <p>“We are very grateful for Chris and his team's work. They were always professional and reliable. <br /><br /><strong>Chris answered my first call right away</strong> and kept me updated throughout the whole selling process.”</p>
                     </blockquote>
                 </div>
                 <div class="lc-testimonials__person">
@@ -80,27 +80,7 @@ $verified_check_url = plugins_url('src/lc-testimonials/assets/verified-check-cir
                         <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                     </div>
                     <blockquote>
-                        <p>"<strong>I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>.</strong> I needed to rehab this property that sat vacant too long.</br></br> He made a reasonable offer and the sale went quickly with prompt payment."</p>
-                    </blockquote>
-                </div>
-                <div class="lc-testimonials__person">
-                    <img class="lc-testimonials__testimonee" src="<?php echo esc_url($darren_pilch_url); ?>" alt="Darren Pilch">
-                    <cite>
-                        Darren Pilch <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span></cite>
-                </div>
-            </div>
-
-            <div class="lc-testimonials__testimonial">
-                <div class="lc-testimonials__testimonial--content">
-                    <div class="lc-hero__reviews-stars-wrapper">
-                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    </div>
-                    <blockquote>
-                        <p>“<strong>Great experience working</strong> with <?php echo esc_html($selectedName) ?> and the team. They were incredibly professional and sold our home quickly for a price we were satisfied with."</p>
+                        <p>“<strong>Great experience working</strong> with Chris and the team. They were incredibly professional and sold our home quickly for a price we were satisfied with.”</p>
                     </blockquote>
                 </div>
                 <div class="lc-testimonials__person">
@@ -120,7 +100,7 @@ $verified_check_url = plugins_url('src/lc-testimonials/assets/verified-check-cir
                         <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                     </div>
                     <blockquote>
-                        <p>"<strong>The customer service experience with <?php echo esc_html($selectedName) ?> was outstanding.</strong> From beginning to end, the process of selling my home was exemplary."</p>
+                        <p>“<strong>The customer service experience with Chris was outstanding.</strong> From beginning to end, the process of selling my home was exemplary.”</p>
                     </blockquote>
                 </div>
                 <div class="lc-testimonials__person">
@@ -140,7 +120,27 @@ $verified_check_url = plugins_url('src/lc-testimonials/assets/verified-check-cir
                         <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
                     </div>
                     <blockquote>
-                        <p>”Managing a property from out of state became too much, and I needed to sell quickly. <strong><?php echo esc_html($selectedName) ?> handled everything seamlessly</strong>, and I couldn't be happier with how smoothly the sale went. They truly made it effortless."</p>
+                        <p>“<strong>I am quite happy with the easy, fast, stress-free process of dealing with Chris.</strong> I needed to sell my home quickly due to medical health issues. <br /><br />He made a reasonable offer, and the sale went quickly with prompt payment.”</p>
+                    </blockquote>
+                </div>
+                <div class="lc-testimonials__person">
+                    <img class="lc-testimonials__testimonee" src="<?php echo esc_url($darren_pilch_url); ?>" alt="Darren Pilch">
+                    <cite>
+                        Darren Pilch <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span></cite>
+                </div>
+            </div>
+
+            <div class="lc-testimonials__testimonial">
+                <div class="lc-testimonials__testimonial--content">
+                    <div class="lc-hero__reviews-stars-wrapper">
+                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                        <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                    </div>
+                    <blockquote>
+                        <p>“<strong>Chris and his team truly exceeded my expectations.</strong> After losing my spouse, I needed to downsize and sell my home quickly. <strong>Chris made the process straightforward</strong> and was always available to answer my questions. I'm incredibly thankful for their support during such a difficult time.”</p>
                     </blockquote>
                 </div>
                 <div class="lc-testimonials__person">

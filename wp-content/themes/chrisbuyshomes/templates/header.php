@@ -39,7 +39,7 @@
     $is_production = (get_bloginfo('name') === 'Chris Buys Homes');
 
     // Favicon URL Construction
-    $favicon_url = get_site_url() . '/wp-content/themes/chrisbuyshomes/assets/favicons/' . $market_map[$current_market]['favicon'];
+    $favicon_url = get_site_url() . '/wp-content/themes/chrisbuyshomes/src/assets/favicons/' . $market_map[$current_market]['favicon'];
     ?>
 
     <!-- Output the Favicon link in the <head> -->
