@@ -392,3 +392,92 @@ function handle_form_submission(WP_REST_Request $request)
 //     }
 //     return $request;
 // }
+
+function add_custom_query_vars($vars)
+{
+    $vars[] = 'custom_path';  // Register custom_path as a valid query var
+    return $vars;
+}
+add_filter('query_vars', 'add_custom_query_vars');
+
+
+function dynamic_landing_page_rewrite_rules()
+{
+    // Capture any URL that starts with /lp/ and store everything after it as custom_path
+    add_rewrite_rule('^lp/(.+)/?', 'index.php?custom_path=$matches[1]', 'top');
+}
+add_action('init', 'dynamic_landing_page_rewrite_rules');
+
+
+function handle_dynamic_path_redirect()
+{
+    // Get the custom path from the URL
+    $custom_path = get_query_var('custom_path');
+
+    // Debugging: Log the custom_path to ensure it's being captured
+    error_log('Custom Path: ' . ($custom_path ? $custom_path : 'No path'));
+
+    // Check if the custom path is empty or if it's a request for a static asset
+    if (empty($custom_path) || preg_match('/\.(?:css|js|png|jpg|jpeg|gif|ico|svg|map)$/', $custom_path)) {
+        error_log('No custom path found or static file request');
+        return;  // Exit early if no custom path is found or it's a static file request
+    }
+
+    // Query the database for a page with a matching custom URL slug
+    $args = array(
+        'post_type' => 'page',
+        'meta_query' => array(
+            array(
+                'key' => 'custom_url_slugs',  // This is the ACF field name
+                'value' => $custom_path,      // Match the custom path from the URL
+                'compare' => 'LIKE'
+            )
+        )
+    );
+
+    // Run the query
+    $query = new WP_Query($args);
+
+    // Check if a page was found
+    if ($query->have_posts()) {
+        $page = $query->posts[0];  // Get the first matching page
+
+        // Set up the post data to render the page
+        global $wp_query;
+        $wp_query->post = $page;
+        $wp_query->queried_object = $page;
+        $wp_query->is_page = true;
+        $wp_query->is_singular = true;
+        $wp_query->is_404 = false;
+
+        // Ensure Gutenberg blocks are parsed correctly
+        $parsed_content = parse_blocks($page->post_content);
+        $rendered_content = '';
+        foreach ($parsed_content as $block) {
+            $rendered_content .= render_block($block);
+        }
+
+        // Output the rendered content
+        echo $rendered_content;
+
+        // Set up post data and force the use of page.php
+        setup_postdata($page);
+        $page_template = get_template_directory() . '/page.php';  // Force page.php
+
+        if (file_exists($page_template)) {
+            error_log('Including forced page.php template: ' . $page_template);
+            include($page_template);
+            exit;
+        } else {
+            error_log('Forced page.php template not found');
+        }
+    } else {
+        // If no matching page is found, return a 404 error
+        global $wp_query;
+        $wp_query->is_404 = true;
+        status_header(404);
+        include(get_404_template());
+        exit;
+    }
+}
+add_action('template_redirect', 'handle_dynamic_path_redirect');
