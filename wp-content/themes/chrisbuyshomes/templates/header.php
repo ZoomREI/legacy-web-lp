@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php
+    // Check if we're on a custom path
+    $custom_path = get_query_var('custom_path');
+    
+    if (!empty($custom_path)) {
+        // Query the page based on the custom path logic
+        $args = array(
+            'post_type' => 'page',
+            'meta_query' => array(
+                array(
+                    'key' => 'custom_url_slugs',  // ACF field name
+                    'value' => $custom_path,
+                    'compare' => 'LIKE'
+                )
+            )
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            $page = $query->posts[0];  // Get the page object
+            $current_page_id = $page->ID;  // Get the page ID
+        } else {
+            // Handle 404 if no page found
+            global $wp_query;
+            $wp_query->is_404 = true;
+            status_header(404);
+            include(get_404_template());
+            exit;
+        }
+    } else {
+        // Fallback: get the normal page ID if no custom path is set
+        $current_page_id = get_the_ID();
+    }
+
     // Map page IDs to market identifiers
     $market_map = array(
         'sf'  => array('page_ids' => array(26, 39, 74, 86, 123), 'gtm_id' => 'GTM-NJ6LP74', 'favicon' => 'sf-favicon.svg'),
@@ -17,7 +51,6 @@
     );
 
     // Determine the current market
-    $current_page_id = get_the_ID();
     $current_market = '';
     foreach ($market_map as $market => $data) {
         if (in_array($current_page_id, $data['page_ids'])) {
@@ -87,4 +120,3 @@
                 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
-    <!--  -->
