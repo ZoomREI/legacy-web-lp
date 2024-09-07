@@ -367,4 +367,15 @@ max-width: 315px;
     gap: 1rem !important;
 }
 
+.ao-hero-wrapper .gform_fields input::-moz-placeholder {
+	color: #333333 !important;
+	opacity: 0.5 !important;
+}
+
+.ao-hero-wrapper .gform_fields input::placeholder {
+	color: #333333 !important;
+	opacity: 0.5 !important;
+}
+
+
 /*# sourceMappingURL=style-index.css.map*/

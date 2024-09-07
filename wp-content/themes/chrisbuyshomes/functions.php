@@ -409,8 +409,7 @@ function dynamic_landing_page_rewrite_rules()
 add_action('init', 'dynamic_landing_page_rewrite_rules');
 
 
-function handle_dynamic_path_redirect()
-{
+function handle_dynamic_path_redirect() {
     // Get the custom path from the URL
     $custom_path = get_query_var('custom_path');
 
@@ -457,20 +456,16 @@ function handle_dynamic_path_redirect()
             $rendered_content .= render_block($block);
         }
 
+        // Output the header with meta tags before rendering content
+        chris_buys_homes_get_header();
+
         // Output the rendered content
         echo $rendered_content;
 
-        // Set up post data and force the use of page.php
-        setup_postdata($page);
-        $page_template = get_template_directory() . '/page.php';  // Force page.php
+        // Output the footer after the content
+        chris_buys_homes_get_footer();
 
-        if (file_exists($page_template)) {
-            error_log('Including forced page.php template: ' . $page_template);
-            include($page_template);
-            exit;
-        } else {
-            error_log('Forced page.php template not found');
-        }
+        exit;
     } else {
         // If no matching page is found, return a 404 error
         global $wp_query;

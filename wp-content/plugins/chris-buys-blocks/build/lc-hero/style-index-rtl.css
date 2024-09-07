@@ -200,9 +200,9 @@
 }
 
 .lc-hero .gform_wrapper {
-    padding: 0 !important;
-    gap: 0 !important;
-    background-color: transparent !important;
+	padding: 0 !important;
+	gap: 0 !important;
+	background-color: transparent !important;
 }
 
 .lc-hero .gform__header {
@@ -227,7 +227,7 @@
 }
 
 .lc-hero .gform_required_legend {
-    display: none;
+	display: none;
 }
 
 .lc-hero .gform_body {
@@ -289,7 +289,7 @@
 	}
 }
 
-.lc-hero .gfield_html  {
+.lc-hero .gfield_html {
 	display: flex !important;
 	gap: 0.5rem !important;
 	justify-content: center !important;
@@ -298,24 +298,35 @@
 }
 
 .lc-hero .gform_footer {
-    display: none !important;
+	display: none !important;
 }
 
 .lc-hero .gform_validation_errors {
-    display: none !important;
+	display: none !important;
 }
 
 .lc-hero .gfield--input-type-address {
-    display: none !important;
+	display: none !important;
 }
 
 .lc-hero .lc-hero__form {
-    background-color: transparent !important;
-    z-index: 1 !important;
+	background-color: transparent !important;
+	z-index: 1 !important;
 }
 
 .lc-hero .gform_fields {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 1rem !important;
 }
+
+.lc-hero .gform_fields input::-moz-placeholder {
+	color: #333333 !important;
+	opacity: 0.5 !important;
+}
+
+.lc-hero .gform_fields input::placeholder {
+	color: #333333 !important;
+	opacity: 0.5 !important;
+}
+
