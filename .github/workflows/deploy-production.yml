@@ -39,9 +39,9 @@ jobs:
           rsync -avz --delete ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/themes
           rsync -avz --delete ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/plugins
 
-      - name: Export wp_options and wp_postmeta from Staging
+      - name: Export wp_options from Staging
         run: |
-          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options,wp_postmeta --path=/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com"
+          ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options --path=/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com"
 
       - name: Transfer and Import SQL Dump to Production
         run: |
