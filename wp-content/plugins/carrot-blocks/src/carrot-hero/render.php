@@ -71,7 +71,7 @@ $bbb_url = esc_url(plugins_url('src/carrot-hero/assets/bbb.svg', dirname(__FILE_
                 We buy houses in any condition. No realtors, no fees, no commissions,
                 no repairs & not even cleaning.
             </h3>
-            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="false"]'); ?>
+            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
         </div>
     </div>
 
