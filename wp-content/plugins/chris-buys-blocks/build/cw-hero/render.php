@@ -77,7 +77,7 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
             </div>
         </div>
         <div id="cw-form" class="cw-hero__form">
-            [gravityform id="<?php echo esc_attr($formId) ?>" title="false" ajax="true"]
+            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="false"]'); ?>
         </div>
     </div>
 </section>
