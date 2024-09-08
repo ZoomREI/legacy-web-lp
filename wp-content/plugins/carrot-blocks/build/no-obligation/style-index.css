@@ -1,1 +1,27 @@
-.no-obligation{font-size:3rem;font-weight:700;padding:1rem;text-align:center;width:100%}.no-obligation:after,.no-obligation:before{background-color:currentColor;border:1px solid grey;content:"";display:block;margin-bottom:2rem;width:100%}.no-obligation:after{margin-bottom:0;margin-top:2rem}
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/no-obligation/style.css ***!
+  \*********************************************************************************************************************************************************************************/
+.no-obligation {
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	padding: 1rem;
+  }
+  
+  .no-obligation::before,
+  .no-obligation::after {
+	content: "";
+	display: block;
+	width: 100%;
+	border: 1px solid #808080;
+	background-color: currentColor;
+	margin-bottom: 2rem;
+  }
+  
+  .no-obligation::after {
+	margin-top: 2rem;
+	margin-bottom: 0;
+  }
+
+/*# sourceMappingURL=style-index.css.map*/

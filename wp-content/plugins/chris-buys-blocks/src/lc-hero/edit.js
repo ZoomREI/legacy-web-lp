@@ -1,31 +1,14 @@
 import { __ } from "@wordpress/i18n";
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, TextControl } from "@wordpress/components";
+import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 import "./editor.css";
 
-export default function Edit({ attributes, setAttributes }) {
-	const { formId } = attributes;
+const ALLOWED_BLOCKS = ["gravityforms/form"];
 
-	const onChangeFormId = (newFormId) => {
-		setAttributes({ formId: newFormId });
-	};
-
+export default function Edit() {
 	return (
 		<div {...useBlockProps()}>
-			<InspectorControls>
-				<PanelBody
-					title={__("Form Settings", "chris-buys-blocks")}
-					initialOpen={true}
-				>
-					<TextControl
-						label={__("Form ID", "chris-buys-blocks")}
-						value={formId}
-						onChange={onChangeFormId}
-						placeholder={__("Enter Form ID", "chris-buys-blocks")}
-					/>
-				</PanelBody>
-			</InspectorControls>
 			<h3>{__("Life Changes Hero", "chris-buys")}</h3>
+			<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 		</div>
 	);
 }

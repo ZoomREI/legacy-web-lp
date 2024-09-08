@@ -7,8 +7,6 @@ import {
 import {
 	PanelBody,
 	SelectControl,
-	TextControl,
-	ToggleControl,
 } from "@wordpress/components";
 import "./editor.css";
 

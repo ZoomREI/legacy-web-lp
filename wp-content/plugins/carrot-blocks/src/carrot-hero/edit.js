@@ -1,10 +1,16 @@
 import { __ } from "@wordpress/i18n";
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import {
+	InnerBlocks,
+	useBlockProps,
+	InspectorControls,
+} from "@wordpress/block-editor";
 import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import "./editor.css";
 
+const ALLOWED_BLOCKS = ["gravityforms/form"];
+
 export default function Edit({ attributes, setAttributes }) {
-	const { formId, selectedMarket, phoneNumber } = attributes;
+	const { selectedMarket, phoneNumber } = attributes;
 
 	// Function to handle the change of selected market
 	const onChangeSelectedMarket = (newMarket) => {
@@ -14,11 +20,6 @@ export default function Edit({ attributes, setAttributes }) {
 	// Function to handle the change of phone number
 	const onChangePhoneNumber = (newPhoneNumber) => {
 		setAttributes({ phoneNumber: newPhoneNumber });
-	};
-
-	// Function to handle the change of form ID
-	const onChangeFormId = (newFormId) => {
-		setAttributes({ formId: newFormId });
 	};
 
 	return (
@@ -43,17 +44,6 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__("Form Settings", "carrot-blocks")}
-					initialOpen={true}
-				>
-					<TextControl
-						label={__("Form ID", "carrot-blocks")}
-						value={formId}
-						onChange={onChangeFormId}
-						placeholder={__("Enter Form ID", "carrot-blocks")}
-					/>
-				</PanelBody>
-				<PanelBody
 					title={__("Contact Settings", "carrot-blocks")}
 					initialOpen={true}
 				>
@@ -66,6 +56,7 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<h3>{__("Carrot Hero", "carrot-blocks")}</h3>
+			<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 		</div>
 	);
 }

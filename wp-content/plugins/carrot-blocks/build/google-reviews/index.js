@@ -1,1 +1,385 @@
-(()=>{"use strict";var e,a={72:()=>{const e=window.wp.blocks,a=window.React,n=window.wp.i18n,t=window.wp.blockEditor,o=window.wp.components,r=JSON.parse('{"UU":"carrot-blocks/google-reviews"}');(0,e.registerBlockType)(r.UU,{edit:function({attributes:e,setAttributes:r}){const{selectedMarket:i,reviewText:s,reviewerName:l}=e,d={"San Francisco Bay Area, CA":{reviewText:"John and his team are outstanding. John is a very fair business man and I was happy with the ease of the process. I would definitely recommend John to my friends or their friends!",reviewerName:"Steven F. Hayward, CA"},"St. Louis, MO":{reviewText:"Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",reviewerName:"Daniel R. [Hazelwood, MO]"},"Kansas City":{reviewText:"My family had a property in Kansas City that needed major repairs, and we needed a cash buyer.Chris was able to give us the best cash offer for the property. It was a great decision to work with this company. Everything worked out the way he told us. I would highly recommend this company.",reviewerName:"Timothy J. Kansas City, MO"},"Metro Detroit, MI":{reviewText:"Chris buys homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in Detroit, Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.”Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",reviewerName:"Jaime R. Detroit, MI"},"Cleveland, OH":{reviewText:"Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in Cleveland Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",reviewerName:"Daniel R. Cleveland, OH"},"Indianapolis, IN":{reviewText:"Chris buys home Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in Indianapolis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",reviewerName:"Roger K. Indianapolis, IN"}};return(0,a.createElement)("div",{...(0,t.useBlockProps)()},(0,a.createElement)(t.InspectorControls,null,(0,a.createElement)(o.PanelBody,{title:(0,n.__)("Market Selection","carrot-blocks"),initialOpen:!0},(0,a.createElement)(o.SelectControl,{label:(0,n.__)("Select Market","carrot-blocks"),value:i,options:[{label:"San Francisco",value:"San Francisco Bay Area, CA"},{label:"St. Louis",value:"St. Louis, MO"},{label:"Kansas City",value:"Kansas City"},{label:"Detroit",value:"Metro Detroit, MI"},{label:"Cleveland",value:"Cleveland, OH"},{label:"Indianapolis",value:"Indianapolis, IN"}],onChange:e=>{const{reviewText:a,reviewerName:n}=d[e]||{reviewText:"“Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.”",reviewerName:"Daniel R. [Hazelwood, MO]"};r({selectedMarket:e,reviewText:a,reviewerName:n})}}))),(0,a.createElement)("h3",null,(0,n.__)("Carrot Google Reviews","carrot-blocks")))}})}},n={};function t(e){var o=n[e];if(void 0!==o)return o.exports;var r=n[e]={exports:{}};return a[e](r,r.exports,t),r.exports}t.m=a,e=[],t.O=(a,n,o,r)=>{if(!n){var i=1/0;for(h=0;h<e.length;h++){for(var[n,o,r]=e[h],s=!0,l=0;l<n.length;l++)(!1&r||i>=r)&&Object.keys(t.O).every((e=>t.O[e](n[l])))?n.splice(l--,1):(s=!1,r<i&&(i=r));if(s){e.splice(h--,1);var d=o();void 0!==d&&(a=d)}}return a}r=r||0;for(var h=e.length;h>0&&e[h-1][2]>r;h--)e[h]=e[h-1];e[h]=[n,o,r]},t.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),(()=>{var e={9887:0,5079:0};t.O.j=a=>0===e[a];var a=(a,n)=>{var o,r,[i,s,l]=n,d=0;if(i.some((a=>0!==e[a]))){for(o in s)t.o(s,o)&&(t.m[o]=s[o]);if(l)var h=l(t)}for(a&&a(n);d<i.length;d++)r=i[d],t.o(e,r)&&e[r]&&e[r][0](),e[r]=0;return t.O(h)},n=globalThis.webpackChunkcarrot_blocks=globalThis.webpackChunkcarrot_blocks||[];n.forEach(a.bind(null,0)),n.push=a.bind(null,n.push.bind(n))})();var o=t.O(void 0,[5079],(()=>t(72)));o=t.O(o)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/google-reviews/edit.js":
+/*!************************************!*\
+  !*** ./src/google-reviews/edit.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.css */ "./src/google-reviews/editor.css");
+
+
+
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    selectedMarket,
+    reviewText,
+    reviewerName
+  } = attributes;
+  const reviews = {
+    "San Francisco Bay Area, CA": {
+      reviewText: "John and his team are outstanding. John is a very fair business man and I was happy with the ease of the process. I would definitely recommend John to my friends or their friends!",
+      reviewerName: "Steven F. Hayward, CA"
+    },
+    "St. Louis, MO": {
+      reviewText: "Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",
+      reviewerName: "Daniel R. [Hazelwood, MO]"
+    },
+    "Kansas City": {
+      reviewText: "My family had a property in Kansas City that needed major repairs, and we needed a cash buyer.Chris was able to give us the best cash offer for the property. It was a great decision to work with this company. Everything worked out the way he told us. I would highly recommend this company.",
+      reviewerName: "Timothy J. Kansas City, MO"
+    },
+    "Metro Detroit, MI": {
+      reviewText: "Chris buys homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in Detroit, Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.”Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",
+      reviewerName: "Jaime R. Detroit, MI"
+    },
+    "Cleveland, OH": {
+      reviewText: "Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in Cleveland Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",
+      reviewerName: "Daniel R. Cleveland, OH"
+    },
+    "Indianapolis, IN": {
+      reviewText: "Chris buys home Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in Indianapolis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.",
+      reviewerName: "Roger K. Indianapolis, IN"
+    }
+  };
+  const onChangeSelectedMarket = newMarket => {
+    const {
+      reviewText,
+      reviewerName
+    } = reviews[newMarket] || {
+      reviewText: "“Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone.”",
+      reviewerName: "Daniel R. [Hazelwood, MO]"
+    };
+
+    // Set the selected market and corresponding review content
+    setAttributes({
+      selectedMarket: newMarket,
+      reviewText: reviewText,
+      reviewerName: reviewerName
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Market Selection", "carrot-blocks"),
+    initialOpen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Market", "carrot-blocks"),
+    value: selectedMarket,
+    options: [{
+      label: "San Francisco",
+      value: "San Francisco Bay Area, CA"
+    }, {
+      label: "St. Louis",
+      value: "St. Louis, MO"
+    }, {
+      label: "Kansas City",
+      value: "Kansas City"
+    }, {
+      label: "Detroit",
+      value: "Metro Detroit, MI"
+    }, {
+      label: "Cleveland",
+      value: "Cleveland, OH"
+    }, {
+      label: "Indianapolis",
+      value: "Indianapolis, IN"
+    }],
+    onChange: onChangeSelectedMarket
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Carrot Google Reviews", "carrot-blocks")));
+}
+
+/***/ }),
+
+/***/ "./src/google-reviews/index.js":
+/*!*************************************!*\
+  !*** ./src/google-reviews/index.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./src/google-reviews/style.css");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/google-reviews/edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/google-reviews/block.json");
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/google-reviews/editor.css":
+/*!***************************************!*\
+  !*** ./src/google-reviews/editor.css ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/google-reviews/style.css":
+/*!**************************************!*\
+  !*** ./src/google-reviews/style.css ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "./src/google-reviews/block.json":
+/*!***************************************!*\
+  !*** ./src/google-reviews/block.json ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"carrot-blocks/google-reviews","version":"0.1.0","title":"Google Reviews","category":"widgets","icon":"","description":"A block to display the \'Google Reviews\' section","supports":{"html":false},"textdomain":"carrot-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"selectedMarket":{"type":"string","default":"St. Louis, MO"},"reviewText":{"type":"string","default":"Chris Buys Homes Real Estate experience was amazing and they are number 1 on google for a reason. When I typed in investment companies in St. Louis Chris buys homes popped up. When I called the number Chris answered and I met with someone the next day. I was able to Negotiate a deal to my liking and we closed in three weeks. This is a company of great integrity and I would recommend them to everyone."},"reviewerName":{"type":"string","default":"Daniel R. [Hazelwood, MO]"}}}');
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"google-reviews/index": 0,
+/******/ 			"google-reviews/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkcarrot_blocks"] = globalThis["webpackChunkcarrot_blocks"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["google-reviews/style-index"], () => (__webpack_require__("./src/google-reviews/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

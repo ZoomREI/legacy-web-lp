@@ -28,7 +28,7 @@ $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
                 </p>
             </div>
             <div class="fast-cash-offer__form">
-                <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="true"]'); ?>
+                <?php echo $content; ?>
             </div>
         </div>
     </div>

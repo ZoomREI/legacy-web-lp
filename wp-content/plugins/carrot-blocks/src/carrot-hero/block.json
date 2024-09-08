@@ -24,10 +24,6 @@
 		"phoneNumber": {
 			"type": "string",
 			"default": "(314) 887-8043 "
-		},
-		"formId": {
-			"type": "string",
-			"default": "1"
 		}
 	}
 }

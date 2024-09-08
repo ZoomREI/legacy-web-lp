@@ -77,8 +77,7 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
             </div>
         </div>
         <div id="cw-form" class="cw-hero__form">
-            <?php echo $content; // This outputs the InnerBlocks content 
-            ?>
+            <?php echo $content; ?>
         </div>
     </div>
 </section>
