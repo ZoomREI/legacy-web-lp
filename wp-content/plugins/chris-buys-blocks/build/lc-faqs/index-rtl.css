@@ -1,1 +1,14 @@
-.wp-block-chris-buys-lc-faqs{align-items:center;background-color:#004c8d;color:#fff;display:flex;justify-content:center;margin-block:1rem!important;padding-block:1.5rem!important;width:100%}
+/*!****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/lc-faqs/editor.css ***!
+  \****************************************************************************************************************************************************************************/
+.wp-block-chris-buys-lc-faqs {
+	padding-block: 1.5rem !important;
+	background-color: #004c8d;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin-block: 1rem !important;
+}
+

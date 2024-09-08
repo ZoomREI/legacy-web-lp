@@ -1,1 +1,50 @@
-.cw-footer-v2{background-color:#004c8d;display:flex;font-family:Inter,sans-serif;padding:1.75rem 1rem}@media (min-width:1024px){.cw-footer-v2{padding:2.5rem 5rem}}.cw-footer-v2__content{align-items:center;color:#fff;display:flex;flex-direction:column;gap:1.75rem;padding:.75rem .5rem;text-align:center}@media (min-width:1024px){.cw-footer-v2__content{align-items:start;flex-direction:row;justify-content:space-between;padding:1.125rem 7.75rem;text-align:right}}.cw-footer-v2__logo{flex-shrink:0}.cw-footer-v2__logo img{width:14.5rem}.cw-footer-v2__text{display:flex;flex-direction:column;gap:1.25rem}
+/*!********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cw-footer-v2/style.css ***!
+  \********************************************************************************************************************************************************************************/
+.cw-footer-v2 {
+	font-family: "Inter", sans-serif;
+	display: flex;
+	background-color: #004c8d;
+	padding: 1.75rem 1rem;
+}
+
+@media (min-width: 1024px) {
+	.cw-footer-v2 {
+		padding: 2.5rem 5rem;
+	}
+}
+
+.cw-footer-v2__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.75rem 0.5rem;
+	color: white;
+	gap: 1.75rem;
+	text-align: center;
+}
+
+@media (min-width: 1024px) {
+	.cw-footer-v2__content {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 1.125rem 7.75rem;
+		text-align: right;
+		align-items: start;
+	}
+}
+
+.cw-footer-v2__logo {
+	flex-shrink: 0;
+}
+
+.cw-footer-v2__logo img {
+	width: 14.5rem;
+}
+
+.cw-footer-v2__text {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+

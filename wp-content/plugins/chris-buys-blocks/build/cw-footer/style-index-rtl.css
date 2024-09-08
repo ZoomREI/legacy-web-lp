@@ -1,1 +1,66 @@
-.cw-footer{background-color:#fff;display:flex;font-family:Inter,sans-serif;padding:2rem 1rem}.cw-footer p{font-size:14px;line-height:1.4;margin:0}@media (min-width:1024px){.cw-footer{padding:2.5rem 1rem}}.cw-footer__content{align-items:center;color:#000;display:flex;flex-direction:column;gap:1.75rem;margin:0 auto;max-width:320px;text-align:center;width:100%}@media (min-width:1024px){.cw-footer__content{align-items:start;flex-direction:row;gap:3.75rem;justify-content:space-between;margin:0 auto;max-width:1260px;text-align:right}}.cw-footer__logo{flex-shrink:0}.cw-footer__logo img{width:170px}.cw-footer__text{display:flex;flex-direction:column;gap:1.25rem}@media (min-width:1024px){.cw-footer__logo img{width:230px}}
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/cw-footer/style.css ***!
+  \*****************************************************************************************************************************************************************************/
+.cw-footer {
+	font-family: "Inter", sans-serif;
+	display: flex;
+	background-color: #fff;
+	padding: 2rem 1rem;
+}
+.cw-footer p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.4;
+}
+@media (min-width: 1024px) {
+	.cw-footer {
+	
+		padding: 2.5rem 1rem;
+	}
+}
+
+.cw-footer__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* padding: 0.75rem 0.5rem; */
+	color: #000;
+	gap: 1.75rem;
+	text-align: center;
+	width: 100%;
+	max-width: 320px;
+	margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+	.cw-footer__content {
+		flex-direction: row;
+		justify-content: space-between;
+		/* padding: 1.125rem 7.75rem; */
+		text-align: right;
+		align-items: start;
+		gap: 3.75rem;
+		max-width: 1260px;
+		margin: 0 auto;
+	}
+}
+
+.cw-footer__logo {
+	flex-shrink: 0;
+}
+
+.cw-footer__logo img {
+	width: 170px;
+}
+
+.cw-footer__text {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+@media (min-width: 1024px) {
+	.cw-footer__logo img {
+		width: 230px;
+	}
+	
+}

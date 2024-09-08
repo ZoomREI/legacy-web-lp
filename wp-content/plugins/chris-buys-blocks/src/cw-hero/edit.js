@@ -1,14 +1,22 @@
 import { __ } from "@wordpress/i18n";
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
+import {
+	InnerBlocks,
+	useBlockProps,
+	InspectorControls,
+} from "@wordpress/block-editor";
+import {
+	PanelBody,
+	SelectControl,
+	TextControl,
+	ToggleControl,
+} from "@wordpress/components";
 import "./editor.css";
 
-export default function Edit({ attributes, setAttributes }) {
-	const { formId, selectedMarket } = attributes;
+const ALLOWED_BLOCKS = ["gravityforms/form"];
 
-	const onChangeFormId = (newFormId) => {
-		setAttributes({ formId: newFormId });
-	};
+// The edit function, which renders the block in the Gutenberg editor
+export default function Edit({ attributes, setAttributes }) {
+	const { selectedMarket } = attributes;
 
 	const onChangeMarket = (newMarket) => {
 		setAttributes({ selectedMarket: newMarket });
@@ -17,17 +25,6 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<div {...useBlockProps()}>
 			<InspectorControls>
-				<PanelBody
-					title={__("Form Settings", "chris-buys-blocks")}
-					initialOpen={true}
-				>
-					<TextControl
-						label={__("Form ID", "chris-buys-blocks")}
-						value={formId}
-						onChange={onChangeFormId}
-						placeholder={__("Enter Form ID", "chris-buys-blocks")}
-					/>
-				</PanelBody>
 				<PanelBody title={__("Select Market", "chris-buys-blocks")}>
 					<SelectControl
 						label={__("Choose a Market", "chris-buys-blocks")}
@@ -45,7 +42,11 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 
-			<h3>{__("cw Hero Placeholder", "chris-buys-blocks")}</h3>
+			{/* Block Content */}
+			<div>
+				<h3>{__("CW Hero Placeholder", "chris-buys-blocks")}</h3>
+				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+			</div>
 		</div>
 	);
 }

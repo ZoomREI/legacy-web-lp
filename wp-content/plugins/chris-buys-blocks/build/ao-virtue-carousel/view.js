@@ -1,1 +1,83 @@
-document.addEventListener("DOMContentLoaded",(function(){const t=document.querySelector(".ao-carousel-track"),e=Array.from(t.children),n=document.querySelector(".ao-carousel-nav");let o,i=0;const r=(n,o)=>{const i=e[o];return t.style.transform="translateX(-"+i.style.left+")",o},s=()=>{window.innerWidth<1024&&(o=e[0].getBoundingClientRect().width,e.forEach(((t,e)=>{t.style.left=o*e+"px"})),r(0,i))};let c,d;n.addEventListener("click",(t=>{if(window.innerWidth>=1024)return;const n=t.target.closest(".ao-carousel-nav__button");if(!n)return;if(n.classList.contains("ao-carousel-nav__button--prev")){const t=(i+1)%e.length;i=r(0,t)}else{const t=(i-1+e.length)%e.length;i=r(0,t)}const o=dots.findIndex((t=>t===targetDot));i=r(0,o)})),t.addEventListener("touchstart",(t=>{window.innerWidth>=1024||(c=t.touches[0].clientX)})),t.addEventListener("touchmove",(t=>{window.innerWidth>=1024||(d=t.touches[0].clientX)})),t.addEventListener("touchend",(()=>{if(!(window.innerWidth>=1024))if(c-d>50){const t=(i+1)%e.length;i=r(0,t)}else if(d-c>50){const t=(i-1+e.length)%e.length;i=r(0,t)}})),s(),window.addEventListener("resize",s)}));
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!****************************************!*\
+  !*** ./src/ao-virtue-carousel/view.js ***!
+  \****************************************/
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".ao-carousel-track");
+  const slides = Array.from(track.children);
+  const buttonNav = document.querySelector(".ao-carousel-nav");
+  let currentSlide = 0;
+  let slideWidth;
+  // let slideInterval;
+
+  // Function to set slide positions and handle resize
+  const setSlidePositions = () => {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + "px";
+    });
+  };
+
+  // Function to move to a specific slide
+  const moveToSlide = (currentSlideIndex, targetSlideIndex) => {
+    const targetSlide = slides[targetSlideIndex];
+    track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+    return targetSlideIndex;
+  };
+
+  // Initialize carousel only if the screen width is below 1024px
+  const initializeCarousel = () => {
+    if (window.innerWidth < 1024) {
+      setSlidePositions();
+      moveToSlide(currentSlide, currentSlide);
+    }
+  };
+
+  // Handle navbutton click navigation
+  buttonNav.addEventListener("click", e => {
+    if (window.innerWidth >= 1024) return;
+    const targetButton = e.target.closest(".ao-carousel-nav__button");
+    if (!targetButton) return;
+    if (targetButton.classList.contains("ao-carousel-nav__button--prev")) {
+      const prevSlide = (currentSlide + 1) % slides.length;
+      currentSlide = moveToSlide(currentSlide, prevSlide);
+    } else {
+      const nextSlide = (currentSlide - 1 + slides.length) % slides.length;
+      currentSlide = moveToSlide(currentSlide, nextSlide);
+    }
+    const targetIndex = dots.findIndex(dot => dot === targetDot);
+    currentSlide = moveToSlide(currentSlide, targetIndex);
+  });
+
+  // Swipe functionality
+  let startX, endX;
+  track.addEventListener("touchstart", e => {
+    if (window.innerWidth >= 1024) return;
+    startX = e.touches[0].clientX;
+  });
+  track.addEventListener("touchmove", e => {
+    if (window.innerWidth >= 1024) return;
+    endX = e.touches[0].clientX;
+  });
+  track.addEventListener("touchend", () => {
+    if (window.innerWidth >= 1024) return;
+    const swipeThreshold = 50; // Minimum swipe distance to change slide
+    if (startX - endX > swipeThreshold) {
+      const nextSlide = (currentSlide + 1) % slides.length;
+      currentSlide = moveToSlide(currentSlide, nextSlide);
+    } else if (endX - startX > swipeThreshold) {
+      const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+      currentSlide = moveToSlide(currentSlide, prevSlide);
+    }
+  });
+
+  // Initialize the carousel when the DOM is loaded
+  initializeCarousel();
+
+  // Reinitialize the carousel on window resize
+  window.addEventListener("resize", initializeCarousel);
+});
+/******/ })()
+;
+//# sourceMappingURL=view.js.map

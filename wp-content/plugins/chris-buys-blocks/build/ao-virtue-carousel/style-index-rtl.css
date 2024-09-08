@@ -1,1 +1,119 @@
-.ao-virtue-carousel{background-color:#e2f2ff;font-family:Inter,sans-serif;max-width:100%;overflow:hidden;padding:1.25rem;position:relative}@media (min-width:1024px){.ao-virtue-carousel{padding:1.125rem 1rem}}.ao-carousel-wrapper{margin:0 auto;max-width:315px;overflow:hidden;width:90%}@media (min-width:1024px){.ao-carousel-wrapper{max-width:1260px;overflow:hidden;width:100%}}.ao-carousel-track{display:flex;transition:transform .6s ease-in-out}@media (min-width:1024px){.ao-carousel-track{align-items:center;flex-direction:row;justify-content:space-between}}.ao-carousel-item{align-items:center;box-sizing:border-box;color:#000;display:flex;flex:1 0 100%;gap:.875rem;justify-content:center}.ao-carousel-item img{height:24px;-o-object-fit:contain;object-fit:contain;width:24px}.ao-carousel-item__content h3{font-size:14px;margin:0}@media (min-width:1024px){.ao-carousel-item__content h3{font-size:16px;font-weight:600px}.ao-carousel-item{flex:0 0 max-content}.ao-carousel-item:not(:last-child){border-left:1px solid #fff;padding-left:6%}.ao-carousel-item img{height:30px;width:30px}}.ao-carousel-nav{display:flex;justify-content:center;justify-content:space-between;right:50%;max-width:315px;position:absolute;top:50%;transform:translate(50%,-50%);width:100%}.ao-carousel-nav__button{align-items:center;display:flex;height:24px;justify-content:center;width:24px}.ao-carousel-nav__button img{height:100%;-o-object-fit:contain;object-fit:contain;width:100%}@media (min-width:1024px){.ao-carousel-nav{display:none}}
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/ao-virtue-carousel/style.css ***!
+  \**************************************************************************************************************************************************************************************/
+.ao-virtue-carousel {
+	overflow: hidden;
+	position: relative;
+	max-width: 100%;
+	background-color: #E2F2FF;
+	padding: 1.25rem;
+	font-family: "Inter", sans-serif;
+}
+
+@media (min-width: 1024px) {
+	.ao-virtue-carousel {
+		padding: 1.125rem 1rem;
+	}
+}
+.ao-carousel-wrapper{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 315px;
+}	
+@media (min-width: 1024px) {
+
+	.ao-carousel-wrapper{
+		width: 100%;
+		max-width: 1260px;
+		overflow: hidden;
+	}
+}
+.ao-carousel-track {
+	display: flex;
+	transition: transform 0.6s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+	.ao-carousel-track {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.ao-carousel-item {
+	flex: 1 0 100%;
+	display: flex;
+	justify-content: center;
+	gap: 0.875rem;
+	align-items: center;
+	color: #000;
+	box-sizing: border-box;
+}
+.ao-carousel-item img{
+width: 24px;
+height: 24px;
+-o-object-fit: contain;
+   object-fit: contain;
+}
+
+
+.ao-carousel-item__content h3 {
+	/* font-size: 1rem; */
+	font-size: 14px;
+	margin: 0;
+}
+@media (min-width: 1024px) {
+	.ao-carousel-item__content h3 {
+		/* font-size: 1.375rem; */
+		font-size: 16px;
+		font-weight: 600px;
+	
+	}
+	.ao-carousel-item {
+		flex: 0 0 max-content;
+	}
+	.ao-carousel-item:not(:last-child) {
+		padding-left: 6%;
+		border-left: 1px solid #FFFFFF;
+	}
+	.ao-carousel-item img{
+		width: 30px;
+		height: 30px;
+		}
+}
+
+.ao-carousel-nav {
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	/* height: 0; */
+	width: 100%;
+	max-width: 315px;
+	position: absolute;
+	right: 50%;
+	top: 50%;
+	transform: translate(50%,-50%);
+}
+
+.ao-carousel-nav__button{
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.ao-carousel-nav__button img{
+	width: 100%;
+	height: 100%;
+	-o-object-fit: contain;
+	   object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+	.ao-carousel-nav{
+		display: none;
+	}
+}
+

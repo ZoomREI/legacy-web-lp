@@ -1,5 +1,5 @@
 <?php
-$formId = isset($attributes['formId']) ? esc_html($attributes['formId']) : '1';
+// $formId = isset($attributes['formId']) ? esc_html($attributes['formId']) : '1';
 $selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis, Missouri';
 
 // Determine the name based on the selected market
@@ -77,7 +77,8 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
             </div>
         </div>
         <div id="cw-form" class="cw-hero__form">
-            <?php echo do_shortcode('[gravityform id="' . $formId . '" title="false" ajax="false"]'); ?>
+            <?php echo $content; // This outputs the InnerBlocks content 
+            ?>
         </div>
     </div>
 </section>

@@ -409,7 +409,8 @@ function dynamic_landing_page_rewrite_rules()
 add_action('init', 'dynamic_landing_page_rewrite_rules');
 
 
-function handle_dynamic_path_redirect() {
+function handle_dynamic_path_redirect()
+{
     // Get the custom path from the URL
     $custom_path = get_query_var('custom_path');
 
@@ -476,37 +477,3 @@ function handle_dynamic_path_redirect() {
     }
 }
 add_action('template_redirect', 'handle_dynamic_path_redirect');
-
-
-// Enqueue Gravity Forms scripts
-add_action('wp_enqueue_scripts', 'enqueue_gravityforms_scripts');
-function enqueue_gravityforms_scripts() {
-    if (class_exists('GFFormDisplay')) {
-        GFFormDisplay::enqueue_scripts();
-    }
-}
-
-// Force AJAX Initialization
-add_action('wp_footer', 'gravity_form_ajax_init', 20);
-function gravity_form_ajax_init() {
-    ?>
-    <script type="text/javascript">
-        gform.initializeOnLoaded();
-    </script>
-    <?php
-}
-
-// Add DataLayer event listener
-add_action('wp_footer', 'gravity_form_datalayer_listener', 30);
-function gravity_form_datalayer_listener() {
-    ?>
-    <script type="text/javascript">
-        jQuery(document).on('gform_post_render', function(event, form_id) {
-            if(form_id == <?php echo esc_js($formId); ?>) {
-                console.log('Form rendered and ready');
-                // Push dataLayer event here
-            }
-        });
-    </script>
-    <?php
-}
