@@ -74,6 +74,8 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		'ao-property-management',
 		'ao-faqs',
 		'ao-cta',
+  
+		's2-form',
 	];
 
 	foreach ($blocks as $block) {
