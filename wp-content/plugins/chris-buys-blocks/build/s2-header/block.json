@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "chris-buys/s2-header",
+  "version": "0.1.0",
+  "title": "s2 Header ",
+  "category": "widgets",
+  "icon": "align-center",
+  "description": "Dynamic Header for the s2 Design",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "chris-buys-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "selectedMarket": {
+      "type": "string",
+      "default": "St. Louis"
+    }
+  }
+}

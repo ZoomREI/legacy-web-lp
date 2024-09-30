@@ -75,7 +75,9 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		'ao-faqs',
 		'ao-cta',
   
+		's2-header',
 		's2-form',
+		's2-as-seen-on-carousel',
 	];
 
 	foreach ($blocks as $block) {
