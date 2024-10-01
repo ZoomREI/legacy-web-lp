@@ -2,11 +2,14 @@ function initAutocomplete() {
   const forms = document.querySelectorAll('form[id^="gform_"]');
 
   forms.forEach((form) => {
-    const autocompleteField = form.querySelector(".autocomplete-field input"); // Autocomplete field
-    const streetAddressField = form.querySelector(".address_line_1 input"); // Street address field
-    const cityField = form.querySelector(".address_city input"); // City field
-    const stateField = form.querySelector(".address_state select"); // State field (as select)
-    const zipcodeFields = form.querySelectorAll(".address_zip input"); // Zipcode fields
+    const autocompleteField = form.querySelector(".autocomplete-field input");
+    const streetAddressField = form.querySelector(".address_line_1 input");
+    const cityField = form.querySelector(".address_city input");
+    const stateField =
+      form.querySelector(".address_state select") ||
+      form.querySelector(".address_state input");
+    const zipcodeFields = form.querySelectorAll(".address_zip input");
+    const submitButton = form.querySelector('input[type="submit"]');
 
     let zipcodeField = null;
     let isAddressValid = false;
@@ -32,6 +35,9 @@ function initAutocomplete() {
       return;
     }
 
+    // Initially disable the submit button
+    submitButton.disabled = true;
+
     // Function to validate address and show message if invalid
     function validateAddress() {
       const place = autocomplete.getPlace();
@@ -39,7 +45,7 @@ function initAutocomplete() {
         isAddressValid = false;
         handleInvalidAddress(
           autocompleteField,
-          "Please select a valid address."
+          "Please re-enter and select your address from the dropdown"
         );
         return;
       }
@@ -49,7 +55,6 @@ function initAutocomplete() {
       let stateShort = "";
       let stateLong = "";
       let zipcode = "";
-      let country = "";
       let hasStreetNumber = false;
 
       for (const component of place.address_components) {
@@ -73,11 +78,6 @@ function initAutocomplete() {
           case "postal_code":
             zipcode = component.long_name;
             break;
-          case "country":
-            if (component.short_name === "US") {
-              country = "USA";
-            }
-            break;
         }
       }
 
@@ -85,7 +85,7 @@ function initAutocomplete() {
         isAddressValid = false;
         handleInvalidAddress(
           autocompleteField,
-          "Address must include a street number."
+          "Address must include a street number"
         );
         return;
       }
@@ -103,6 +103,7 @@ function initAutocomplete() {
       isAddressValid = true;
       autocompleteField.setCustomValidity(""); // Clear any previous custom validity message
       autocompleteField.classList.remove("invalid");
+      submitButton.disabled = false; // Enable the submit button
 
       // Log the populated address components
       console.log("Address populated:", {
@@ -111,7 +112,6 @@ function initAutocomplete() {
         stateShort,
         stateLong,
         zipcode,
-        country,
       });
     }
 
@@ -123,22 +123,25 @@ function initAutocomplete() {
 
     autocomplete.addListener("place_changed", validateAddress);
 
-    // Handle Gravity Forms pre-submission validation
-    gform.addFilter("gform_pre_submission", function (formId) {
-      console.log("Pre-submission validation...");
-
+    // Handle form submission
+    form.addEventListener("submit", function (event) {
       if (!isAddressValid) {
-        console.warn("Invalid address detected. Blocking submission.");
+        event.preventDefault(); // Prevent form submission
         handleInvalidAddress(
           autocompleteField,
-          "Please use autocomplete to enter a complete property address."
+          "Please use the dropdown to enter a complete property address"
         );
-        return false; // Block form submission if the address is invalid
       }
+    });
 
-      // Address is valid, allowing form submission.
-      console.log("Address is valid, allowing form submission.");
-      return true;
+    // Track form click events
+    form.addEventListener("click", function (event) {
+      if (submitButton.disabled) {
+        handleInvalidAddress(
+          autocompleteField,
+          "Please use the dropdown to enter a complete property address"
+        );
+      }
     });
 
     // Revalidate when the user changes the address
@@ -146,6 +149,7 @@ function initAutocomplete() {
       isAddressValid = false;
       autocompleteField.setCustomValidity(""); // Reset custom validity message
       autocompleteField.classList.remove("invalid");
+      submitButton.disabled = true; // Disable the submit button
     });
 
     // Allow the user to re-trigger the autocomplete by clearing the field
@@ -157,6 +161,7 @@ function initAutocomplete() {
         zipcodeField.value = "";
         isAddressValid = false;
         autocompleteField.classList.add("invalid");
+        submitButton.disabled = true; // Disable the submit button
       }
     });
   });
@@ -188,7 +193,7 @@ function loadScript(src) {
   document.head.appendChild(script);
 }
 
-// Function to handle invalid addresses (e.g., missing street number)
+// Function to handle invalid addresses
 function handleInvalidAddress(autocompleteField, message) {
   console.log("Handling invalid address, setting custom validity message.");
   autocompleteField.classList.add("invalid");

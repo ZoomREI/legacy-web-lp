@@ -14,7 +14,7 @@ services:
       - legacy_network
 
   wordpress:
-    image: wordpress:6.6.1-fpm
+    image: wordpress:6.6.2-fpm
     container_name: ${ENV_NAME}_wordpress
     volumes:
       - wordpress_data_${ENV_NAME}:/var/www/html

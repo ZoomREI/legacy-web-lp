@@ -39,6 +39,21 @@ jobs:
           rsync -avz --delete ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/themes
           rsync -avz --delete ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/plugins
 
+      # - name: Export wp_options and wp_postmeta from Staging
+      #   run: |
+      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options --path=/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com"
+
+      # - name: Transfer and Import SQL Dump to Production
+      #   run: |
+      #     ssh rootadmin@${{ secrets.SERVER_IP }} "cp /home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/partial_backup.sql /home/rootadmin/public_html/legacy.chrisbuyshomes.com/partial_backup.sql"
+      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp db import /home/rootadmin/public_html/legacy.chrisbuyshomes.com/partial_backup.sql --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
+
+      # - name: Set Site Title (blogname), Site URL (siteurl), and Home URL (home) in Production
+      #   run: |
+      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update blogname 'Chris Buys Homes' --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
+      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update siteurl 'https://legacy.chrisbuyshomes.com' --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
+      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update home 'https://legacy.chrisbuyshomes.com' --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
+
       - name: Run Database Migrations in Production
         run: |
           ssh rootadmin@${{ secrets.SERVER_IP }} "wp core update-db --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
