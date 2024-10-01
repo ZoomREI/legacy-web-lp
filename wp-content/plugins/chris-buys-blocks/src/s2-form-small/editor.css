@@ -1,0 +1,11 @@
+.wp-block-chris-buys-s2-form-small {
+	padding-block: 1.5rem !important;
+	background-color: #004c8d;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+	margin-block: 1rem !important;
+}

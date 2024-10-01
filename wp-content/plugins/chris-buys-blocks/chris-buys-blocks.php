@@ -77,6 +77,7 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
   
 		's2-header',
 		's2-form',
+		's2-form-small',
 		's2-as-seen-on-carousel',
 	];
 
