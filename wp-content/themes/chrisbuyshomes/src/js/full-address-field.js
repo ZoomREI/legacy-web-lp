@@ -5,9 +5,7 @@ function initAutocomplete() {
     const autocompleteField = form.querySelector(".autocomplete-field input");
     const streetAddressField = form.querySelector(".address_line_1 input");
     const cityField = form.querySelector(".address_city input");
-    const stateField =
-      form.querySelector(".address_state select") ||
-      form.querySelector(".address_state input");
+    const stateField = form.querySelector(".address_state :is(select, input)");
     const zipcodeFields = form.querySelectorAll(".address_zip input");
     const submitButton = form.querySelector('input[type="submit"]');
 
@@ -131,6 +129,10 @@ function initAutocomplete() {
           autocompleteField,
           "Please use the dropdown to enter a complete property address"
         );
+        // Focus on the autocomplete field to trigger keyboard on mobile
+        setTimeout(() => {
+          autocompleteField.focus();
+        }, 0);
       }
     });
 
@@ -141,6 +143,10 @@ function initAutocomplete() {
           autocompleteField,
           "Please use the dropdown to enter a complete property address"
         );
+        // Focus on the autocomplete field to trigger keyboard on mobile
+        setTimeout(() => {
+          autocompleteField.focus();
+        }, 0);
       }
     });
 
