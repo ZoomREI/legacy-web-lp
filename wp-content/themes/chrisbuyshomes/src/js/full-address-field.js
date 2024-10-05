@@ -11,15 +11,14 @@ function initAutocomplete() {
 
     let zipcodeField = null;
     let isAddressValid = false;
+    let errorMessageContainer; // To hold the error message container
 
-    // Ensure we select the right field if there are multiple
     zipcodeFields.forEach((field) => {
       if (field) {
         zipcodeField = field;
       }
     });
 
-    // Check for missing required fields
     const missingFields = [];
     if (!autocompleteField) missingFields.push("autocompleteField");
     if (!streetAddressField) missingFields.push("streetAddressField");
@@ -33,18 +32,13 @@ function initAutocomplete() {
       return;
     }
 
-    // Initially disable the submit button
     submitButton.disabled = true;
 
-    // Function to validate address and show message if invalid
     function validateAddress() {
       const place = autocomplete.getPlace();
       if (!place || !place.geometry) {
         isAddressValid = false;
-        handleInvalidAddress(
-          autocompleteField,
-          "Please re-enter and select your address from the dropdown"
-        );
+        showError("Please re-enter and select your address from the dropdown");
         return;
       }
 
@@ -81,10 +75,7 @@ function initAutocomplete() {
 
       if (!hasStreetNumber) {
         isAddressValid = false;
-        handleInvalidAddress(
-          autocompleteField,
-          "Address must include a street number"
-        );
+        showError("Address must include a street number");
         return;
       }
 
@@ -99,18 +90,9 @@ function initAutocomplete() {
 
       // Address is valid
       isAddressValid = true;
-      autocompleteField.setCustomValidity(""); // Clear any previous custom validity message
-      autocompleteField.classList.remove("invalid");
+      clearError(); // Clear error if valid
+      autocompleteField.classList.remove("invalid"); // Remove invalid class
       submitButton.disabled = false; // Enable the submit button
-
-      // Log the populated address components
-      console.log("Address populated:", {
-        streetAddress,
-        city,
-        stateShort,
-        stateLong,
-        zipcode,
-      });
     }
 
     // Initialize Google Maps Autocomplete
@@ -125,37 +107,27 @@ function initAutocomplete() {
     form.addEventListener("submit", function (event) {
       if (!isAddressValid) {
         event.preventDefault(); // Prevent form submission
-        handleInvalidAddress(
-          autocompleteField,
+        showError(
           "Please use the dropdown to enter a complete property address"
         );
-        // Focus on the autocomplete field to trigger keyboard on mobile
-        setTimeout(() => {
-          autocompleteField.focus();
-        }, 0);
       }
     });
 
-    // Track form click events
-    form.addEventListener("click", function (event) {
-      if (submitButton.disabled) {
-        handleInvalidAddress(
-          autocompleteField,
+    // Validate on blur event
+    autocompleteField.addEventListener("blur", function () {
+      if (!isAddressValid) {
+        showError(
           "Please use the dropdown to enter a complete property address"
         );
-        // Focus on the autocomplete field to trigger keyboard on mobile
-        setTimeout(() => {
-          autocompleteField.focus();
-        }, 0);
       }
     });
 
     // Revalidate when the user changes the address
     autocompleteField.addEventListener("input", function () {
       isAddressValid = false;
-      autocompleteField.setCustomValidity(""); // Reset custom validity message
-      autocompleteField.classList.remove("invalid");
+      autocompleteField.classList.add("invalid"); // Add invalid class for styling
       submitButton.disabled = true; // Disable the submit button
+      clearError(); // Clear any previous error messages
     });
 
     // Allow the user to re-trigger the autocomplete by clearing the field
@@ -166,10 +138,33 @@ function initAutocomplete() {
         stateField.value = "";
         zipcodeField.value = "";
         isAddressValid = false;
-        autocompleteField.classList.add("invalid");
+        autocompleteField.classList.add("invalid"); // Add invalid class for styling
         submitButton.disabled = true; // Disable the submit button
+        clearError(); // Clear any previous error messages
       }
     });
+
+    // Function to show error messages
+    function showError(message) {
+      if (!errorMessageContainer) {
+        errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("error-message-container"); // Class for styling
+        autocompleteField.parentNode.insertBefore(
+          errorMessageContainer,
+          autocompleteField.nextSibling
+        ); // Insert below the input field
+      }
+      errorMessageContainer.textContent = message; // Display the message
+      autocompleteField.classList.add("invalid"); // Add invalid class for styling
+    }
+
+    // Function to clear the error message
+    function clearError() {
+      if (errorMessageContainer) {
+        errorMessageContainer.remove(); // Remove from DOM
+        errorMessageContainer = null; // Reset the reference
+      }
+    }
   });
 }
 
@@ -197,12 +192,4 @@ function loadScript(src) {
   script.async = true;
   script.defer = true;
   document.head.appendChild(script);
-}
-
-// Function to handle invalid addresses
-function handleInvalidAddress(autocompleteField, message) {
-  console.log("Handling invalid address, setting custom validity message.");
-  autocompleteField.classList.add("invalid");
-  autocompleteField.setCustomValidity(message);
-  autocompleteField.reportValidity(); // Trigger native validation UI
 }

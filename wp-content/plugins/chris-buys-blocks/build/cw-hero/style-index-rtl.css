@@ -86,46 +86,31 @@
 	}
 }
 
-.cw-hero {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2rem 0rem;
-	/* padding: 2rem 7.75rem; */
-	gap: 1.125rem;
-	max-width: 320px;
-	font-family: "Inter", sans-serif;
-	width: 100%;
-	height: 100%;
-}
-.cw-hero .cw-fresh-start__testimonial blockquote p {
+.cw-hero-wrapper .cw-fresh-start__testimonial blockquote p {
 	text-align: right;
 	padding-left: 10px;
 }
 @media (min-width: 1024px) {
-	.cw-hero {
-		/* padding: 2rem 7.75rem; */
-		flex-direction: row;
-		padding: 6rem 1rem;
-		max-width: 1260px;
-		/* gap: 3rem; */
-	}
-	.cw-hero .cw-fresh-start__testimonial blockquote p {
+	.cw-hero-wrapper .cw-fresh-start__testimonial blockquote p {
 		padding-left: 0;
 	}
 }
 
 .cw-hero__content {
 	position: relative;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1fr;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	z-index: 1;
 	color: white;
 	gap: 1rem;
+	padding: 2rem 0rem;
+	max-width: 320px;
+	font-family: "Inter", sans-serif;
+	width: 100%;
+	height: 100%;
 	/* max-width: 40.25rem; */
 }
 
@@ -133,7 +118,9 @@
 	.cw-hero__content {
 		align-items: start;
 		gap: 2rem;
-		flex: 0 0 48%;
+		grid-template-columns: 1fr 45%;
+		padding: 6rem 1rem;
+		max-width: 1260px;
 	}
 }
 
@@ -149,6 +136,7 @@
 		justify-content: start;
 		align-items: center;
 		display: flex;
+		grid-column: 1 / 2;
 	}
 }
 
@@ -171,26 +159,27 @@
 	display: flex;
 }
 
-.cw-hero__titles {
+.cw-hero__title {
 	text-align: right;
+	font-family: "Inter", sans-serif;
 	display: flex;
 	flex-direction: column;
-	gap: 1.125rem;
-}
-
-.cw-hero__titles h1 {
-	font-family: "Inter", sans-serif;
 	font-size: 24px;
 	line-height: 1.2;
 	margin: 0;
-	/* margin-block-end: 0.83em; */
 }
 
-.cw-hero__titles h1 span {
+.cw-hero__title span {
 	font-size: 18px;
 	display: block;
 }
-.cw-hero__titles p {
+.cw-hero__subtitle {
+	text-align: right;
+	font-family: "Inter", sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 0;
 	line-height: 1.4;
 	margin: 0;
 	font-size: 14px;
@@ -198,20 +187,21 @@
 }
 
 @media (min-width: 1024px) {
-	.cw-hero__titles {
-		gap: 1.5rem;
+	.cw-hero__title,
+	.cw-hero__subtitle {
+		grid-column: 1 / 2;
 	}
 
-	.cw-hero__titles p {
+	.cw-hero__subtitle {
 		/* font-size: 1.125rem; */
 		font-size: 18px;
 	}
 
-	.cw-hero__titles h1 span {
+	.cw-hero__title span {
 		font-size: 34px;
 		margin-top: 12px;
 	}
-	.cw-hero__titles h1 {
+	.cw-hero__title {
 		font-size: 48px;
 		line-height: 1.2;
 	}
@@ -222,7 +212,6 @@
 	flex-direction: column;
 	gap: 0.25rem;
 	color: #fff;
-
 	padding: 0;
 }
 
@@ -232,6 +221,7 @@
 		flex-direction: column;
 		gap: 1rem;
 		margin: 0;
+		grid-column: 1 / 2;
 	}
 }
 
@@ -278,6 +268,7 @@
 @media (min-width: 1024px) {
 	.cw-hero__content--footer {
 		flex-direction: column;
+		grid-column: 1 / 2;
 	}
 }
 
@@ -347,10 +338,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	background-color: white;
 	border-radius: 20px;
 	z-index: 1;
+}
+
+@media (min-width: 1024px) {
+	.cw-hero__form {
+		grid-row: span 6;
+		grid-column: 2 / 3;
+	}
 }
 
 .cw-hero__form .gform_wrapper {
@@ -387,18 +384,6 @@
 	.cw-hero__bullet-point:nth-child(3) {
 		order: 1;
 	}
-}
-
-.cw-hero__form {
-	flex: 0 0 45%;
-	/* min-height: 60vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	
-	background-color: white;
-	border-radius: 20px;
-	z-index: 1; */
 }
 
 .cw-hero__form .gform_wrapper {
@@ -551,5 +536,43 @@
 .cw-hero-wrapper .gform_fields input::placeholder {
 	color: #333333 !important;
 	opacity: 0.5 !important;
+}
+
+.cw-hero-wrapper .error-message-container {
+	border: 1px solid rgb(192, 43, 10);
+	background-color: hsl(11, 90%, 95%);
+	color: rgb(192, 43, 10);
+	font-size: 0.75rem;
+	/* font-weight: 700; */
+	/* font-style: italic; */
+	border-radius: 0.25rem;
+	padding: 0.5rem 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.cw-hero-wrapper input.invalid {
+	border-color: rgb(192, 43, 10) !important;
+}
+
+.shake {
+	animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(5px);
+	}
+	50% {
+		transform: translateX(-5px);
+	}
+	75% {
+		transform: translateX(5px);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
