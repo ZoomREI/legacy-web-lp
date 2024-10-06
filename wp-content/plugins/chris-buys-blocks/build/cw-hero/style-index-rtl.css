@@ -554,25 +554,8 @@
 	border-color: rgb(192, 43, 10) !important;
 }
 
-.shake {
-	animation: shake 0.5s ease-in-out;
+.cw-hero-wrapper input[type="submit"]:disabled {
+	background-color: gainsboro !important;
+	color: gray !important;
+	opacity: .75 !important;
 }
-
-@keyframes shake {
-	0% {
-		transform: translateX(0);
-	}
-	25% {
-		transform: translateX(5px);
-	}
-	50% {
-		transform: translateX(-5px);
-	}
-	75% {
-		transform: translateX(5px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
