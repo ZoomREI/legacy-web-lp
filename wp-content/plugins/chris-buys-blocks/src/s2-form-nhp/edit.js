@@ -37,7 +37,7 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 
-			<h3>{__("Step 2 Form Small", "chris-buys")}</h3>
+			<h3>{__("Step 2 Form NHP", "chris-buys")}</h3>
 			<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 		</div>
 	);

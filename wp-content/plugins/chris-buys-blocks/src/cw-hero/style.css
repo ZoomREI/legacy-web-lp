@@ -543,8 +543,12 @@
 }
 
 .cw-hero-wrapper input[type="submit"]:disabled {
-	background-color: gainsboro !important;
-	color: gray !important;
-	opacity: 0.75 !important;
-	cursor: not-allowed !important;
+	/* background-color: gainsboro !important; */
+	/* color: gray !important; */
+	opacity: 1 !important;
+	/* cursor: not-allowed !important; */
+}
+
+.cw-hero-wrapper input[type="submit"]:hover {
+	background-color: #00802b !important;
 }

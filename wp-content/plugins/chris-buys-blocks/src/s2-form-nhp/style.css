@@ -238,9 +238,14 @@
 .s2-form-small__btn:hover ,.gform-theme.gform-theme--framework.gform_wrapper .gform_footer > [type="submit"].gform_button:hover{
 	background: #13A243;
 }
-.gform_wrapper .gform_heading {
+.s2-form-small .gform_wrapper .gform_heading {
 	display: none;
 }
+
+.s2-form-small .gform_wrapper .gfield--input-type-address {
+	display: none !important;
+}
+
 .s2-form-small__form {
 	margin-top: 20px;
 	padding: 0 10px 40px;
