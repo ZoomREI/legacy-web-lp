@@ -7,11 +7,16 @@ function initAutocomplete() {
     const cityField = form.querySelector(".address_city input");
     const stateField = form.querySelector(".address_state :is(select, input)");
     const zipcodeFields = form.querySelectorAll(".address_zip input");
+    const nameField = form.querySelector(".dl-full-name input");
+    const phoneField = form.querySelector(".dl-phone input");
     const submitButton = form.querySelector('input[type="submit"]');
 
     let zipcodeField = null;
     let isAddressValid = false;
-    let errorMessageContainer; // To hold the error message container
+    let isNameValid = false;
+    let isPhoneValid = false;
+    let errorMessageContainers = {};
+    let lastAddressError = null;
 
     zipcodeFields.forEach((field) => {
       if (field) {
@@ -25,6 +30,8 @@ function initAutocomplete() {
     if (!cityField) missingFields.push("cityField");
     if (!stateField) missingFields.push("stateField");
     if (!zipcodeField) missingFields.push("zipcodeField");
+    if (!nameField) missingFields.push("nameField");
+    if (!phoneField) missingFields.push("phoneField");
 
     if (missingFields.length > 0) {
       console.error(`Required fields not found in form:`, form);
@@ -38,7 +45,9 @@ function initAutocomplete() {
       const place = autocomplete.getPlace();
       if (!place || !place.geometry) {
         isAddressValid = false;
-        showError("Please re-enter and select your address from the dropdown");
+        lastAddressError =
+          "Please re-enter and select your address from the dropdown";
+        showError(autocompleteField, lastAddressError);
         return;
       }
 
@@ -75,27 +84,26 @@ function initAutocomplete() {
 
       if (!hasStreetNumber) {
         isAddressValid = false;
-        showError("Address must include a street number");
+        lastAddressError = "Address must include a street number";
+        showError(autocompleteField, lastAddressError);
         return;
       }
 
-      // Populate the hidden fields
       streetAddressField.value = streetAddress;
       cityField.value = city;
       stateField.value = stateLong;
       zipcodeField.value = zipcode;
 
-      // Update the autocomplete field with the full address
       autocompleteField.value = `${streetAddress}, ${city}, ${stateShort}, ${zipcode}`;
 
-      // Address is valid
       isAddressValid = true;
-      clearError(); // Clear error if valid
-      autocompleteField.classList.remove("invalid"); // Remove invalid class
-      submitButton.disabled = false; // Enable the submit button
+      lastAddressError = null;
+      clearError(autocompleteField);
+      autocompleteField.classList.remove("invalid");
+      checkSubmitButton();
     }
 
-    // Initialize Google Maps Autocomplete
+    // Google Maps Autocomplete Initialization
     let autocomplete = new google.maps.places.Autocomplete(autocompleteField, {
       types: ["address"],
       componentRestrictions: { country: "us" },
@@ -103,34 +111,46 @@ function initAutocomplete() {
 
     autocomplete.addListener("place_changed", validateAddress);
 
-    // Handle form submission
-    form.addEventListener("submit", function (event) {
-      if (!isAddressValid) {
-        event.preventDefault(); // Prevent form submission
-        showError(
-          "Please use the dropdown to enter a complete property address"
-        );
+    // Validation for other fields (Name & Phone)
+    function validateField(field, message) {
+      if (field.value.trim() === "") {
+        showError(field, message);
+        return false;
+      } else {
+        clearError(field);
+        return true;
       }
+    }
+
+    nameField.addEventListener("blur", function () {
+      isNameValid = validateField(nameField, "Name cannot be empty");
+      checkSubmitButton();
     });
 
-    // Validate on blur event
+    phoneField.addEventListener("blur", function () {
+      isPhoneValid = validateField(phoneField, "Phone cannot be empty");
+      checkSubmitButton();
+    });
+
     autocompleteField.addEventListener("blur", function () {
       if (!isAddressValid) {
+        // Only show the specific error if it was previously set
         showError(
-          "Please use the dropdown to enter a complete property address"
+          autocompleteField,
+          lastAddressError ||
+            "Please use the dropdown to enter a complete property address"
         );
       }
     });
 
-    // Revalidate when the user changes the address
     autocompleteField.addEventListener("input", function () {
       isAddressValid = false;
-      autocompleteField.classList.add("invalid"); // Add invalid class for styling
-      submitButton.disabled = true; // Disable the submit button
-      clearError(); // Clear any previous error messages
+      lastAddressError = null;
+      autocompleteField.classList.add("invalid");
+      submitButton.disabled = true;
+      clearError(autocompleteField);
     });
 
-    // Allow the user to re-trigger the autocomplete by clearing the field
     autocompleteField.addEventListener("input", function () {
       if (autocompleteField.value === "") {
         streetAddressField.value = "";
@@ -138,31 +158,48 @@ function initAutocomplete() {
         stateField.value = "";
         zipcodeField.value = "";
         isAddressValid = false;
-        autocompleteField.classList.add("invalid"); // Add invalid class for styling
-        submitButton.disabled = true; // Disable the submit button
-        clearError(); // Clear any previous error messages
+        lastAddressError = null;
+        autocompleteField.classList.add("invalid");
+        submitButton.disabled = true;
+        clearError(autocompleteField);
       }
     });
 
-    // Function to show error messages
-    function showError(message) {
-      if (!errorMessageContainer) {
-        errorMessageContainer = document.createElement("div");
-        errorMessageContainer.classList.add("error-message-container"); // Class for styling
-        autocompleteField.parentNode.insertBefore(
-          errorMessageContainer,
-          autocompleteField.nextSibling
-        ); // Insert below the input field
+    form.addEventListener("submit", function (event) {
+      if (!isAddressValid || !isNameValid || !isPhoneValid) {
+        event.preventDefault();
+        showError(
+          autocompleteField,
+          lastAddressError ||
+            "Please use the dropdown to enter a complete property address"
+        );
       }
-      errorMessageContainer.textContent = message; // Display the message
-      autocompleteField.classList.add("invalid"); // Add invalid class for styling
+    });
+
+    function showError(field, message) {
+      if (!errorMessageContainers[field.name]) {
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("error-message-container");
+        field.parentNode.insertBefore(errorMessageContainer, field.nextSibling);
+        errorMessageContainers[field.name] = errorMessageContainer;
+      }
+      errorMessageContainers[field.name].textContent = message;
+      field.classList.add("invalid");
     }
 
-    // Function to clear the error message
-    function clearError() {
-      if (errorMessageContainer) {
-        errorMessageContainer.remove(); // Remove from DOM
-        errorMessageContainer = null; // Reset the reference
+    function clearError(field) {
+      if (errorMessageContainers[field.name]) {
+        errorMessageContainers[field.name].remove();
+        delete errorMessageContainers[field.name];
+      }
+      field.classList.remove("invalid");
+    }
+
+    function checkSubmitButton() {
+      if (isAddressValid && isNameValid && isPhoneValid) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
       }
     }
   });

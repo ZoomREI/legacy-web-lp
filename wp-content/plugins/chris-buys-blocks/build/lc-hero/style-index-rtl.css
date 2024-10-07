@@ -347,9 +347,9 @@
 }
 
 .lc-hero input[type="submit"]:disabled {
-	background-color: gainsboro !important;
-	color: gray !important;
-	opacity: .75 !important;
-	cursor: not-allowed !important;
+	/* background-color: gainsboro !important; */
+	/* color: gray !important; */
+	opacity: 1 !important;
+	/* cursor: not-allowed !important; */
 
 }

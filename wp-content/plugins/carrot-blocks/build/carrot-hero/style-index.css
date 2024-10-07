@@ -192,5 +192,28 @@
 	display: none !important;
 }
 
+.kc-hero .error-message-container {
+	border: 1px solid rgb(192, 43, 10);
+	background-color: hsl(11, 90%, 95%);
+	color: rgb(192, 43, 10);
+	font-size: 0.75rem;
+	/* font-weight: 700; */
+	/* font-style: italic; */
+	border-radius: 0.25rem;
+	padding: 0.5rem 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.kc-hero input.invalid {
+	border-color: rgb(192, 43, 10) !important;
+}
+
+.kc-hero input[type="submit"]:disabled {
+	/* background-color: gainsboro !important; */
+	/* color: gray !important; */
+	opacity: 1 !important;
+	/* cursor: not-allowed !important; */
+}
+
 
 /*# sourceMappingURL=style-index.css.map*/
