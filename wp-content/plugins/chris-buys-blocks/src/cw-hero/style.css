@@ -545,5 +545,6 @@
 .cw-hero-wrapper input[type="submit"]:disabled {
 	background-color: gainsboro !important;
 	color: gray !important;
-	opacity: .75 !important;
+	opacity: 0.75 !important;
+	cursor: not-allowed !important;
 }

@@ -388,4 +388,5 @@
 	background-color: gainsboro !important;
 	color: gray !important;
 	opacity: 0.75 !important;
+	cursor: not-allowed !important;
 }

@@ -76,7 +76,8 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		'ao-cta',
 
 		's2-header',
-		's2-form',
+		's2-form-cw',
+		's2-form-nhp',
 		's2-as-seen-on-carousel',
 	];
 
