@@ -24,13 +24,10 @@
 					<h1>Great! Just a few more quick questions to learn more about your property. </h1>
 				</div>
 				<div class="s2-form-small__subtitle">
-                <span>It'll only take 5 minutes and help us make a faster, more accurate offer. <br>
-				The more we know, the better we can tailor our offer to you.</span>
-
-					<p>Prefer to talk instead?<br>
-						Give us a call at <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a> or send a text-whatever works best for you.</p>
+                    <p>It'll only take 5 minutes and help us make a faster, more accurate offer. <br> The more we know, the better we can tailor our offer to you.</p>
+                    <p><strong>Prefer to talk instead?<br>Give us a call at <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a> or send a text-whatever works best for you.</strong></p>
 				</div>
-				<div class="s2-form-small__form">
+				<div class="s2-form__form">
 					<?php echo $content; ?>
 				</div>
 			</div>

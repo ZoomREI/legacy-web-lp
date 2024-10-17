@@ -322,3 +322,6 @@ footer .contact-info {
   gap: 1rem;
   list-style: none !important;
 } */
+.is-hidden-block{
+  display: none !important;
+}
