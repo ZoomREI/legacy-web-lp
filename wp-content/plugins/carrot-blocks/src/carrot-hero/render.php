@@ -57,7 +57,7 @@ $bbb_url = esc_url(plugins_url('src/carrot-hero/assets/bbb.svg', dirname(__FILE_
 
     <div class="kc-hero main-page-hero">
         <div class="kc-hero__call-us">
-            Call Us! <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
+            Call Us! <a class="call-btn" href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
         </div>
         <div class="kc-hero__content">
             <img
