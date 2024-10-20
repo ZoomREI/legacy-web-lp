@@ -39,7 +39,7 @@ $arrow_icon_url = plugins_url('src/cw-meet-chris/assets/cta-arrow.svg', dirname(
                 <h3 class="cw-meet-chris__cta-text">Ready to sell your house right now?</h3>
             </div>
             <div class="cw-meet-chris__footer-block">
-                <a class="cw-meet-chris__cta" href="#cw-form">Get my offer<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+                <a class="cta-btn cw-meet-chris__cta" href="#cw-form">Get my offer<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
                 <div class="cw-hero__reviews">
                     <div class="cw-hero__reviews-stars-wrapper">
                         <?php for ($i = 0; $i < 5; $i++): ?>

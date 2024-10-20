@@ -26,7 +26,7 @@ $arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(
                 </div>
                 <h3 class="ao-meet-chris__cta-text">Ready to sell your house right now?</h3>
             </div>
-            <a class="ao-meet-chris__cta" href="#ao-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+            <a class="cta-btn ao-meet-chris__cta" href="#ao-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
             <div class="ao-hero__reviews">
                 <div class="ao-hero__reviews-stars-wrapper">
                     <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>

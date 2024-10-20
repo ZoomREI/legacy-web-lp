@@ -20,11 +20,12 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
         <div class="ao-header__logo">
             <img src="<?php echo $logoUrl; ?>" alt="Logo" />
         </div>
-        <div class="ao-header__phone-number">
-            <span class="ao-header__phone-icon"><img src="<?php echo $telephoneUrl; ?>" alt="Phone Icon"></span>
-            <span class="ao-header__phone-text">Call Us On
-                <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
-            </span>
-        </div>
+        <a class="call-btn" href="tel:<?php echo $phoneNumber; ?>">
+            <div class="ao-header__phone-number">
+                <span class="ao-header__phone--icon"><img src="<?php echo $telephoneUrl; ?>" alt="Phone Icon"></span>
+                <span class="ao-header__phone--text">Call Us On </span>
+                <span class="ao-header__phone--number"><?php echo $phoneNumber; ?></span>
+            </div>
+        </a>
     </div>
 </header>

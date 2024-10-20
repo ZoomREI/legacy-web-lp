@@ -46,7 +46,7 @@ $faqs = array(
     <div class="cw-faqs__items">
         <?php foreach ($faqs as $faq) : ?>
             <div class="cw-faqs__item">
-                <div class="cw-faqs__question">
+                <div class="faq-question cw-faqs__question">
                     <?php echo esc_html($faq['question']); ?>
                     <span class="cw-faq-indicator">+</span>
                 </div>
