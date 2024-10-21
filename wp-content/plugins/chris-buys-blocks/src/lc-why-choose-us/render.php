@@ -88,7 +88,7 @@ $verified_check_url = plugins_url('src/lc-why-choose-us/assets/verified-check-ci
             </div>
         </div>
         <div class="lc-why-choose-us__cta">
-            <a class="lc-why-choose-us__cta--button" href="#lc-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+            <a class="cta-btn lc-why-choose-us__cta--button" href="#lc-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
             <div class="lc-hero__reviews">
                 <div class="lc-hero__reviews-stars-wrapper">
                     <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>

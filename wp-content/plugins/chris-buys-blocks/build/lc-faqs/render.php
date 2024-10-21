@@ -31,7 +31,7 @@ $faqs = array(
         <div class="lc-faqs__items">
             <?php foreach ($faqs as $faq) : ?>
                 <div class="lc-faqs__item">
-                    <div class="lc-faqs__question">
+                    <div class="faq-question lc-faqs__question">
                         <?php echo esc_html($faq['question']); ?>
                         <span class="faq-indicator">+</span>
                     </div>

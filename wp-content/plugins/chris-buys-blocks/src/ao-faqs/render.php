@@ -34,7 +34,7 @@ $faqs = array(
     <div class="ao-faqs__items">
         <?php foreach ($faqs as $faq) : ?>
             <div class="ao-faqs__item">
-                <div class="ao-faqs__question">
+                <div class="faq-question ao-faqs__question">
                     <?php echo esc_html($faq['question']); ?>
                     <span class="ao-faq-indicator">+</span>
                 </div>

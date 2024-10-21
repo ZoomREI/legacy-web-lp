@@ -45,27 +45,27 @@
 	}
 }
 
-.lc-header__phone-icon {
+.lc-header__phone--icon {
 	padding: 0.375rem;
 	border-radius: 7px;
 	background-color: #004c8d;
 }
 
-.lc-header__phone-icon img {
+.lc-header__phone--icon img {
 	max-width: 0.625rem;
 }
 
 @media (min-width: 1024px) {
-	.lc-header__phone-icon {
+	.lc-header__phone--icon {
 		padding: 0.625rem;
 	}
 
-	.lc-header__phone-icon img {
+	.lc-header__phone--icon img {
 		max-width: none;
 	}
 }
 
-.lc-header__phone-number a {
+.lc-header__phone--number {
 	text-decoration: underline;
 	font-weight: bold;
 	color: #004c8d;
