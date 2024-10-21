@@ -1,4 +1,6 @@
-
+.s2-form-small * {
+	font-family: "Poppins", sans-serif;
+}
 .s2-form-small {
 	margin-top: 1.25rem;
 	margin-bottom: 2rem;
