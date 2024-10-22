@@ -50,6 +50,11 @@
 .s2-form__form .gfield_description {
 	text-align: right;
 }
+.s2-form__form .gfield {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .s2-form__form .ginput_container select,
 .s2-form__form .ginput_container input,
 .s2-form__form .ginput_container_text input {
