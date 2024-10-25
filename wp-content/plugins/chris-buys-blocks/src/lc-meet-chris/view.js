@@ -1,6 +1,7 @@
-import gsap from "gsap";
+// import gsap from "gsap";
 
-document.addEventListener("DOMContentLoaded", function () {
+
+function loadCallback() {
 	const logosWrapper = document.querySelector(".lc-featured-in__logos-wrapper");
 	const logos = document.querySelector(".lc-featured-in__logos");
 
@@ -54,4 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Re-run on window resize
 	window.addEventListener("resize", checkScreenSize);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', loadCallback)
 });

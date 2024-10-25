@@ -1,6 +1,6 @@
-import gsap from "gsap";
+// import gsap from "gsap";
 
-document.addEventListener("DOMContentLoaded", function () {
+function loadCallback() {
 	function fadingPages(context, opts) {
 		let pages = Array.from(context.querySelectorAll(opts.pageSelector));
 		let activePageName = 'main';
@@ -86,4 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		pagesInstance.show('thanks')
 		console.log('success')
 	});
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', loadCallback)
 });
