@@ -28,6 +28,11 @@
 	margin: 0 auto;
 	max-width: 320px;
 }
+
+.cw-hero__reviews-stars-wrapper{
+	display: flex;
+	margin-bottom: 0.3125rem;
+}
 @media (min-width: 1024px) {
 	.cw-why-choose-us {
 		padding: 6.25rem 1rem;

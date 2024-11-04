@@ -139,6 +139,11 @@ margin: 0;
 	flex-direction: column;
 	gap: 1rem;
 }
+
+.cw-hero__reviews-stars-wrapper{
+	display: flex;
+	margin-bottom: 0.3125rem;
+}
 .cw-fresh-start__testimonial--content .cw-hero__reviews-stars-wrapper{
 	justify-content: center;
 }
