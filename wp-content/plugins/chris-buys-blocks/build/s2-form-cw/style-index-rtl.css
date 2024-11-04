@@ -215,6 +215,39 @@
 .s2-form__title-custom:not(:first-child) {
 	margin-top: 50px;
 }
+
+
+
+.s2-form__form .error-message-container {
+	background-color: #feebe7;
+	border: 1px solid #c02b0a;
+	border-radius: .25rem;
+	color: #c02b0a;
+	font-size: .75rem;
+	margin-top: .5rem;
+	padding: .5rem;
+}
+
+@media (min-width: 1024px) {
+	.s2-form__form #field_4_64,
+	.s2-form__form #field_4_65,
+	.s2-form__form #field_4_67,
+	.s2-form__form #field_4_66 {
+		margin-bottom: 30px;
+	}
+	.s2-form__form .gfield {
+		position: relative;
+	}
+	.s2-form__form .error-message-container {
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: -3px;
+		transform: translateY(100%);
+	}
+}
+
+
 @media (max-width: 1023px) {
 	.s2-form {
 		max-width: 328px;

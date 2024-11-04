@@ -11,60 +11,61 @@ function loadScript(src, callback = ()=>{}) {
   if(typeof src === 'string'){
     src = [src];
   }
-  console.log("1. Appending script:", src);
-  let loadedScripts = 0;
-  let shouldLoad = src.filter(item => !window.loadedScripts.includes(item));
-  let shouldLoadCount = shouldLoad.length
-  let hasCallbackInURL = false
+  let shouldLoad = src.filter(item => !window.loadedScripts.includes(item.replace(/&callback=[^&]*/, '')));
+  let hasCallbackInURL = src.find(item=>item.indexOf('&callback=') > -1)
+  let allScriptsLoaded = src.every(script => window.fullyLoadedScripts.includes(script.replace(/&callback=[^&]*/, '')));
 
-  console.log("2. Not loaded before:", shouldLoad);
-
-  if(!shouldLoadCount){
-    let notFullyLoaded = src.filter(item => !window.fullyLoadedScripts.includes(item));
+  if (allScriptsLoaded) {
+    if(!hasCallbackInURL) {
+      setTimeout(function () {
+        callback();
+      }, 10)
+    }
+    return;
+  } else {
+    let notFullyLoaded = src.map(item=>item.replace(/&callback=[^&]*/, '')).filter(item => !window.fullyLoadedScripts.includes(item));
 
     if(!notFullyLoaded.length){
-      callback(true) // true - loaded before
+      if(!hasCallbackInURL) {
+        callback(true) // true - loaded before
+      }
     } else {
       window.loadingQueue.push({
         scripts: src,
-        callback: callback
+        callback: callback,
+        hasCallbackInURL: hasCallbackInURL
       })
     }
-
-    return;
   }
 
-  window.loadedScripts = Array.from(new Set([...window.loadedScripts, ...shouldLoad]));
+  window.loadedScripts = Array.from(new Set([...window.loadedScripts, ...shouldLoad.map(item=>item.replace(/&callback=[^&]*/, ''))]));
 
   shouldLoad.forEach(function (scriptSrc) {
     const script = document.createElement("script");
 
-    if(scriptSrc.indexOf('callback=') > -1){
-      hasCallbackInURL = true
-    }
     script.type = "text/javascript";
     script.async = true;
     script.defer = true;
     script.onload = function() {
-      loadedScripts++
+      window.fullyLoadedScripts.push(scriptSrc.replace(/&callback=[^&]*/, ''))
 
-      if(loadedScripts === shouldLoadCount) {
-        console.log("3. Scripts loaded.", shouldLoad);
+      if(window.loadingQueue.length){
 
-        window.fullyLoadedScripts = Array.from(new Set([...window.fullyLoadedScripts, ...shouldLoad]));
+        window.loadingQueue.forEach((item, index) => {
+          if(item.loaded){
+            return;
+          }
+          let thisAllScriptsLoaded = item.scripts.every(script => window.fullyLoadedScripts.includes(script.replace(/&callback=[^&]*/, '')));
 
-        if(!hasCallbackInURL) {
-          callback(false) // false - not loaded before
-        }
-        if(window.loadingQueue.length){
-          window.loadingQueue.forEach(item => {
-            const allScriptsLoaded = item.scripts.every(script => window.fullyLoadedScripts.includes(script));
-
-            if (allScriptsLoaded) {
-              item.callback(false);
+          if (thisAllScriptsLoaded) {
+            window.loadingQueue[index].loaded = true
+            if(!item.hasCallbackInURL) {
+              setTimeout(function () {
+                item.callback(false);
+              }, 10)
             }
-          });
-        }
+          }
+        });
       }
     };
     script.src = scriptSrc;
