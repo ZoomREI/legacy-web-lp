@@ -32,7 +32,7 @@
                     <script src="https://player.vimeo.com/api/player.js"></script>
                 <?php endif; ?>
             </div>
-            <button data-page-link="form" type="button" class="s2-form__btn">continue</button>
+            <button data-page-link="form" type="button" class="s2-form__btn cta-btn">continue</button>
         </div>
         <div data-page="form" class="s2-form__step">
             <div class="s2-form__progress" style="--progress: 50%">

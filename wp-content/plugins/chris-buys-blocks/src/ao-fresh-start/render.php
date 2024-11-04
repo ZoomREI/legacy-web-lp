@@ -60,7 +60,7 @@ $home_url = plugins_url('src/ao-fresh-start/assets/home.svg', dirname(__FILE__, 
            </div>
        </div>
    
-       <a class="cta-btn ao-fresh-start__cta" href="#ao-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+       <a class="cta-btn ao-fresh-start__cta cta-btn" href="#ao-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
        <div class="ao-hero__reviews">
            <div class="ao-hero__reviews-stars-wrapper">
                <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
