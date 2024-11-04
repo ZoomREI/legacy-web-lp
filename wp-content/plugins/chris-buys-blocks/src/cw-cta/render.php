@@ -38,7 +38,7 @@ $verified_check_url = plugins_url('src/cw-cta/assets/verified-check-circle.svg',
                 <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark">We’ll buy your house in&nbsp;<strong>any condition</strong></li>
                 <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><strong>No agent fees,</strong>&nbsp;commissions, or hidden costs</li>
             </ul>
-            <a class="cw-cta__cta--button" href="#cw-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+            <a class="cw-cta__cta--button cta-btn" href="#cw-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
         </div>
         <div class="cw-fresh-start__testimonial">
             <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_url); ?>" alt="Leigh Williams">

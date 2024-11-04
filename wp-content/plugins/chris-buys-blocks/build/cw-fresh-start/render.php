@@ -60,7 +60,7 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
            </div>
        </div>
    
-       <a class="cw-fresh-start__cta" href="#cw-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+       <a class="cw-fresh-start__cta cta-btn" href="#cw-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
        <div class="cw-hero__reviews">
            <div class="cw-hero__reviews-stars-wrapper">
                <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>

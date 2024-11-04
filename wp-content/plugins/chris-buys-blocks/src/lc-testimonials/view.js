@@ -1,9 +1,10 @@
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+// import gsap from "gsap";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollToPlugin);
 
-document.addEventListener("DOMContentLoaded", function () {
+function loadCallback() {
+	gsap.registerPlugin(ScrollToPlugin);
+
 	// Function to handle the carousel logic for smaller screens
 	const initializeCarousel = () => {
 		if (window.innerWidth < 1024) {
@@ -103,9 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Reinitialize if the condition is met
 		initializeCarousel();
 	});
-});
 
-document.addEventListener("DOMContentLoaded", function () {
 	// Initialize only if the viewport is desktop size
 	if (window.innerWidth >= 1024) {
 		const loadMoreButton = document.querySelector(
@@ -117,4 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
 			testimonialsSection.classList.add("lc-testimonials--expanded");
 		});
 	}
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	loadScript([
+		'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+		'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js'
+	], loadCallback)
 });
