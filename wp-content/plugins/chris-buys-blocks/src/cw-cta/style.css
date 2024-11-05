@@ -30,6 +30,10 @@
 		max-width: 1260px;
 	}
 }
+.cw-hero__reviews-stars-wrapper{
+	display: flex;
+	margin-bottom: 0.3125rem;
+}
 
 .cw-cta__content {
 	display: flex;
