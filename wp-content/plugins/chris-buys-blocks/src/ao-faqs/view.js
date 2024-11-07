@@ -1,6 +1,7 @@
-import gsap from "gsap";
+// import gsap from "gsap";
 
-document.addEventListener("DOMContentLoaded", () => {
+
+function loadCallback() {
 	const faqs = document.querySelectorAll(".ao-faqs__item");
 
 	faqs.forEach((faq) => {
@@ -96,4 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		firstIndicator.innerHTML = "-";
 		firstQuestion.style.fontWeight = "600";
 	}
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', loadCallback)
 });

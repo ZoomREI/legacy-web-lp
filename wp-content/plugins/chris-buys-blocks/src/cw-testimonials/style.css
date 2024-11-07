@@ -34,6 +34,10 @@
 	}
 }
 
+.cw-hero__reviews-stars-wrapper{
+	display: flex;
+	margin-bottom: 0.3125rem;
+}
 
 
 

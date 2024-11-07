@@ -35,6 +35,10 @@
 	}
 }
 
+.cw-hero__reviews-stars-wrapper{
+	display: flex;
+	margin-bottom: 0.3125rem;
+}
 .cw-property-management__content {
 	display: flex;
 	flex-direction: column;

@@ -5,7 +5,7 @@
 
 <div class="s2-form-small">
 	<div class="s2-form-small__start">
-		<a href="tel:<?php echo $phoneNumber; ?>" class="s2-form-small__start-phone"><span>Call Us! <br><?php echo $phoneNumber; ?></span></a>
+		<a href="tel:<?php echo $phoneNumber; ?>" class="s2-form-small__start-phone call-btn"><span>Call Us! <br><?php echo $phoneNumber; ?></span></a>
 		<div class="s2-form-small__start-title"><span>Get A Cash Offer in 7 Minutes</span></div>
 	</div>
     <div class="s2-form-small__container">
@@ -25,7 +25,7 @@
 				</div>
 				<div class="s2-form-small__subtitle">
                     <p>It'll only take 5 minutes and help us make a faster, more accurate offer. <br> The more we know, the better we can tailor our offer to you.</p>
-                    <p><strong>Prefer to talk instead?<br>Give us a call at <a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a> or send a text-whatever works best for you.</strong></p>
+                    <p><strong>Prefer to talk instead?<br>Give us a call at <a href="tel:<?php echo $phoneNumber; ?>" class="call-btn"><?php echo $phoneNumber; ?></a> or send a text-whatever works best for you.</strong></p>
 				</div>
 				<div class="s2-form__form">
 					<?php echo $content; ?>
