@@ -1,0 +1,7 @@
+sync:
+  wp-content:
+    alpha: ./wp-content
+    beta: docker://legacy_wordpress/var/www/html/wp-content
+    mode: two-way-resolved
+    ignore:
+      vcs: true

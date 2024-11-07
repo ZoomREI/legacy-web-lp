@@ -18,8 +18,8 @@ services:
     container_name: ${ENV_NAME}_wordpress
     volumes:
       - wordpress_data_${ENV_NAME}:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
       - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+      # - ./wp-content:/var/www/html/wp-content:delegated
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: ${DB_NAME}
@@ -43,7 +43,7 @@ services:
       - ./nginx/snippets:/etc/nginx/snippets
       - ./ssl:/etc/ssl
       - wordpress_data_${ENV_NAME}:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
+      # - ./wp-content:/var/www/html/wp-content:delegated
     ports:
       - "${NGINX_PORT_HTTP:-80}:80"
       - "${NGINX_PORT_HTTPS:-443}:443"
@@ -57,8 +57,8 @@ services:
     container_name: ${ENV_NAME}_wp_cli
     volumes:
       - wordpress_data_${ENV_NAME}:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
       - ./db/backup:/db_backup
+      # - ./wp-content:/var/www/html/wp-content:delegated
     entrypoint: [ "sh", "-c", "while :; do sleep 2073600; done" ]
     depends_on:
       - wordpress

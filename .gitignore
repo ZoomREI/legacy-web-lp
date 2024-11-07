@@ -32,3 +32,6 @@ ssl/*.pem
 
 # IDE specific
 .vscode/
+
+# mutagen
+mutagen.yml.lock
