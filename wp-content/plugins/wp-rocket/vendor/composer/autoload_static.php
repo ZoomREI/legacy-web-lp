@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
+class ComposerStaticInitb92765c8966e5b1389795892065d1a37
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -19,12 +19,17 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'W' => 
         array (
             'WP_Rocket\\' => 10,
+            'WPMedia\\PluginFamily\\' => 21,
             'WPMedia\\Cloudflare\\' => 19,
         ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Component\\CssSelector\\' => 30,
+        ),
+        'B' => 
+        array (
+            'BerlinDB\\' => 9,
         ),
     );
 
@@ -37,6 +42,10 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         array (
             0 => __DIR__ . '/../..' . '/inc',
         ),
+        'WPMedia\\PluginFamily\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wp-media/plugin-family/src',
+        ),
         'WPMedia\\Cloudflare\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc/Addon/Cloudflare',
@@ -48,6 +57,10 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
+        ),
+        'BerlinDB\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/berlindb/core/src',
         ),
     );
 
@@ -63,6 +76,15 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
 
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'BerlinDB\\Database\\Base' => __DIR__ . '/..' . '/berlindb/core/src/Database/Base.php',
+        'BerlinDB\\Database\\Column' => __DIR__ . '/..' . '/berlindb/core/src/Database/Column.php',
+        'BerlinDB\\Database\\Queries\\Compare' => __DIR__ . '/..' . '/berlindb/core/src/Database/Queries/Compare.php',
+        'BerlinDB\\Database\\Queries\\Date' => __DIR__ . '/..' . '/berlindb/core/src/Database/Queries/Date.php',
+        'BerlinDB\\Database\\Queries\\Meta' => __DIR__ . '/..' . '/berlindb/core/src/Database/Queries/Meta.php',
+        'BerlinDB\\Database\\Query' => __DIR__ . '/..' . '/berlindb/core/src/Database/Query.php',
+        'BerlinDB\\Database\\Row' => __DIR__ . '/..' . '/berlindb/core/src/Database/Row.php',
+        'BerlinDB\\Database\\Schema' => __DIR__ . '/..' . '/berlindb/core/src/Database/Schema.php',
+        'BerlinDB\\Database\\Table' => __DIR__ . '/..' . '/berlindb/core/src/Database/Table.php',
         'CloudFlare\\IpRewrite' => __DIR__ . '/..' . '/cloudflare/cf-ip-rewrite/src/CloudFlare/IpRewrite.php',
         'CloudFlare\\IpUtils' => __DIR__ . '/..' . '/cloudflare/cf-ip-rewrite/src/CloudFlare/IpUtils.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -125,6 +147,9 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'WPMedia\\Cloudflare\\Auth\\APIKeyFactory' => __DIR__ . '/../..' . '/inc/Addon/Cloudflare/Auth/APIKeyFactory.php',
         'WPMedia\\Cloudflare\\Auth\\AuthFactoryInterface' => __DIR__ . '/../..' . '/inc/Addon/Cloudflare/Auth/AuthFactoryInterface.php',
+        'WPMedia\\PluginFamily\\Controller\\PluginFamily' => __DIR__ . '/..' . '/wp-media/plugin-family/src/Controller/PluginFamily.php',
+        'WPMedia\\PluginFamily\\Controller\\PluginFamilyInterface' => __DIR__ . '/..' . '/wp-media/plugin-family/src/Controller/PluginFamilyInterface.php',
+        'WPMedia\\PluginFamily\\Model\\PluginFamily' => __DIR__ . '/..' . '/wp-media/plugin-family/src/Model/PluginFamily.php',
         'WP_Rocket\\Abstract_Render' => __DIR__ . '/../..' . '/inc/classes/class-abstract-render.php',
         'WP_Rocket\\Addon\\Busting\\BustingFactory' => __DIR__ . '/../..' . '/inc/deprecated/Engine/Addon/Busting/BustingFactory.php',
         'WP_Rocket\\Addon\\Busting\\FileBustingTrait' => __DIR__ . '/../..' . '/inc/deprecated/Engine/Addon/Busting/FileBustingTrait.php',
@@ -159,15 +184,15 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'WP_Rocket\\Busting\\Abstract_Busting' => __DIR__ . '/../..' . '/inc/deprecated/classes/busting/class-abstract-busting.php',
         'WP_Rocket\\Busting\\Facebook_Pickles' => __DIR__ . '/../..' . '/inc/deprecated/classes/busting/class-facebook-pickles.php',
         'WP_Rocket\\Busting\\Facebook_SDK' => __DIR__ . '/../..' . '/inc/deprecated/classes/busting/class-facebook-sdk.php',
-        'WP_Rocket\\Dependencies\\Database\\Base' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Base.php',
-        'WP_Rocket\\Dependencies\\Database\\Column' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Column.php',
-        'WP_Rocket\\Dependencies\\Database\\Queries\\Compare' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Queries/Compare.php',
-        'WP_Rocket\\Dependencies\\Database\\Queries\\Date' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Queries/Date.php',
-        'WP_Rocket\\Dependencies\\Database\\Queries\\Meta' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Queries/Meta.php',
-        'WP_Rocket\\Dependencies\\Database\\Query' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Query.php',
-        'WP_Rocket\\Dependencies\\Database\\Row' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Row.php',
-        'WP_Rocket\\Dependencies\\Database\\Schema' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Schema.php',
-        'WP_Rocket\\Dependencies\\Database\\Table' => __DIR__ . '/../..' . '/inc/Dependencies/Database/Table.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Base' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Base.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Column' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Column.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Queries\\Compare' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Queries/Compare.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Queries\\Date' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Queries/Date.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Queries\\Meta' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Queries/Meta.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Query' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Query.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Row' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Row.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Schema' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Schema.php',
+        'WP_Rocket\\Dependencies\\BerlinDB\\Database\\Table' => __DIR__ . '/../..' . '/inc/Dependencies/BerlinDB/Database/Table.php',
         'WP_Rocket\\Dependencies\\League\\Container\\Argument\\ArgumentInterface' => __DIR__ . '/../..' . '/inc/Dependencies/League/Container/Argument/ArgumentInterface.php',
         'WP_Rocket\\Dependencies\\League\\Container\\Argument\\ArgumentResolverInterface' => __DIR__ . '/../..' . '/inc/Dependencies/League/Container/Argument/ArgumentResolverInterface.php',
         'WP_Rocket\\Dependencies\\League\\Container\\Argument\\ArgumentResolverTrait' => __DIR__ . '/../..' . '/inc/Dependencies/League/Container/Argument/ArgumentResolverTrait.php',
@@ -251,6 +276,9 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'WP_Rocket\\Dependencies\\RocketLazyload\\Assets' => __DIR__ . '/../..' . '/inc/Dependencies/RocketLazyload/Assets.php',
         'WP_Rocket\\Dependencies\\RocketLazyload\\Iframe' => __DIR__ . '/../..' . '/inc/Dependencies/RocketLazyload/Iframe.php',
         'WP_Rocket\\Dependencies\\RocketLazyload\\Image' => __DIR__ . '/../..' . '/inc/Dependencies/RocketLazyload/Image.php',
+        'WP_Rocket\\Dependencies\\WPMedia\\PluginFamily\\Controller\\PluginFamily' => __DIR__ . '/../..' . '/inc/Dependencies/WPMedia/PluginFamily/Controller/PluginFamily.php',
+        'WP_Rocket\\Dependencies\\WPMedia\\PluginFamily\\Controller\\PluginFamilyInterface' => __DIR__ . '/../..' . '/inc/Dependencies/WPMedia/PluginFamily/Controller/PluginFamilyInterface.php',
+        'WP_Rocket\\Dependencies\\WPMedia\\PluginFamily\\Model\\PluginFamily' => __DIR__ . '/../..' . '/inc/Dependencies/WPMedia/PluginFamily/Model/PluginFamily.php',
         'WP_Rocket\\Engine\\Activation\\Activation' => __DIR__ . '/../..' . '/inc/Engine/Activation/Activation.php',
         'WP_Rocket\\Engine\\Activation\\ActivationInterface' => __DIR__ . '/../..' . '/inc/Engine/Activation/ActivationInterface.php',
         'WP_Rocket\\Engine\\Activation\\ServiceProvider' => __DIR__ . '/../..' . '/inc/Engine/Activation/ServiceProvider.php',
@@ -296,6 +324,7 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'WP_Rocket\\Engine\\Cache\\PurgeExpired\\PurgeExpiredCache' => __DIR__ . '/../..' . '/inc/Engine/Cache/PurgeExpired/PurgeExpiredCache.php',
         'WP_Rocket\\Engine\\Cache\\PurgeExpired\\Subscriber' => __DIR__ . '/../..' . '/inc/Engine/Cache/PurgeExpired/Subscriber.php',
         'WP_Rocket\\Engine\\Cache\\ServiceProvider' => __DIR__ . '/../..' . '/inc/Engine/Cache/ServiceProvider.php',
+        'WP_Rocket\\Engine\\Cache\\TaxonomySubscriber' => __DIR__ . '/../..' . '/inc/Engine/Cache/TaxonomySubscriber.php',
         'WP_Rocket\\Engine\\Cache\\WPCache' => __DIR__ . '/../..' . '/inc/Engine/Cache/WPCache.php',
         'WP_Rocket\\Engine\\Capabilities\\Manager' => __DIR__ . '/../..' . '/inc/Engine/Capabilities/Manager.php',
         'WP_Rocket\\Engine\\Capabilities\\ServiceProvider' => __DIR__ . '/../..' . '/inc/Engine/Capabilities/ServiceProvider.php',
@@ -552,7 +581,9 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
         'WP_Rocket\\Engine\\Saas\\Admin\\Notices' => __DIR__ . '/../..' . '/inc/Engine/Saas/Admin/Notices.php',
         'WP_Rocket\\Engine\\Saas\\Admin\\Subscriber' => __DIR__ . '/../..' . '/inc/Engine/Saas/Admin/Subscriber.php',
         'WP_Rocket\\Engine\\Saas\\ServiceProvider' => __DIR__ . '/../..' . '/inc/Engine/Saas/ServiceProvider.php',
+        'WP_Rocket\\Engine\\Support\\CommentTrait' => __DIR__ . '/../..' . '/inc/Engine/Support/CommentTrait.php',
         'WP_Rocket\\Engine\\Support\\Data' => __DIR__ . '/../..' . '/inc/Engine/Support/Data.php',
+        'WP_Rocket\\Engine\\Support\\Meta' => __DIR__ . '/../..' . '/inc/Engine/Support/Meta.php',
         'WP_Rocket\\Engine\\Support\\Rest' => __DIR__ . '/../..' . '/inc/Engine/Support/Rest.php',
         'WP_Rocket\\Engine\\Support\\ServiceProvider' => __DIR__ . '/../..' . '/inc/Engine/Support/ServiceProvider.php',
         'WP_Rocket\\Engine\\Support\\Subscriber' => __DIR__ . '/../..' . '/inc/Engine/Support/Subscriber.php',
@@ -693,10 +724,10 @@ class ComposerStaticInit43952dce62c512aaa853ca79fe4740fb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit43952dce62c512aaa853ca79fe4740fb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit43952dce62c512aaa853ca79fe4740fb::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit43952dce62c512aaa853ca79fe4740fb::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit43952dce62c512aaa853ca79fe4740fb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb92765c8966e5b1389795892065d1a37::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb92765c8966e5b1389795892065d1a37::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb92765c8966e5b1389795892065d1a37::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitb92765c8966e5b1389795892065d1a37::$classMap;
 
         }, null, ClassLoader::class);
     }
