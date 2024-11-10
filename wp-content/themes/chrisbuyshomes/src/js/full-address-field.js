@@ -24,6 +24,50 @@ function initAutocomplete() {
       }
     });
 
+    // Error Tracking Function
+    function trackError(field, message) {
+      const label = findLabel(field);
+      const labelText = label ? label.innerText.trim() : "unknown";
+      dataLayer.push({
+        event: "form_error",
+        form_id: form.id,
+        form_name: form.name,
+        error_field_label: labelText,
+        error_message: message,
+      });
+    }
+
+    // Helper function to find the corresponding label for an input
+    function findLabel(inputElement) {
+      if (inputElement.id) {
+        return document.querySelector(`label[for="${inputElement.id}"]`);
+      }
+
+      let parent = inputElement.parentElement;
+      while (parent) {
+        if (parent.tagName.toLowerCase() === "label") {
+          return parent;
+        }
+        parent = parent.parentElement;
+      }
+
+      return null;
+    }
+
+    function showError(field, message) {
+      if (!errorMessageContainers[field.name]) {
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("error-message-container");
+        field.parentNode.insertBefore(errorMessageContainer, field.nextSibling);
+        errorMessageContainers[field.name] = errorMessageContainer;
+      }
+      errorMessageContainers[field.name].textContent = message;
+      field.classList.add("invalid");
+
+      // Track the error in the dataLayer
+      trackError(field, message);
+    }
+
     const missingFields = [];
     if (!autocompleteField) missingFields.push("autocompleteField");
     if (!streetAddressField) missingFields.push("streetAddressField");
@@ -176,17 +220,6 @@ function initAutocomplete() {
       }
     });
 
-    function showError(field, message) {
-      if (!errorMessageContainers[field.name]) {
-        const errorMessageContainer = document.createElement("div");
-        errorMessageContainer.classList.add("error-message-container");
-        field.parentNode.insertBefore(errorMessageContainer, field.nextSibling);
-        errorMessageContainers[field.name] = errorMessageContainer;
-      }
-      errorMessageContainers[field.name].textContent = message;
-      field.classList.add("invalid");
-    }
-
     function clearError(field) {
       if (errorMessageContainers[field.name]) {
         errorMessageContainers[field.name].remove();
@@ -211,7 +244,10 @@ document.addEventListener("DOMContentLoaded", function () {
     typeof gform.initializeOnLoaded !== "undefined"
   ) {
     gform.initializeOnLoaded(function () {
-      loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places", initAutocomplete);
+      loadScript(
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places",
+        initAutocomplete
+      );
     });
   }
 });
