@@ -5,3 +5,11 @@ sync:
     mode: two-way-resolved
     ignore:
       vcs: true
+    permissions:
+      mode: "portable"
+    configurationBeta:
+      permissions:
+        defaultOwner: "www-data"
+        defaultGroup: "www-data"
+        defaultFileMode: 0644
+        defaultDirectoryMode: 0755
