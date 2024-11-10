@@ -516,9 +516,10 @@
 	font-weight: 700 !important;
 }
 
-.cw-hero-wrapper input {
+.cw-hero-wrapper input:not([type="submit"]) {
 	background-color: #f1f6fa !important;
 	border-color: #afbfcc !important;
+	text-align: left !important;
 }
 
 .cw-hero-wrapper .gform_fields input::placeholder {
