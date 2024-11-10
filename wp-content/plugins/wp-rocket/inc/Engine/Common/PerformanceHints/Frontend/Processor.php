@@ -53,6 +53,10 @@ class Processor {
 			return $html;
 		}
 
+		if ( is_user_logged_in() && $this->options->get( 'cache_logged_user', 0 ) ) {
+			return $html;
+		}
+
 		global $wp;
 
 		$url       = untrailingslashit( home_url( add_query_arg( [], $wp->request ) ) );
@@ -91,6 +95,10 @@ class Processor {
 	 * @return string The modified HTML content with the beacon script injected just before the closing body tag.
 	 */
 	private function inject_beacon( $html, $url, $is_mobile ): string {
+		if ( rocket_get_constant( 'DONOTROCKETOPTIMIZE' ) && empty( $_GET['wpr_imagedimensions'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return $html;
+		}
+
 		$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 		if ( ! $this->filesystem->exists( rocket_get_constant( 'WP_ROCKET_ASSETS_JS_PATH' ) . 'wpr-beacon' . $min . '.js' ) ) {

@@ -211,22 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     typeof gform.initializeOnLoaded !== "undefined"
   ) {
     gform.initializeOnLoaded(function () {
-      if (typeof google === "object" && typeof google.maps === "object") {
-        initAutocomplete();
-      } else {
-        loadScript(
-          "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places&callback=initAutocomplete"
-        );
-      }
+      loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places", initAutocomplete);
     });
   }
 });
-
-function loadScript(src) {
-  const script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = src;
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
-}

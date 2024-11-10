@@ -1,0 +1,13 @@
+# docker-compose.mac.yml
+services:
+  wordpress:
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+  nginx:
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+  wp-cli:
+    volumes:
+      - ./wp-content:/var/www/html/wp-content

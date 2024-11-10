@@ -30,7 +30,7 @@ $fox_logo_url = plugins_url('src/lc-meet-chris/assets/fox.svg', dirname(__FILE__
                 </div>
                 <h3 class="lc-meet-chris__cta-text">Ready to sell your house right now?</h3>
             </div>
-            <a class="cta-btn lc-meet-chris__cta" href="#lc-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+            <a class="lc-meet-chris__cta cta-btn" href="#lc-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
             <div class="lc-hero__reviews">
                 <div class="lc-hero__reviews-stars-wrapper">
                     <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>

@@ -1,11 +1,10 @@
+.s2-form * {
+	font-family: "Poppins", sans-serif;
+}
 .s2-form {
-	font-family: "Inter", sans-serif;
 	padding-top: 20px;
 	text-align: center;
 	background-color: white;
-}
-.s2-form h1 {
-	font-family: "Inter", sans-serif;
 }
 .s2-form__container {
 	max-width: 1062px;
@@ -40,17 +39,22 @@
 	border-block-end: none !important;
 }
 .s2-form__title-custom option,
-.gf_placeholder {
+.s2-form__form .gf_placeholder {
 	text-align: left;
 }
-.gfield option,
-.gfield textarea,
-.gfield_description {
+.s2-form__form .gfield option,
+.s2-form__form .gfield textarea,
+.s2-form__form .gfield_description {
 	text-align: left;
 }
-.ginput_container select,
-.ginput_container input,
-.ginput_container_text input {
+.s2-form__form .gfield {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.s2-form__form .ginput_container select,
+.s2-form__form .ginput_container input,
+.s2-form__form .ginput_container_text input {
 	border-color: #dddddd !important;
 	padding: 0 18px;
 	min-height: 50px !important;
@@ -59,6 +63,7 @@
 	text-align: left;
 	line-height: 50px;
 }
+.s2-form__title-custom,
 .s2-form__title-custom h3 {
 	font-size: 36px;
 	font-weight: 600;
@@ -95,13 +100,6 @@
 	background: #fff;
 	position: relative;
 	z-index: 2;
-}
-.autocomplete-field {
-	gap: 0;
-	font-size: 16px;
-	line-height: 24px;
-	font-family: "Inter", sans-serif;
-	color: black;
 }
 .s2-form__progress::before,
 .s2-form__progress::after {
@@ -156,9 +154,7 @@
 	margin: 0 auto;
 }
 .s2-form__btn,
-.gform-theme.gform-theme--framework.gform_wrapper
-	.gform_footer
-	> [type="submit"].gform_button {
+.s2-form__form .gform-theme.gform-theme--framework.gform_wrapper .gform_footer > [type="submit"].gform_button {
 	display: inline-block;
 	text-transform: uppercase;
 	text-align: center;
@@ -178,19 +174,19 @@
 	border-radius: 16px !important;
 }
 .s2-form__btn:hover,
-.gform-theme.gform-theme--framework.gform_wrapper
-	.gform_footer
-	> [type="submit"].gform_button:hover {
+.s2-form__form .gform-theme.gform-theme--framework.gform_wrapper .gform_footer > [type="submit"].gform_button:hover {
 	background: #13a243;
 }
-.s2-form .gform_wrapper .gform_heading {
+.s2-form__form .gform_wrapper .gform_heading {
 	display: none;
 }
-.s2-form .gform_wrapper label {
+.s2-form__form .gform_wrapper label {
 	font-size: 1rem !important;
+	display: block;
+	text-align: left;
 }
 
-.s2-form .gform_wrapper .gfield--input-type-address {
+.s2-form__form  .gform_wrapper .gfield--input-type-address {
 	display: none !important;
 }
 
@@ -198,16 +194,56 @@
 	margin-top: 60px;
 }
 
-.gfield option,
-.gfield textarea,
-.gfield_description {
+.s2-form__form .gfield option,
+.s2-form__form .gfield textarea,
+.s2-form__form .gfield_description {
 	border-color: #dddddd;
 }
 
-.gform-theme--foundation .gform_footer,
-.gform-theme--foundation .gform_page_footer {
+.s2-form__form .gform-theme--foundation .gform_footer,
+.s2-form__form .gform-theme--foundation .gform_page_footer {
 	justify-content: center;
+	--gf-form-footer-margin-y-start: 0;
 }
+.s2-form__form .gform_fields {
+	--gf-form-gap-y: 24px;
+}
+
+.s2-form__title-custom:not(:first-child) {
+	margin-top: 50px;
+}
+
+
+
+.s2-form__form .error-message-container {
+	background-color: #feebe7;
+	border: 1px solid #c02b0a;
+	border-radius: .25rem;
+	color: #c02b0a;
+	font-size: .75rem;
+	margin-top: .5rem;
+	padding: .5rem;
+}
+
+@media (min-width: 1024px) {
+	.s2-form__form #field_4_64,
+	.s2-form__form #field_4_65,
+	.s2-form__form #field_4_67,
+	.s2-form__form #field_4_66 {
+		margin-bottom: 30px;
+	}
+	.s2-form__form .gfield {
+		position: relative;
+	}
+	.s2-form__form .error-message-container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -3px;
+		transform: translateY(100%);
+	}
+}
+
 
 @media (max-width: 1023px) {
 	.s2-form {
@@ -234,12 +270,11 @@
 	}
 
 	.s2-form__btn,
-	.gform-theme.gform-theme--framework.gform_wrapper
-		.gform_footer
-		> [type="submit"].gform_button {
+	.s2-form__form .gform-theme.gform-theme--framework.gform_wrapper .gform_footer > [type="submit"].gform_button {
 		margin-top: 32px !important;
 	}
 
+	.s2-form__title-custom,
 	.s2-form__title-custom h3 {
 		font-size: 32px;
 	}
@@ -261,15 +296,9 @@
 	.s2-form__thanks {
 		padding: 50px 20px !important;
 	}
-	.gform-theme--foundation .gform_fields {
-		row-gap: 24px;
-	}
 
-	.gform-theme--framework {
+	.s2-form__form .gform-theme--framework {
 		text-align: left;
 	}
 
-	.s2-form__title-custom:not(:first-child) {
-		margin-top: 50px;
-	}
 }
