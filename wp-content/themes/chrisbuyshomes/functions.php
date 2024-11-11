@@ -401,14 +401,12 @@ function add_custom_query_vars($vars)
 }
 add_filter('query_vars', 'add_custom_query_vars');
 
-
 function dynamic_landing_page_rewrite_rules()
 {
     // Capture any URL that starts with /lp/ and store everything after it as custom_path
     add_rewrite_rule('^lp/(.+)/?', 'index.php?custom_path=$matches[1]', 'top');
 }
 add_action('init', 'dynamic_landing_page_rewrite_rules');
-
 
 function handle_dynamic_path_redirect()
 {
@@ -473,7 +471,16 @@ function handle_dynamic_path_redirect()
         global $wp_query;
         $wp_query->is_404 = true;
         status_header(404);
-        include(get_404_template());
+
+        // Fix: Check if get_404_template() returns a valid path before including
+        $template_404 = get_404_template();
+        if ($template_404) {
+            include($template_404);
+        } else {
+            // If no 404 template is found, output a default message or handle accordingly
+            echo '404 Not Found';
+        }
+
         exit;
     }
 }
