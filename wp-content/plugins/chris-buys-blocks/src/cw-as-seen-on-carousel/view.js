@@ -38,10 +38,8 @@ function loadCallback() {
 		logos.classList.add("animated");
 	}
 
-	// Запуск при завантаженні
 	checkScreenSize();
 
-	// Запуск при зміні розміру вікна
 	window.addEventListener("resize", checkScreenSize);
 }
 
