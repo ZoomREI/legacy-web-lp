@@ -566,5 +566,9 @@
 	background-color: #00802b !important;
 }
 
+.cw-hero-wrapper .validation_message {
+	display: none;
+}
+
 
 /*# sourceMappingURL=style-index.css.map*/

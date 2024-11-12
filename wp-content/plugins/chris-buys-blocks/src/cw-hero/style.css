@@ -553,3 +553,7 @@
 .cw-hero-wrapper input[type="submit"]:hover {
 	background-color: #00802b !important;
 }
+
+.cw-hero-wrapper .validation_message {
+	display: none;
+}
