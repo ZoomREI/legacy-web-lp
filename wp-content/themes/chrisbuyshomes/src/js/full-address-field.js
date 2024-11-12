@@ -230,6 +230,7 @@ function initAutocomplete() {
 
     function checkSubmitButton() {
       if (isAddressValid && isNameValid && isPhoneValid) {
+        window['gf_submitting_' + form.id.replace('gform_', '')] = false
         submitButton.disabled = false;
       } else {
         submitButton.disabled = true;
