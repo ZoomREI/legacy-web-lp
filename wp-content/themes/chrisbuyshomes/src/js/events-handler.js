@@ -185,7 +185,6 @@ function trackVimeoVideos(vimeoIframes) {
               event: "video_play",
               video_id: videoId,
               video_name: videoTitle,
-              page_url: window.location.href,
             });
           });
 
@@ -201,7 +200,6 @@ function trackVimeoVideos(vimeoIframes) {
                   event: "video_milestone_25",
                   video_id: videoId,
                   video_name: videoTitle,
-                  milestone: 25,
                 });
               }
 
@@ -212,7 +210,6 @@ function trackVimeoVideos(vimeoIframes) {
                   event: "video_complete",
                   video_id: videoId,
                   video_name: videoTitle,
-                  watch_duration: duration,
                 });
               }
             });
@@ -302,7 +299,6 @@ function trackYouTubeVideos(youtubeIframes) {
             event: "video_play",
             video_id: videoId,
             video_name: videoTitle,
-            page_url: window.location.href,
           });
         }
 
@@ -343,7 +339,6 @@ function trackYouTubeVideos(youtubeIframes) {
           event: "video_milestone_25",
           video_id: playerData.videoId,
           video_name: playerData.videoTitle,
-          milestone: 25,
         });
       }
 
@@ -354,7 +349,6 @@ function trackYouTubeVideos(youtubeIframes) {
           event: "video_complete",
           video_id: playerData.videoId,
           video_name: playerData.videoTitle,
-          watch_duration: duration,
         });
         // Stop checking milestones if 100% completion is reached
         clearInterval(interval);
