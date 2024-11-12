@@ -15,8 +15,8 @@
             'post_type' => 'page',
             'meta_query' => array(
                 array(
-                    'key' => 'custom_url_slugs',  // ACF field name
-                    'value' => $custom_path,
+                    'key'     => 'custom_url_slugs',  // ACF field name
+                    'value'   => $custom_path,
                     'compare' => 'LIKE'
                 )
             )
@@ -26,7 +26,6 @@
 
         if ($query->have_posts()) {
             $page = $query->posts[0];  // Get the page object
-            $current_page_id = $page->ID;  // Get the page ID
         } else {
             // Handle 404 if no page found
             global $wp_query;
@@ -36,32 +35,29 @@
             exit;
         }
     } else {
-        // Fallback: get the normal page ID if no custom path is set
-        $current_page_id = get_the_ID();
+        // Fallback: get the normal page object if no custom path is set
+        $page = get_post(); // Get the current post object
     }
+
+    // Get the market_code ACF field from the page
+    $market_code = get_field('market_code', $page->ID);
 
     // Market-specific GTM configuration
     $market_map = array(
-        'sf'  => array('page_ids' => array(26, 39, 74, 86, 123), 'gtm_id' => 'GTM-NJ6LP74', 'auth' => '7H1OBOUOmrByvYq6bdpadQ', 'preview' => 'env-189', 'favicon' => 'sf-favicon.svg'),
-        'stl' => array('page_ids' => array(9, 14, 18, 21), 'gtm_id' => 'GTM-PQTW9BQ', 'auth' => 'LrQbrrYid_3p5-g4d9c6nA', 'preview' => 'env-180', 'favicon' => 'stl-favicon.svg'),
-        'kc'  => array('page_ids' => array(27, 63, 75, 87), 'gtm_id' => 'GTM-K4Q5CKB', 'auth' => 'GxKUyRZJ3GvxiyIJXLv60A', 'preview' => 'env-125', 'favicon' => 'kc-favicon.svg'),
-        'det' => array('page_ids' => array(28, 60, 76, 88), 'gtm_id' => 'GTM-T75JTFR', 'auth' => 'txHjXG--1VMuPmPwSOTuug', 'preview' => 'env-127', 'favicon' => 'det-favicon.svg'),
-        'cle' => array('page_ids' => array(29, 61, 77, 89), 'gtm_id' => 'GTM-MFXJR55', 'auth' => 'RenHfCiizOd8kGCtWA2A_g', 'preview' => 'env-125', 'favicon' => 'cle-favicon.svg'),
-        'ind' => array('page_ids' => array(30, 62, 78, 90), 'gtm_id' => 'GTM-MPG2VCR', 'auth' => 'YaUYwQOsU62aUAiCwNaaYg', 'preview' => 'env-130', 'favicon' => 'ind-favicon.svg'),
+        'sf'  => array('gtm_id' => 'GTM-NJ6LP74', 'auth' => '7H1OBOUOmrByvYq6bdpadQ', 'preview' => 'env-189', 'favicon' => 'sf-favicon.svg'),
+        'stl' => array('gtm_id' => 'GTM-PQTW9BQ', 'auth' => 'LrQbrrYid_3p5-g4d9c6nA', 'preview' => 'env-180', 'favicon' => 'stl-favicon.svg'),
+        'kc'  => array('gtm_id' => 'GTM-K4Q5CKB', 'auth' => 'GxKUyRZJ3GvxiyIJXLv60A', 'preview' => 'env-125', 'favicon' => 'kc-favicon.svg'),
+        'det' => array('gtm_id' => 'GTM-T75JTFR', 'auth' => 'txHjXG--1VMuPmPwSOTuug', 'preview' => 'env-127', 'favicon' => 'det-favicon.svg'),
+        'cle' => array('gtm_id' => 'GTM-MFXJR55', 'auth' => 'RenHfCiizOd8kGCtWA2A_g', 'preview' => 'env-125', 'favicon' => 'cle-favicon.svg'),
+        'ind' => array('gtm_id' => 'GTM-MPG2VCR', 'auth' => 'YaUYwQOsU62aUAiCwNaaYg', 'preview' => 'env-130', 'favicon' => 'ind-favicon.svg'),
     );
 
-    // Determine the current market
-    $current_market = '';
-    foreach ($market_map as $market => $data) {
-        if (in_array($current_page_id, $data['page_ids'])) {
-            $current_market = $market;
-            $gtm_config = $data;
-            break;
-        }
-    }
-
-    // If no matching market is found, return early
-    if (empty($current_market)) {
+    // Determine the current market using the market_code ACF field
+    if ($market_code && array_key_exists($market_code, $market_map)) {
+        $current_market = $market_code;
+        $gtm_config = $market_map[$current_market];
+    } else {
+        // If no matching market is found, return early
         wp_head();
         echo '</head><body ' . body_class() . '>';
         wp_body_open();
