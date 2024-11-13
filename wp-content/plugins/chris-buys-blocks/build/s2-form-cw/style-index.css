@@ -13,7 +13,7 @@
 	max-width: 1062px;
 	margin: 0 auto;
 }
-.s2-form__step {
+.s2-form__step:not(:first-child) {
 	display: none;
 }
 .s2-form__title {
@@ -218,6 +218,7 @@
 
 
 
+.s2-form__form .gfield_validation_message,
 .s2-form__form .error-message-container {
 	background-color: #feebe7;
 	border: 1px solid #c02b0a;
@@ -229,21 +230,18 @@
 }
 
 @media (min-width: 1024px) {
-	.s2-form__form #field_4_64,
-	.s2-form__form #field_4_65,
-	.s2-form__form #field_4_67,
-	.s2-form__form #field_4_66 {
-		margin-bottom: 30px;
-	}
-	.s2-form__form .gfield {
+	.s2-form__form .gfield:not(#field_12_56):not(#field_12_55):not(#field_12_68):not(#field_12_4){
+		margin-bottom: 18px;
 		position: relative;
 	}
+	.s2-form__form .gfield_validation_message,
 	.s2-form__form .error-message-container {
 		position: absolute;
 		left: 0;
 		right: 0;
 		bottom: -3px;
 		transform: translateY(100%);
+		text-align: left;
 	}
 }
 

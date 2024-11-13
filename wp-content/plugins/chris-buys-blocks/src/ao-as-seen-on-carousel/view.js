@@ -1,29 +1,26 @@
 // import gsap from "gsap";
 
 function loadCallback() {
-	const logosWrapper = document.querySelector(
-		".ao-as-seen-on-carousel__logos-wrapper",
-	);
 	const logos = document.querySelector(".ao-as-seen-on-carousel__logos");
 
 	function cloneLogos() {
 		const logosWidth = logos.scrollWidth;
 
-		// Remove any existing clones
 		const clones = logos.querySelectorAll(".cloned");
 		clones.forEach((clone) => clone.remove());
 
-		// Clone each logo and append it to the wrapper
-		const logoElements = logos.querySelectorAll(
-			".ao-as-seen-on-carousel__logo",
-		);
-		logoElements.forEach((logo) => {
-			const clone = logo.cloneNode(true);
-			clone.classList.add("cloned"); // Add a class to differentiate the clone
-			logos.appendChild(clone);
-		});
+		const logoElements = logos.querySelectorAll(".ao-as-seen-on-carousel__logo");
+		let cloneCount = Math.ceil(window.innerWidth / logosWidth) + 1;
 
-		gsap.set(logos, { width: `${logosWidth * 2}px` });
+		for (let i = 0; i < cloneCount; i++) {
+			logoElements.forEach((logo) => {
+				const clone = logo.cloneNode(true);
+				clone.classList.add("cloned");
+				logos.appendChild(clone);
+			});
+		}
+
+		gsap.set(logos, { width: `${logos.scrollWidth}px` });
 
 		gsap.to(logos, {
 			x: `-${logosWidth}px`,
@@ -53,10 +50,10 @@ function loadCallback() {
 		}
 	}
 
-	// Run on load
-	checkScreenSize();
+	setTimeout(function () {
+		checkScreenSize();
+	}, 500)
 
-	// Re-run on window resize
 	window.addEventListener("resize", checkScreenSize);
 }
 
