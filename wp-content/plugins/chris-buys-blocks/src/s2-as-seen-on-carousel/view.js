@@ -25,7 +25,7 @@ function loadCallback() {
 
 		gsap.to(logos, {
 			x: `-${logosWidth - window.innerWidth}px`,
-			duration: 100,
+			duration: 50,
 			ease: "none",
 			repeat: -1,
 			modifiers: {
