@@ -95,13 +95,6 @@ function initAutocomplete() {
       })
       return missingFields
     }
-    function checkButton() {
-      let isValid = validateFields(false) && validateAddress(false)
-
-      if(isValid){
-        window['gf_submitting_' + form.id.replace('gform_', '')] = false
-      }
-    }
     function populateAddressFields(data = {}) {
       let hiddenFields = [
         'street',
@@ -254,7 +247,6 @@ function initAutocomplete() {
 
     autocomplete.addListener("place_changed", function () {
       validateAddress()
-      checkButton()
     });
 
     autocompleteField.addEventListener("input", function () {
@@ -269,13 +261,9 @@ function initAutocomplete() {
     });
 
     form.addEventListener("focusout", function (e) {
-      checkButton()
       if(e.target.isContactField && e.target.focusOutErrors) {
         validateField(e.target)
       }
-    });
-    form.addEventListener("input", function (e) {
-      checkButton()
     });
     form.addEventListener("input", function (e) {
       if(e.target.isContactField) {
@@ -288,15 +276,10 @@ function initAutocomplete() {
       e.stopImmediatePropagation()
       form.focusOutErrors = true
 
-      console.log('clickkkk')
       if(validateAddress() && validateFields()){
         realSubmitButton.click()
       }
     });
-
-    setTimeout(function () {
-      checkButton()
-    }, 300)
   }
 
   setInterval(function () {
