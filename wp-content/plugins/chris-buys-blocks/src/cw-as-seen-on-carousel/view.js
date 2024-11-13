@@ -23,8 +23,8 @@ function loadCallback() {
 		gsap.set(logos, { width: `${logos.scrollWidth}px` });
 
 		gsap.to(logos, {
-			x: `-${logosWidth}px`,
-			duration: 200,
+			x: `-${logosWidth - window.innerWidth}px`,
+			duration: 100,
 			ease: "none",
 			repeat: -1,
 			modifiers: {
@@ -38,7 +38,9 @@ function loadCallback() {
 		logos.classList.add("animated");
 	}
 
-	checkScreenSize();
+	setTimeout(function () {
+		checkScreenSize();
+	}, 500)
 
 	window.addEventListener("resize", checkScreenSize);
 }
