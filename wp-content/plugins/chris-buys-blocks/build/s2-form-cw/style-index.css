@@ -13,7 +13,7 @@
 	max-width: 1062px;
 	margin: 0 auto;
 }
-.s2-form__step {
+.s2-form__step:not(:first-child) {
 	display: none;
 }
 .s2-form__title {
