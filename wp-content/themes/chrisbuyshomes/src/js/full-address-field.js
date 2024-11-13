@@ -243,9 +243,8 @@ function initAutocomplete() {
       autocompleteField.isValidField = true;
       lastAddressError = null;
       autocompleteField.value = `${addressData.street}, ${addressData.city}, ${stateShort}, ${addressData.zipcode}`;
-      if(addressFromQuery){
-        window.addressFromQuery = addressFromQuery = addressData.street + addressData.city + addressData.state + addressData.zipcode
-      }
+
+      window.addressFromQuery = addressFromQuery = addressData.street + addressData.city + addressData.state + addressData.zipcode
 
       clearError(autocompleteField)
       populateAddressFields(addressData)
