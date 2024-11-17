@@ -1,119 +1,154 @@
 function initAutocomplete() {
-  const forms = document.querySelectorAll('form[id^="gform_"]');
+  // Use MutationObserver instead of setInterval
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (node) {
+        if (
+          node.nodeType === 1 && // Ensure it's an element node
+          node.matches('form[id^="gform_"]') &&
+          !node.initted
+        ) {
+          initForm(node);
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  // Initialize already existing forms
+  document.querySelectorAll('form[id^="gform_"]').forEach((form) => {
+    if (!form.initted) {
+      initForm(form);
+    }
+  });
 
   function initForm(form) {
-    form.initted = true
+    form.initted = true;
     let fieldsToCheck = {
-      'street': {
-        'el': form.querySelector(".address_line_1 input"),
-        'message': ''
+      street: {
+        el: form.querySelector(".address_line_1 input"),
+        message: "",
       },
-      'city': {
-        'el': form.querySelector(".address_city input"),
-        'message': ''
+      city: {
+        el: form.querySelector(".address_city input"),
+        message: "",
       },
-      'state': {
-        'el': form.querySelector(".address_state :is(select, input)"),
-        'message': ''
+      state: {
+        el: form.querySelector(".address_state :is(select, input)"),
+        message: "",
       },
-      'zipcode': {
-        'el': Array.from(form.querySelectorAll(".address_zip input")).pop(),
-        'message': ''
+      zipcode: {
+        el: Array.from(form.querySelectorAll(".address_zip input")).pop(),
+        message: "",
       },
-      'name': {
-        'el': form.querySelector(".dl-full-name input"),
-        'message': 'Name cannot be empty'
+      name: {
+        el: form.querySelector(".dl-full-name input"),
+        message: "Name cannot be empty",
       },
-      'phone': {
-        'el': form.querySelector(".dl-phone input"),
-        'message': 'Phone cannot be empty'
+      phone: {
+        el: form.querySelector(".dl-phone input"),
+        message: "Phone cannot be empty",
       },
     };
+
     let autocompleteField = form.querySelector(".autocomplete-field input");
     let realSubmitButton = form.querySelector('[type="submit"]');
 
-    if(!autocompleteField || !realSubmitButton){
-      console.error(`Autocomplete field not found in form:`, form);
+    if (!autocompleteField || !realSubmitButton) {
+      console.error(
+        `Autocomplete field or submit button not found in form:`,
+        form
+      );
       return;
     }
-    let windowQuery = new URLSearchParams(document.location.search)
-    let submitButton = document.createElement('input')
-    let addressFromQuery = window.addressFromQuery ? window.addressFromQuery : (windowQuery.get('propstreet') + windowQuery.get('propcity') + windowQuery.get('propstate') + windowQuery.get('propzip'))
 
-    submitButton.setAttribute('type', 'submit')
-    submitButton.setAttribute('class', realSubmitButton.getAttribute('class'))
-    submitButton.value = realSubmitButton.value
-    realSubmitButton.after(submitButton)
-    realSubmitButton.style.position = 'absolute'
-    realSubmitButton.style.left = '-99999px'
+    let windowQuery = new URLSearchParams(document.location.search);
+    let submitButton = document.createElement("input");
+    let addressFromQuery = window.addressFromQuery
+      ? window.addressFromQuery
+      : windowQuery.get("propstreet") +
+        windowQuery.get("propcity") +
+        windowQuery.get("propstate") +
+        windowQuery.get("propzip");
+
+    submitButton.setAttribute("type", "submit");
+    submitButton.setAttribute("class", realSubmitButton.getAttribute("class"));
+    submitButton.value = realSubmitButton.value;
+    realSubmitButton.after(submitButton);
+    realSubmitButton.style.position = "absolute";
+    realSubmitButton.style.left = "-99999px";
 
     function validateField(field, displayErrors = true) {
       let isValid = true;
 
       if (field.value.trim() === "") {
-        if(field.message && displayErrors) {
+        if (field.message && displayErrors) {
           showError(field, field.message);
         }
-        field.isValidField = false
-        isValid = false
+        field.isValidField = false;
+        isValid = false;
       } else {
-        if(field.message) {
+        if (field.message) {
           clearError(field);
         }
-        field.isValidField = true
+        field.isValidField = true;
       }
 
-      return isValid
+      return isValid;
     }
+
     function validateFields(displayErrors = true) {
       let isValid = true;
 
       Object.keys(fieldsToCheck).forEach(function (fieldName) {
-        let field = fieldsToCheck[fieldName]
+        let field = fieldsToCheck[fieldName];
 
-        if(!validateField(field.el, displayErrors)){
+        if (!validateField(field.el, displayErrors)) {
           isValid = false;
         }
-      })
+      });
 
-      return isValid
+      return isValid;
     }
+
     function checkFields() {
       let missingFields = [];
 
       Object.keys(fieldsToCheck).forEach(function (fieldName) {
-        let field = fieldsToCheck[fieldName]
+        let field = fieldsToCheck[fieldName];
 
-        if(!field.el){
-          missingFields.push(fieldName)
+        if (!field.el) {
+          missingFields.push(fieldName);
           return;
         }
-        if(field.message){
-          field.el.message = field.message
+        if (field.message) {
+          field.el.message = field.message;
         }
-        field.el.isContactField = true
-      })
-      return missingFields
+        field.el.isContactField = true;
+      });
+      return missingFields;
     }
+
     function populateAddressFields(data = {}) {
-      let hiddenFields = [
-        'street',
-        'city',
-        'state',
-        'zipcode'
-      ]
+      let hiddenFields = ["street", "city", "state", "zipcode"];
 
       hiddenFields.forEach(function (fieldName) {
-        fieldsToCheck[fieldName].el.value = data ? data[fieldName] || '' : ''
-      })
+        fieldsToCheck[fieldName].el.value = data ? data[fieldName] || "" : "";
+      });
     }
 
-    let missingFields = checkFields()
+    let missingFields = checkFields();
     if (missingFields.length) {
       console.error(`Required fields not found in form:`, form);
       console.error(`Missing fields:`, missingFields.join(", "));
       return;
     }
+
+    // Initialize Google Places Autocomplete
     let autocomplete = new google.maps.places.Autocomplete(autocompleteField, {
       types: ["address"],
       componentRestrictions: { country: "us" },
@@ -165,6 +200,7 @@ function initAutocomplete() {
       // Track the error in the dataLayer
       trackError(field, message);
     }
+
     function clearError(field) {
       if (errorMessageContainers[field.name]) {
         errorMessageContainers[field.name].remove();
@@ -177,10 +213,16 @@ function initAutocomplete() {
       const place = autocomplete.getPlace();
 
       if (!place || !place.geometry) {
-        if(addressFromQuery === fieldsToCheck.street.el.value + fieldsToCheck.city.el.value + fieldsToCheck.state.el.value + fieldsToCheck.zipcode.el.value){
+        if (
+          addressFromQuery ===
+          fieldsToCheck.street.el.value +
+            fieldsToCheck.city.el.value +
+            fieldsToCheck.state.el.value +
+            fieldsToCheck.zipcode.el.value
+        ) {
           autocompleteField.isValidField = true;
           lastAddressError = null;
-          clearError(autocompleteField)
+          clearError(autocompleteField);
           return true;
         } else {
           autocompleteField.isValidField = false;
@@ -192,12 +234,13 @@ function initAutocomplete() {
           return false;
         }
       }
+
       let addressData = {
-        'street': '',
-        'city': '',
-        'state': '',
-        'zipcode': ''
-      }
+        street: "",
+        city: "",
+        state: "",
+        zipcode: "",
+      };
       let stateShort = "";
       let hasStreetNumber = false;
 
@@ -216,7 +259,7 @@ function initAutocomplete() {
             addressData.city = component.long_name;
             break;
           case "administrative_area_level_1":
-            addressData.state =component.long_name;
+            addressData.state = component.long_name;
             stateShort = component.short_name;
             break;
           case "postal_code":
@@ -227,7 +270,7 @@ function initAutocomplete() {
 
       if (!hasStreetNumber) {
         autocompleteField.isValidField = false;
-        if(displayErrors) {
+        if (displayErrors) {
           lastAddressError = "Address must include a street number";
           showError(autocompleteField, lastAddressError);
         }
@@ -237,74 +280,83 @@ function initAutocomplete() {
       lastAddressError = null;
       autocompleteField.value = `${addressData.street}, ${addressData.city}, ${stateShort}, ${addressData.zipcode}`;
 
-      window.addressFromQuery = addressFromQuery = addressData.street + addressData.city + addressData.state + addressData.zipcode
+      window.addressFromQuery = addressFromQuery =
+        addressData.street +
+        addressData.city +
+        addressData.state +
+        addressData.zipcode;
 
-      clearError(autocompleteField)
-      populateAddressFields(addressData)
+      clearError(autocompleteField);
+      populateAddressFields(addressData);
 
-      return true
+      return true;
     }
 
     autocomplete.addListener("place_changed", function () {
-      validateAddress()
+      validateAddress();
     });
 
     autocompleteField.addEventListener("input", function () {
-      autocompleteField.hadInput = true
-    })
+      autocompleteField.hadInput = true;
+    });
+
     autocompleteField.addEventListener("focusout", function () {
-      if(!autocompleteField.value.trim() && autocompleteField.hadInput) {
+      if (!autocompleteField.value.trim() && autocompleteField.hadInput) {
         autocompleteField.isValidField = false;
-        lastAddressError = "Please re-enter and select your address from the dropdown";
+        lastAddressError =
+          "Please re-enter and select your address from the dropdown";
         showError(autocompleteField, lastAddressError);
       }
     });
 
     form.addEventListener("focusout", function (e) {
-      if(e.target.isContactField && e.target.focusOutErrors) {
-        validateField(e.target)
+      if (e.target.isContactField && e.target.focusOutErrors) {
+        validateField(e.target);
       }
     });
-    form.addEventListener("input", function (e) {
-      if(e.target.isContactField) {
-        e.target.focusOutErrors = true
-      }
-    });
-    submitButton.addEventListener("click", function (e) {
-      e.preventDefault()
-      e.stopPropagation()
-      e.stopImmediatePropagation()
-      form.focusOutErrors = true
 
-      if(validateAddress() && validateFields()){
-        realSubmitButton.click()
+    form.addEventListener("input", function (e) {
+      if (e.target.isContactField) {
+        e.target.focusOutErrors = true;
+      }
+    });
+
+    submitButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      form.focusOutErrors = true;
+
+      if (validateAddress() && validateFields()) {
+        realSubmitButton.click();
       }
     });
   }
-
-  setInterval(function () {
-    document.querySelectorAll('form[id^="gform_"]').forEach((form) => {
-      if(!form.initted) {
-        initForm(form)
-      }
-    });
-  }, 500)
-
-  forms.forEach((form) => {
-    initForm(form)
-  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (
-    typeof gform !== "undefined" &&
-    typeof gform.initializeOnLoaded !== "undefined"
-  ) {
+  // Function to wait for Gravity Forms to be loaded
+  function waitForGform(callback) {
+    if (
+      typeof gform !== "undefined" &&
+      typeof gform.initializeOnLoaded !== "undefined"
+    ) {
+      console.log("gform and gform.initializeOnLoaded are available.");
+      callback();
+    } else {
+      console.log("Waiting for gform to be defined...");
+      setTimeout(function () {
+        waitForGform(callback);
+      }, 100);
+    }
+  }
+
+  waitForGform(function () {
     gform.initializeOnLoaded(function () {
       loadScript(
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places",
+        "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places",
         initAutocomplete
       );
     });
-  }
+  });
 });
