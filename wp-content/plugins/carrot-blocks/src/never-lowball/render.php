@@ -22,7 +22,7 @@ $brand_area = esc_html($attributes['brandArea']);
 
 <section class="never-lowball">
     <div class="never-lowball__content">
-        <?php echo get_responsive_image($imageUrl, $brand_name.' Logo'); ?>
+        <?php echo cb_get_responsive_image($imageUrl, $brand_name.' Logo'); ?>
         
         <p>
             <strong>We buy houses in <?php echo $brand_area; ?>.</strong>

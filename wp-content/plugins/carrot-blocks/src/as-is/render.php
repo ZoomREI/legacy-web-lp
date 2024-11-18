@@ -25,15 +25,15 @@ $before_after_bg = isset($before_after_map[$selected_market]) ? 'as-is/' . $befo
 ?>
 
 <section class="full-width banner" style="
-    --before-after-bg-small: url('<?php echo get_image_url($before_after_bg, 768); ?>');
-    --before-after-bg-medium: url('<?php echo get_image_url($before_after_bg, 1024); ?>');
-    --before-after-bg-large: url('<?php echo get_image_url($before_after_bg, 2048); ?>');
+    --before-after-bg-small: url('<?php echo cb_get_image_url($before_after_bg, 768); ?>');
+    --before-after-bg-medium: url('<?php echo cb_get_image_url($before_after_bg, 1024); ?>');
+    --before-after-bg-large: url('<?php echo cb_get_image_url($before_after_bg, 2048); ?>');
     ">
     <div class="as-is">
         <h2>Sell Your <?php echo $selected_market; ?> House As-Is, True As-Is</h2>
         <div class="as-is__image">
             <?php if ($image_url) : ?>
-                <?php echo get_responsive_image($image_url, 'Logo representing '.$selected_market); ?>
+                <?php echo cb_get_responsive_image($image_url, 'Logo representing '.$selected_market); ?>
             <?php endif; ?>
         </div>
         <p>

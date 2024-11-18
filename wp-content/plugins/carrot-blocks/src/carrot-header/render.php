@@ -18,7 +18,7 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
 <header class="c-header">
     <div class="c-header__content">
         <div class="c-header__logo">
-            <?php echo get_responsive_image($logoUrl, 'Logo'); ?>
+            <?php echo cb_get_responsive_image($logoUrl, 'Logo'); ?>
         </div>
 
         <div class="main-nav__container">
