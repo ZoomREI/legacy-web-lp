@@ -335,28 +335,8 @@ function initAutocomplete() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to wait for Gravity Forms to be loaded
-  function waitForGform(callback) {
-    if (
-      typeof gform !== "undefined" &&
-      typeof gform.initializeOnLoaded !== "undefined"
-    ) {
-      console.log("gform and gform.initializeOnLoaded are available.");
-      callback();
-    } else {
-      console.log("Waiting for gform to be defined...");
-      setTimeout(function () {
-        waitForGform(callback);
-      }, 100);
-    }
-  }
-
-  waitForGform(function () {
-    gform.initializeOnLoaded(function () {
-      loadScript(
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places",
-        initAutocomplete
-      );
-    });
-  });
+  loadScript(
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI&libraries=places",
+    initAutocomplete
+  );
 });
