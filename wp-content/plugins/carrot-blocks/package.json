@@ -6,7 +6,7 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "wp-scripts build --webpack-copy-php && npm run build:css",
+		"build": "wp-scripts build --webpack-copy-php && npm run build:css && npm run process-images",
 		"process-images": "node build-scripts/process-images.js",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
