@@ -239,11 +239,7 @@
 	margin-top: 0 !important;
 	width: 100%;
 }
-.s2-form-small__form .error-message-container {
-	font-size: 0.75rem;
-	margin-top: 0.3125rem;
-	color: #d50505;
-}
+
 .s2-form-small__thanks {
 	margin: 0.875rem -1rem -2.5rem;
 }
@@ -251,32 +247,31 @@
 	color: #151111;
 }
 
+.s2-form__form .gfield_validation_message,
 .s2-form__form .error-message-container {
 	background-color: #feebe7;
 	border: 1px solid #c02b0a;
 	border-radius: .25rem;
 	color: #c02b0a;
 	font-size: .75rem;
+	line-height: .75rem;
 	margin-top: .5rem;
 	padding: .5rem;
 }
 
 @media (min-width: 1024px) {
-	.s2-form__form #field_4_64,
-	.s2-form__form #field_4_65,
-	.s2-form__form #field_4_67,
-	.s2-form__form #field_4_66 {
-		margin-bottom: 30px;
-	}
-	.s2-form__form .gfield {
+	.s2-form__form .gfield:not(.gfield_visibility_hidden){
+		margin-bottom: 18px;
 		position: relative;
 	}
+	.s2-form__form .gfield_validation_message,
 	.s2-form__form .error-message-container {
 		position: absolute;
 		left: 0;
 		right: 0;
 		bottom: -3px;
 		transform: translateY(100%);
+		text-align: left;
 	}
 }
 
@@ -555,7 +550,7 @@
 
 .s2-form__form .gfield option,
 .s2-form__form .gfield textarea,
-.s2-form__form .gfield_description {
+.s2-form__form .gfield_description:not(.gfield_validation_message) {
 	border-color: #dddddd;
 }
 
@@ -572,45 +567,6 @@
 	margin-top: 50px;
 }
 
-
-
-.s2-form__form .error-message-container {
-	background-color: #feebe7;
-	border: 1px solid #c02b0a;
-	border-radius: .25rem;
-	color: #c02b0a;
-	font-size: .75rem;
-	margin-top: .5rem;
-	padding: .5rem;
-}
-.s2-form__form .gfield_visibility_hidden {
-	position: absolute !important;
-	left: -999999px;
-	height: 0;
-}
-
-@media (min-width: 1024px) {
-	.s2-form__form #field_4_64,
-	.s2-form__form #field_4_65,
-	.s2-form__form #field_4_67,
-	.s2-form__form #field_4_66,
-	.s2-form__form #field_11_64,
-	.s2-form__form #field_11_65,
-	.s2-form__form #field_11_66,
-	.s2-form__form #field_11_67 {
-		margin-bottom: 30px;
-	}
-	.s2-form__form .gfield {
-		position: relative;
-	}
-	.s2-form__form .error-message-container {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: -3px;
-		transform: translateY(100%);
-	}
-}
 
 
 @media (max-width: 1023px) {

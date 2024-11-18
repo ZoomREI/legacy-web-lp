@@ -222,12 +222,13 @@
 	border-radius: .25rem;
 	color: #c02b0a;
 	font-size: .75rem;
+	line-height: .75rem;
 	margin-top: .5rem;
 	padding: .5rem;
 }
 
 @media (min-width: 1024px) {
-	.s2-form__form .gfield:not(#field_12_56):not(#field_12_55):not(#field_12_68):not(#field_12_4){
+	.s2-form__form .gfield:not(.gfield_visibility_hidden){
 		margin-bottom: 18px;
 		position: relative;
 	}
