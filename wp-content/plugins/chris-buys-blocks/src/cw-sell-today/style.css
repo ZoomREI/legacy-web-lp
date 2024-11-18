@@ -2,7 +2,7 @@
  
 .cw-sell-today-wrapper {
 	position: relative;
-	background-image: var(--background-image);
+	background-image: var(--background-image-small);
 	background-size: cover;
 	background-position: 0% center;
 	overflow: hidden;
@@ -11,6 +11,17 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+}
+@media (min-width: 768px) {
+	.cw-sell-today-wrapper {
+		background-image: var(--background-image-medium);
+	}
+}
+
+@media (min-width: 1024px) {
+	.cw-sell-today-wrapper {
+		background-image: var(--background-image-large);
+	}
 }
 @media (min-width: 1024px) {
 	.cw-sell-today-wrapper {
@@ -131,9 +142,8 @@ z-index: 1;
 		display: none;
 	}
 	.cw-sell-today {
-		/* padding: 2rem 7.75rem; */
 		flex-direction: row;
-		padding:6rem 1rem;
+		padding: 0;
 		max-width: 1040px;
 		background-color: transparent;
 		justify-content: flex-start;

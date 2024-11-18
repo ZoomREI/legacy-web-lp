@@ -3,13 +3,11 @@ $selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['s
 
 $selectedName = ($selectedMarket === 'The Bay Area') ? 'John' : 'Chris';
 
-$chris_url = plugins_url('src/ao-meet-chris/assets/chris-buys.webp', dirname(__FILE__, 2));
-$john_url = plugins_url('src/ao-meet-chris/assets/john-buys.webp', dirname(__FILE__, 2));
+$chris_url = 'ao-meet-chris/chris-buys';
+$john_url = 'ao-meet-chris/john-buys';
 
 $image_url = ($selectedName === 'John') ? $john_url : $chris_url;
 
-$star_icon_url = plugins_url('src/ao-meet-chris/assets/star.svg', dirname(__FILE__, 2));
-$arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(__FILE__, 2));
 ?>
 
 <section class="ao-meet-chris">
@@ -26,14 +24,24 @@ $arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(
                 </div>
                 <h3 class="ao-meet-chris__cta-text">Ready to sell your house right now?</h3>
             </div>
-            <a class="cta-btn ao-meet-chris__cta cta-btn" href="#ao-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+            <a class="cta-btn ao-meet-chris__cta cta-btn" href="#ao-form">Get Fast Cash OFFER <?php echo get_responsive_image('ao-meet-chris/cta-arrow', 'Arrow'); ?></a>
             <div class="ao-hero__reviews">
                 <div class="ao-hero__reviews-stars-wrapper">
-                    <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="ao-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                    <span class="ao-hero__star">
+                        <?php echo get_responsive_image('ao-meet-chris/star', 'star'); ?>
+                    </span>
+                    <span class="ao-hero__star">
+                        <?php echo get_responsive_image('ao-meet-chris/star', 'star'); ?>
+                    </span>
+                    <span class="ao-hero__star">
+                        <?php echo get_responsive_image('ao-meet-chris/star', 'star'); ?>
+                    </span>
+                    <span class="ao-hero__star">
+                        <?php echo get_responsive_image('ao-meet-chris/star', 'star'); ?>
+                    </span>
+                    <span class="ao-hero__star">
+                        <?php echo get_responsive_image('ao-meet-chris/star', 'star'); ?>
+                    </span>
                 </div>
                 <div class="ao-hero__reviews-text">
                     <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
@@ -41,7 +49,7 @@ $arrow_icon_url = plugins_url('src/ao-meet-chris/assets/cta-arrow.svg', dirname(
             </div>
         </div>
         <div class="ao-meet-chris__img">
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($selectedName); ?>">
+            <?php echo get_responsive_image($image_url, esc_attr($selectedName)); ?>
         </div>
     </div>
 </section>

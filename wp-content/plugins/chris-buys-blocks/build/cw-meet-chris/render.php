@@ -8,22 +8,18 @@ if ($selectedMarket === "the Bay Area") {
     $selectedName = "Chris";
 }
 
-$chris_url = plugins_url('src/cw-meet-chris/assets/meet-cris-foto.webp', dirname(__FILE__, 2));
-$john_url = plugins_url('src/cw-meet-chris/assets/meet-john-foto.webp', dirname(__FILE__, 2));
+$chris_url = 'cw-meet-chris/meet-cris-foto';
+$john_url = 'cw-meet-chris/meet-john-foto';
 
 // Choose the correct image based on the selected name
 $image_url = ($selectedName === 'Chris') ? $chris_url : $john_url;
-
-$fon_url = plugins_url('src/cw-meet-chris/assets/meet-cris-fon.webp', dirname(__FILE__, 2));
-$star_icon_url = plugins_url('src/cw-meet-chris/assets/star.svg', dirname(__FILE__, 2));
-$arrow_icon_url = plugins_url('src/cw-meet-chris/assets/cta-arrow.svg', dirname(__FILE__, 2));
 ?>
 
 <section id='about' class="cw-meet-chris">
     <div class="cw-meet-chris__media">
-        <img src="<?php echo esc_url($fon_url); ?>" alt="image fon" class="cw-meet-chris__media--fon">
+        <?php echo get_responsive_image('cw-meet-chris/meet-cris-fon', 'image fon', 'cw-meet-chris__media--fon'); ?>
         <div class="cw-meet-chris__foto">
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($selectedName); ?>" class="">
+            <?php echo get_responsive_image($image_url, esc_attr($selectedName)); ?>
         </div>
     </div>
     <div class="cw-meet-chris__container">
@@ -39,11 +35,11 @@ $arrow_icon_url = plugins_url('src/cw-meet-chris/assets/cta-arrow.svg', dirname(
                 <h3 class="cw-meet-chris__cta-text">Ready to sell your house right now?</h3>
             </div>
             <div class="cw-meet-chris__footer-block">
-                <a class="cw-meet-chris__cta cta-btn" href="#cw-form">Get my offer<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+                <a class="cw-meet-chris__cta cta-btn" href="#cw-form">Get my offer <?php echo get_responsive_image('cw-meet-chris/cta-arrow', 'Arrow'); ?></a>
                 <div class="cw-hero__reviews">
                     <div class="cw-hero__reviews-stars-wrapper">
                         <?php for ($i = 0; $i < 5; $i++): ?>
-                            <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                            <span class="cw-hero__star"><?php echo get_responsive_image('cw-meet-chris/star', 'star'); ?></span>
                         <?php endfor; ?>
                     </div>
                     <div class="cw-hero__reviews-text">

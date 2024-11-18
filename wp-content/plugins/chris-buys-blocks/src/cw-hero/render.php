@@ -8,19 +8,18 @@ if ($selectedMarket === "the Bay Area") {
 } else {
     $selectedName = "Chris";
 }
-
-$background_image_url = plugins_url('src/cw-hero/assets/life-changes-hero-background.webp', dirname(__FILE__, 2));
-$testimonee_url = plugins_url('src/cw-hero/assets/hero-testimoniels.webp', dirname(__FILE__, 2));
-$star_icon_url = plugins_url('src/cw-hero/assets/star.svg', dirname(__FILE__, 2));
-$checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname(__FILE__, 2));
 ?>
 
-<section class="cw-hero-wrapper" style="--background-image: url('<?php echo esc_url($background_image_url); ?>');">
+<section class="cw-hero-wrapper" style="
+    --background-image-small: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 768); ?>');
+    --background-image-medium: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 1024); ?>');
+    --background-image-large: url('<?php echo get_image_url('cw-hero/life-changes-hero-background', 2048); ?>');
+    ">
     <div class="cw-hero__content">
         <div class="cw-hero__reviews">
             <div class="cw-hero__reviews-stars-wrapper">
                 <?php for ($i = 0; $i < 5; $i++): ?>
-                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-hero/star', 'star'); ?></span>
                 <?php endfor; ?>
             </div>
             <div class="cw-hero__reviews-text">
@@ -33,19 +32,19 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
         </div>
         <h3 class="cw-hero__subtitle">House to sell in <?php echo esc_html($selectedMarket); ?>? <strong>Get a cash offer in just 7 minutes</strong>, and get the sale closed as soon as you want to.</h3>
         <ul class="cw-hero__bullet-points">
-            <li class="cw-hero__bullet-point"><img src="<?php echo esc_url($checkmark_icon_url); ?>" alt="checkmark">
+            <li class="cw-hero__bullet-point"><?php echo get_responsive_image('cw-hero/check-circle', 'checkmark'); ?>
                 <span><strong>No need for you to clean</strong> or make repairs</span>
             </li>
-            <li class="cw-hero__bullet-point"><img src="<?php echo esc_url($checkmark_icon_url); ?>" alt="checkmark">
+            <li class="cw-hero__bullet-point"><?php echo get_responsive_image('cw-hero/check-circle', 'checkmark'); ?>
                 <span>No realtors, <strong>fees, banks, commissions,</strong> or inspectors</span>
             </li>
-            <li class="cw-hero__bullet-point"><img src="<?php echo esc_url($checkmark_icon_url); ?>" alt="checkmark">
+            <li class="cw-hero__bullet-point"><?php echo get_responsive_image('cw-hero/check-circle', 'checkmark'); ?>
                 <span>We pay all closing costs - <strong>you pay nothing</strong></span>
             </li>
         </ul>
         <div class="cw-hero__content--footer">
             <div class="cw-fresh-start__testimonial">
-                <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_url); ?>" alt="Leigh Williams">
+                <?php echo get_responsive_image('cw-hero/hero-testimoniels', 'Leigh Williams', 'cw-fresh-start__testimonee'); ?>
                 <div class="cw-fresh-start__testimonial--content">
                     <blockquote>
                         <p>"We are very grateful for <?php echo esc_html($selectedName); ?> and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName); ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
@@ -53,7 +52,7 @@ $checkmark_icon_url = plugins_url('src/cw-hero/assets/check-circle.svg', dirname
                             <span>Liv Skyler</span>
                             <div class="cw-hero__reviews-stars-wrapper">
                                 <?php for ($i = 0; $i < 5; $i++): ?>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-hero/star', 'star'); ?></span>
                                 <?php endfor; ?>
                             </div>
                         </cite>

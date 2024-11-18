@@ -1,8 +1,6 @@
 <?php
 $first_market_mention = esc_html($attributes['firstMarketMention']);
 $second_market_mention = esc_html($attributes['secondMarketMention']);
-
-$checkmark_url = esc_url(plugins_url('src/we-can-help/assets/circled-checkmark.webp', dirname(__FILE__, 2)));
 ?>
 
 <section id="we-can-help" class="we-can-help">
@@ -27,65 +25,45 @@ $checkmark_url = esc_url(plugins_url('src/we-can-help/assets/circled-checkmark.w
     <div class="we-can-help__reasons">
         <div class="col-1">
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Inherited a House</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Tired of Being a Landlord</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Too Many Costly Repairs</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Behind on Payments</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Hoarder Houses</span>
             </div>
         </div>
         <div class="col-2">
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Need To Relocate</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark small-text" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Vacant Houses</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Elderly in Need of Assisted Living</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Sell Old House To Buy A New Place</span>
             </div>
             <div class="reason small-text">
-                <img
-                    src="<?php echo $checkmark_url ?>"
-                    alt="checkmark" />
+                <?php echo get_responsive_image('we-can-help/circled-checkmark', 'checkmark'); ?>
                 <span>Going Through a Divorce</span>
             </div>
         </div>

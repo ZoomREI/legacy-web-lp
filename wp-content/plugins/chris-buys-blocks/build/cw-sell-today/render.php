@@ -1,26 +1,11 @@
 <?php
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
-
-$chris_url = plugins_url('src/cw-sell-today/assets/last-block-foto.webp', dirname(__FILE__, 2));
-$john_url = plugins_url('src/cw-sell-today/assets/john-buys.webp', dirname(__FILE__, 2));
-
-$image_url_variable = strtolower($selectedName) . "_url";
-$image_url = $$image_url_variable;
-
-$background_image_url = plugins_url('src/cw-sell-today/assets/last-block-fon.webp', dirname(__FILE__, 2));
-$foto_image_url = plugins_url('src/cw-sell-today/assets/last-block-foto.webp', dirname(__FILE__, 2));
-$testimonee_url = plugins_url('src/cw-sell-today/assets/hero-testimoniels.webp', dirname(__FILE__, 2));
-$star_icon_url = plugins_url('src/cw-sell-today/assets/star.svg', dirname(__FILE__, 2));
-$arrow_icon_url = plugins_url('src/cw-sell-today/assets/cta-arrow.svg', dirname(__FILE__, 2));
-$checkmark_icon_url = plugins_url('src/cw-sell-today/assets/check-circle.svg', dirname(__FILE__, 2));
 ?>
 <section class="cw-sell-today-wrapper">
          <div class="cw-sell-today__media">
-            <img src="<?php echo esc_url($background_image_url); ?>" alt="" class="cw-sell-today__fon">
-            <img  src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($selectedName); ?>" class="cw-sell-today__foto">
-           
-            <!-- <img src="<?php echo esc_url($foto_image_url); ?>" alt="" class="cw-sell-today__foto"> -->
-        </div>
+             <?php echo get_responsive_image('cw-sell-today/last-block-fon', 'Leigh Williams', 'cw-sell-today__fon'); ?>
+             <?php echo get_responsive_image('cw-sell-today/'.strtolower($selectedName), esc_attr($selectedName), 'cw-sell-today__foto'); ?>
+         </div>
     <div class="cw-sell-today">
        
         <div class=" cw-hero__content">
@@ -31,14 +16,14 @@ $checkmark_icon_url = plugins_url('src/cw-sell-today/assets/check-circle.svg', d
             </div>
   
             <div class="cw-hero__footer-block">
-               <a class="cw-hero__cta cta-btn" href="#cw-form">Get my offer<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+               <a class="cw-hero__cta cta-btn" href="#cw-form">Get my offer <?php echo get_responsive_image('cw-sell-today/cta-arrow', 'Arrow'); ?></a>
                <div class="cw-hero__reviews">
                    <div class="cw-hero__reviews-stars-wrapper">
-                       <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                       <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                       <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                       <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                       <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                       <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>
+                       <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>
+                       <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>
+                       <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>
+                       <span class="cw-hero__star"><?php echo get_responsive_image('cw-sell-today/star', 'star'); ?></span>
                    </div>
                    <div class="cw-hero__reviews-text">
                        <p>Rated <strong>4.7/5</strong> Based on <strong>100+</strong> reviews</p>

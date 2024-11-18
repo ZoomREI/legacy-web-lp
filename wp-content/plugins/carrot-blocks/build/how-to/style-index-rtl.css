@@ -59,6 +59,9 @@
 .step__text__heading a {
 	color: inherit;
 }
+.step__text img{
+	width: 60px;
+}
 
 .full-width {
 	display: flex;

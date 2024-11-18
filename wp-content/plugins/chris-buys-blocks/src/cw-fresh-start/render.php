@@ -1,17 +1,5 @@
 <?php
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
-
-$testimonee_url = plugins_url('src/cw-fresh-start/assets/testimonee.webp', dirname(__FILE__, 2));
-
-$star_icon_url = plugins_url('src/cw-fresh-start/assets/star.svg', dirname(__FILE__, 2));
-$check_url = plugins_url('src/cw-fresh-start/assets/check-circle.svg', dirname(__FILE__, 2));
-
-$arrow_icon_url = plugins_url('src/cw-fresh-start/assets/cta-arrow.svg', dirname(__FILE__, 2));
-
-$emotional_url = plugins_url('src/cw-fresh-start/assets/emotial.svg', dirname(__FILE__, 2));
-$time_url = plugins_url('src/cw-fresh-start/assets/time.svg', dirname(__FILE__, 2));
-$select_url = plugins_url('src/cw-fresh-start/assets/select.svg', dirname(__FILE__, 2));
-$home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 2));
 ?>
 
 <section class="cw-fresh-start">
@@ -23,7 +11,7 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
        <div class="cw-fresh-start__reasons">
            <div class="cw-reason">
                <div class="cw-reason__icon">
-                   <img src="<?php echo esc_url($emotional_url); ?>" alt="Emotional Burden">
+                   <?php echo get_responsive_image('cw-fresh-start/emotial', 'Emotional Burden'); ?>
                </div>
                <div class="cw-reason__content">
                    <h3>Emotional Burden</h3>
@@ -32,8 +20,7 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
            </div>
            <div class="cw-reason">
                <div class="cw-reason__icon">
-                   <img src="<?php echo esc_url($home_url); ?>" alt="Maintenance Challenges">
-   
+                   <?php echo get_responsive_image('cw-fresh-start/home', 'Maintenance Challenges'); ?>
                </div>
                <div class="cw-reason__content">
                    <h3>Maintenance Challenges</h3>
@@ -42,7 +29,7 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
            </div>
            <div class="cw-reason">
                <div class="cw-reason__icon">
-                   <img src="<?php echo esc_url($select_url); ?>" alt="Financial Strain">
+                   <?php echo get_responsive_image('cw-fresh-start/select', 'Financial Strain'); ?>
                </div>
                <div class="cw-reason__content">
                    <h3>Financial Strain</h3>
@@ -51,7 +38,7 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
            </div>
            <div class="cw-reason">
                <div class="cw-reason__icon">
-                   <img src="<?php echo esc_url($time_url); ?>" alt="Time Constraints">
+                   <?php echo get_responsive_image('cw-fresh-start/time', 'Time Constraints'); ?>
                </div>
                <div class="cw-reason__content">
                    <h3>Time Constraints</h3>
@@ -60,14 +47,14 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
            </div>
        </div>
    
-       <a class="cw-fresh-start__cta cta-btn" href="#cw-form">Get Fast Cash OFFER<img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+       <a class="cw-fresh-start__cta cta-btn" href="#cw-form">Get Fast Cash OFFER <?php echo get_responsive_image('cw-fresh-start/cta-arrow', 'Arrow'); ?></a>
        <div class="cw-hero__reviews">
            <div class="cw-hero__reviews-stars-wrapper">
-               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-               <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+               <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+               <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+               <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+               <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+               <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
            </div>
            <div class="cw-hero__reviews-text">
                <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>
@@ -75,19 +62,19 @@ $home_url = plugins_url('src/cw-fresh-start/assets/home.svg', dirname(__FILE__, 
        </div>
    
        <div class="cw-fresh-start__testimonial">
-           <img class="cw-fresh-start__testimonee" src="<?php echo esc_url($testimonee_url); ?>" alt="Leigh Williams">
+           <?php echo get_responsive_image('cw-fresh-start/testimonee', 'Leigh Williams', 'cw-fresh-start__testimonee'); ?>
            <div class="cw-fresh-start__testimonial--content">
                <div class="cw-hero__reviews-stars-wrapper">
-                   <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                   <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                   <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                   <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                   <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                   <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+                   <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+                   <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+                   <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
+                   <span class="cw-hero__star"><?php echo get_responsive_image('cw-fresh-start/star', 'star'); ?></span>
                </div>
                <blockquote>
                    <p>"The <strong>customer service experience with <?php echo esc_html($selectedName) ?> was outstanding.</strong> From beginning to end, the process of selling my home was exemplary."</p>
                    <cite>
-                       Leigh Williams <img src="<?php echo esc_url($check_url); ?>" alt="checkmark"> <span class="verified">Verified customer</span></cite>
+                       Leigh Williams <?php echo get_responsive_image('cw-fresh-start/check-circle', 'checkmark'); ?> <span class="verified">Verified customer</span></cite>
                </blockquote>
            </div>
        </div>

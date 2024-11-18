@@ -1,11 +1,11 @@
 <?php
 $logos = [
-    "Kansas City" => plugins_url('src/cw-footer/assets/kc-footer-logo.svg', dirname(__FILE__, 2)),
-    "San Francisco Bay Area" => plugins_url('src/cw-footer/assets/sf-footer-logo.svg', dirname(__FILE__, 2)),
-    "St. Louis" => plugins_url('src/cw-footer/assets/stl-footer-logo.svg', dirname(__FILE__, 2)),
-    "Metro Detroit" => plugins_url('src/cw-footer/assets/det-footer-logo.svg', dirname(__FILE__, 2)),
-    "Cleveland" => plugins_url('src/cw-footer/assets/cle-footer-logo.svg', dirname(__FILE__, 2)),
-    "Indianapolis" => plugins_url('src/cw-footer/assets/ind-footer-logo.svg', dirname(__FILE__, 2)),
+    "Kansas City" => 'cw-footer/kc-footer-logo',
+    "San Francisco Bay Area" => 'cw-footer/sf-footer-logo',
+    "St. Louis" => 'cw-footer/stl-footer-logo',
+    "Metro Detroit" => 'cw-footer/det-footer-logo',
+    "Cleveland" => 'cw-footer/cle-footer-logo',
+    "Indianapolis" => 'cw-footer/ind-footer-logo',
 ];
 
 $selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis';
@@ -18,7 +18,7 @@ $brandName = $selectedMarket === "San Francisco Bay Area" ? "John Buys Bay Area 
 <footer class="cw-footer">
     <div class="cw-footer__content">
         <div class="cw-footer__logo">
-            <img src="<?php echo $logoUrl; ?>" alt="Logo" />
+            <?php echo get_responsive_image($logoUrl, 'Logo'); ?>
         </div>
         <div class="cw-footer__text">
             <p>We are a real estate solutions and investment firm that helps homeowners get rid of burdensome houses, fast. We can buy your house immediately with a fair cash offer and zero hassle</p>

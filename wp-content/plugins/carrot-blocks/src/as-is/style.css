@@ -28,11 +28,25 @@
 	padding: 1rem;
 	width: 100%;
 	height: auto;
-	background-image: var(--before-after-bg);
+	background-image: var(--before-after-bg-small);
 	background-size: cover;
 	background-position: center;
 	/* border-radius: 1rem; */
 	min-height: 18.5rem;
+}
+.as-is__image > img {
+	max-width: 16.5625rem;
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.as-is__image {
+		background-image: var(--before-after-bg-medium);
+	}
+}
+@media (min-width: 1024px) {
+	.as-is__image {
+		background-image: var(--before-after-bg-large);
+	}
 }
 
 .full-width {

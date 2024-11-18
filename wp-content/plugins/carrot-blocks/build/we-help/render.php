@@ -1,16 +1,12 @@
 <?php
 $selected_market = esc_html($attributes['selectedMarket']);
-$image_url = esc_url(plugins_url('src/we-help/assets/couple-' . strtolower(str_replace(' ', '-', $selected_market)) . '.webp', dirname(__FILE__, 2)));
-
-$satisfaction_url = esc_url(plugins_url('src/we-help/assets/satisfaction.webp', dirname(__FILE__, 2)));
+$image_url = 'we-help/couple-' . strtolower(str_replace(' ', '-', $selected_market));
 ?>
 
 <section class="we-help__container">
     <div class="we-help">
         <div class="we-help__image">
-            <img
-                src="<?php echo $image_url; ?>"
-                alt="We’re Here" />
+            <?php echo get_responsive_image($image_url, 'We’re Here'); ?>
         </div>
         <div class="we-help__text">
             <h2>We’re Here to Help!</h2>
@@ -26,9 +22,6 @@ $satisfaction_url = esc_url(plugins_url('src/we-help/assets/satisfaction.webp', 
                     but even then – we promise to guide you and advise you through the
                     best solution for YOU!
                 </p>
-                <!-- <img
-                    src="<?php echo $satisfaction_url; ?>"
-                    alt="Satisfaction Guarantee" /> -->
             </div>
         </div>
     </div>

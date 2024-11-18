@@ -1,6 +1,6 @@
 .lc-hero-wrapper {
 	position: relative;
-	background-image: var(--background-image);
+	background-image: var(--background-image-small);
 	background-size: cover;
 	background-position: 0% center;
 	overflow: hidden;
@@ -9,7 +9,17 @@
 	display: flex;
 	justify-content: center;
 }
+@media (min-width: 768px) {
+	.lc-hero-wrapper {
+		background-image: var(--background-image-medium);
+	}
+}
 
+@media (min-width: 1024px) {
+	.lc-hero-wrapper {
+		background-image: var(--background-image-large);
+	}
+}
 .lc-hero-wrapper::before {
 	content: "";
 	position: absolute;

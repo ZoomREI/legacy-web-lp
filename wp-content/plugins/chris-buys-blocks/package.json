@@ -7,6 +7,7 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php && npm run build:css",
+		"process-images": "node build-scripts/process-images.js",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
@@ -23,7 +24,8 @@
 		"postcss": "^8.4.38",
 		"postcss-cli": "^11.0.0",
 		"postcss-import": "^16.1.0",
-		"postcss-nested": "^6.0.1"
+		"postcss-nested": "^6.0.1",
+		"sharp": "^0.33.5"
 	},
 	"dependencies": {
 		"gsap": "^3.12.5"
