@@ -45,9 +45,9 @@ $background_image_url = 'carrot-hero/background-' . $selected_market;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
 
-        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
-        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
-        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
+        --background-image-small: url('<?php echo cb_get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo cb_get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo cb_get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 
@@ -61,8 +61,8 @@ $background_image_url = 'carrot-hero/background-' . $selected_market;
             Call Us! <a class="call-btn" href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
         </div>
         <div class="kc-hero__content">
-            <?php echo get_responsive_image('carrot-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'hero-headline-image'); ?>
-            <?php echo get_responsive_image('carrot-hero/bbb', 'Logo', 'bbb-logo'); ?>
+            <?php echo cb_get_responsive_image('carrot-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'hero-headline-image'); ?>
+            <?php echo cb_get_responsive_image('carrot-hero/bbb', 'Logo', 'bbb-logo'); ?>
             <h3>
                 We buy houses in any condition. No realtors, no fees, no commissions,
                 no repairs & not even cleaning.

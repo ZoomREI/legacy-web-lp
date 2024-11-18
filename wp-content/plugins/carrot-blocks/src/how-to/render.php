@@ -35,11 +35,11 @@ $sell_image_url = 'how-to/sell-' . $market_code;
         <div class="how-to__steps">
             <div class="how-to__step">
                 <div class="step__image">
-                    <?php echo get_responsive_image($about_image_url, 'Learn more about us in '.$selected_market); ?>
+                    <?php echo cb_get_responsive_image($about_image_url, 'Learn more about us in '.$selected_market); ?>
                 </div>
                 <div class="step__text">
                     <div class="step__text__heading">
-                        <?php echo get_responsive_image('how-to/1-black', 'Icon'); ?>
+                        <?php echo cb_get_responsive_image('how-to/1-black', 'Icon'); ?>
                         <span>Go to "About Us"</span>
                     </div>
                     <p class="step__text__description">
@@ -50,11 +50,11 @@ $sell_image_url = 'how-to/sell-' . $market_code;
             </div>
             <div class="how-to__step">
                 <div class="step__image">
-                    <?php echo get_responsive_image($how_image_url, 'Learn how we buy houses in '.$selected_market); ?>
+                    <?php echo cb_get_responsive_image($how_image_url, 'Learn how we buy houses in '.$selected_market); ?>
                 </div>
                 <div class="step__text">
                     <div class="step__text__heading">
-                        <?php echo get_responsive_image('how-to/2-black', 'Icon'); ?>
+                        <?php echo cb_get_responsive_image('how-to/2-black', 'Icon'); ?>
                         <span>Read the "How It Works"</span>
                     </div>
                     <p class="step__text__description">
@@ -64,11 +64,11 @@ $sell_image_url = 'how-to/sell-' . $market_code;
             </div>
             <div class="how-to__step">
                 <div class="step__image">
-                    <?php echo get_responsive_image($sell_image_url, 'Sell your house fast in '.$selected_market); ?>
+                    <?php echo cb_get_responsive_image($sell_image_url, 'Sell your house fast in '.$selected_market); ?>
                 </div>
                 <div class="step__text">
                     <div class="step__text__heading">
-                        <?php echo get_responsive_image('how-to/3-black', 'Icon'); ?>
+                        <?php echo cb_get_responsive_image('how-to/3-black', 'Icon'); ?>
                         <span>Request Your Cash Offer</span>
                     </div>
                     <p class="step__text__description">

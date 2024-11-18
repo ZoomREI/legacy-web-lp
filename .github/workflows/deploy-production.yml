@@ -34,25 +34,29 @@ jobs:
           npm install
           npm run build
 
+      # Install dependencies and build the chris-buys-blocks plugin
+      - name: Install dependencies and build chris-buys-blocks plugin
+        working-directory: ./wp-content/plugins/chris-buys-blocks
+        run: |
+          npm install
+          npm run build
+
+      # Install dependencies and build the carrot-blocks plugin
+      - name: Install dependencies and build carrot-blocks plugin
+        working-directory: ./wp-content/plugins/carrot-blocks
+        run: |
+          npm install
+          npm run build
+
+      # Sync themes and plugins to the staging server, excluding node_modules
       - name: Sync Plugins and Themes to Production
         run: |
-          rsync -avz --delete ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/themes
-          rsync -avz --delete ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/plugins
-
-      # - name: Export wp_options and wp_postmeta from Staging
-      #   run: |
-      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp db export /home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/partial_backup.sql --tables=wp_options --path=/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com"
-
-      # - name: Transfer and Import SQL Dump to Production
-      #   run: |
-      #     ssh rootadmin@${{ secrets.SERVER_IP }} "cp /home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/partial_backup.sql /home/rootadmin/public_html/legacy.chrisbuyshomes.com/partial_backup.sql"
-      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp db import /home/rootadmin/public_html/legacy.chrisbuyshomes.com/partial_backup.sql --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
-
-      # - name: Set Site Title (blogname), Site URL (siteurl), and Home URL (home) in Production
-      #   run: |
-      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update blogname 'Chris Buys Homes' --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
-      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update siteurl 'https://legacy.chrisbuyshomes.com' --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
-      #     ssh rootadmin@${{ secrets.SERVER_IP }} "wp option update home 'https://legacy.chrisbuyshomes.com' --path=/home/rootadmin/public_html/legacy.chrisbuyshomes.com"
+          rsync -avz --delete \
+            --exclude 'node_modules' \
+            ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/themes
+          rsync -avz --delete \
+            --exclude 'node_modules' \
+            ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy.chrisbuyshomes.com/wp-content/plugins
 
       - name: Run Database Migrations in Production
         run: |

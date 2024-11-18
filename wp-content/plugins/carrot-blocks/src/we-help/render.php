@@ -6,7 +6,7 @@ $image_url = 'we-help/couple-' . strtolower(str_replace(' ', '-', $selected_mark
 <section class="we-help__container">
     <div class="we-help">
         <div class="we-help__image">
-            <?php echo get_responsive_image($image_url, 'We’re Here'); ?>
+            <?php echo cb_get_responsive_image($image_url, 'We’re Here'); ?>
         </div>
         <div class="we-help__text">
             <h2>We’re Here to Help!</h2>

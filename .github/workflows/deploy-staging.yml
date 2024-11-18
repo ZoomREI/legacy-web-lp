@@ -34,10 +34,29 @@ jobs:
           npm install
           npm run build
 
+      # Install dependencies and build the chris-buys-blocks plugin
+      - name: Install dependencies and build chris-buys-blocks plugin
+        working-directory: ./wp-content/plugins/chris-buys-blocks
+        run: |
+          npm install
+          npm run build
+
+      # Install dependencies and build the carrot-blocks plugin
+      - name: Install dependencies and build carrot-blocks plugin
+        working-directory: ./wp-content/plugins/carrot-blocks
+        run: |
+          npm install
+          npm run build
+
+      # Sync themes and plugins to the staging server, excluding node_modules
       - name: Sync Plugins and Themes to Staging
         run: |
-          rsync -avz --delete ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/themes
-          rsync -avz --delete ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/plugins
+          rsync -avz --delete \
+            --exclude 'node_modules' \
+            ./wp-content/themes/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/themes
+          rsync -avz --delete \
+            --exclude 'node_modules' \
+            ./wp-content/plugins/ rootadmin@${{ secrets.SERVER_IP }}:/home/rootadmin/public_html/legacy-stg.chrisbuyshomes.com/wp-content/plugins
 
       - name: Run Database Migrations in Staging
         run: |

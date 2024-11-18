@@ -32,13 +32,13 @@ $selected_reviews = in_array($selected_market, ['San Francisco Bay Area']) ? $jo
 
 <section id="reviews" class="reviews">
     <div class="reviews__header">
-        <?php echo get_responsive_image('reviews/reviews-header', 'People Love Us, And So Will You'); ?>
+        <?php echo cb_get_responsive_image('reviews/reviews-header', 'People Love Us, And So Will You'); ?>
     </div>
     <div class="reviews__wrapper">
         <hr />
         <?php foreach ($selected_reviews as $review) : ?>
             <div class="reviews__item">
-                <?php echo get_responsive_image('reviews/'.$review, 'Review'); ?>
+                <?php echo cb_get_responsive_image('reviews/'.$review, 'Review'); ?>
             </div>
             <hr />
         <?php endforeach; ?>
