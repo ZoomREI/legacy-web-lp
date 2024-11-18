@@ -9,7 +9,7 @@ $logos = [
 ];
 
 $selected_market = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis';
-$logoUrl = isset($logos[$selected_market]) ? esc_url($logos[$selected_market]) : esc_url($logos['St. Louis']);
+$logoUrl = isset($logos[$selected_market]) ? $logos[$selected_market] : $logos['St. Louis'];
 
 $telephoneUrl = plugins_url('src/ao-header/assets/telephone.svg', dirname(__FILE__, 2));
 $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNumber']) : '';

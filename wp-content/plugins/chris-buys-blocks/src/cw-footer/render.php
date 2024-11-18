@@ -9,7 +9,7 @@ $logos = [
 ];
 
 $selectedMarket = isset($attributes['selectedMarket']) ? esc_html($attributes['selectedMarket']) : 'St. Louis';
-$logoUrl = isset($logos[$selectedMarket]) ? esc_url($logos[$selectedMarket]) : esc_url($logos['St. Louis']);
+$logoUrl = isset($logos[$selectedMarket]) ? $logos[$selectedMarket] : $logos['St. Louis'];
 
 // Automatically set the brand name based on the selected market
 $brandName = $selectedMarket === "San Francisco Bay Area" ? "John Buys Bay Area Houses" : "Chris Buys Homes";
