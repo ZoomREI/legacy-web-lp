@@ -13,13 +13,13 @@ $market_code_map = [
 
 $market_code = isset($market_code_map[$selected_market]) ? $market_code_map[$selected_market] : 'kc';
 
-$one_icon_url = esc_url(plugins_url('src/how-to/assets/1-black.svg', dirname(__FILE__, 2)));
+$one_icon_url = esc_url(plugins_url('src/.svg', dirname(__FILE__, 2)));
 $two_icon_url = esc_url(plugins_url('src/how-to/assets/2-black.svg', dirname(__FILE__, 2)));
 $three_icon_url = esc_url(plugins_url('src/how-to/assets/3-black.svg', dirname(__FILE__, 2)));
 
-$about_image_url = esc_url(plugins_url('src/how-to/assets/about-' . $market_code . '.webp', dirname(__FILE__, 2)));
-$how_image_url = esc_url(plugins_url('src/how-to/assets/how-' . $market_code . '.webp', dirname(__FILE__, 2)));
-$sell_image_url = esc_url(plugins_url('src/how-to/assets/sell-' . $market_code . '.webp', dirname(__FILE__, 2)));
+$about_image_url = 'how-to/about-' . $market_code;
+$how_image_url = 'how-to/how-' . $market_code;
+$sell_image_url = 'how-to/sell-' . $market_code;
 ?>
 
 <section class="full-width banner">
@@ -35,11 +35,11 @@ $sell_image_url = esc_url(plugins_url('src/how-to/assets/sell-' . $market_code .
         <div class="how-to__steps">
             <div class="how-to__step">
                 <div class="step__image">
-                    <img src="<?php echo $about_image_url; ?>" alt="Learn more about us in <?php echo $selected_market; ?>" />
+                    <?php echo get_responsive_image($about_image_url, 'Learn more about us in '.$selected_market); ?>
                 </div>
                 <div class="step__text">
                     <div class="step__text__heading">
-                        <img src="<?php echo $one_icon_url; ?>" alt="" />
+                        <?php echo get_responsive_image('how-to/1-black', 'Icon'); ?>
                         <span>Go to "About Us"</span>
                     </div>
                     <p class="step__text__description">
@@ -50,11 +50,11 @@ $sell_image_url = esc_url(plugins_url('src/how-to/assets/sell-' . $market_code .
             </div>
             <div class="how-to__step">
                 <div class="step__image">
-                    <img src="<?php echo $how_image_url; ?>" alt="Learn how we buy houses in <?php echo $selected_market; ?>" />
+                    <?php echo get_responsive_image($how_image_url, 'Learn how we buy houses in '.$selected_market); ?>
                 </div>
                 <div class="step__text">
                     <div class="step__text__heading">
-                        <img src="<?php echo $two_icon_url; ?>" alt="" />
+                        <?php echo get_responsive_image('how-to/2-black', 'Icon'); ?>
                         <span>Read the "How It Works"</span>
                     </div>
                     <p class="step__text__description">
@@ -64,11 +64,11 @@ $sell_image_url = esc_url(plugins_url('src/how-to/assets/sell-' . $market_code .
             </div>
             <div class="how-to__step">
                 <div class="step__image">
-                    <img src="<?php echo $sell_image_url; ?>" alt="Sell your house fast in <?php echo $selected_market; ?>" />
+                    <?php echo get_responsive_image($sell_image_url, 'Sell your house fast in '.$selected_market); ?>
                 </div>
                 <div class="step__text">
                     <div class="step__text__heading">
-                        <img src="<?php echo $three_icon_url; ?>" alt="" />
+                        <?php echo get_responsive_image('how-to/3-black', 'Icon'); ?>
                         <span>Request Your Cash Offer</span>
                     </div>
                     <p class="step__text__description">

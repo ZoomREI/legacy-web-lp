@@ -18,6 +18,9 @@
 		padding: 0;
 	}
 }
+.google-reviews>img{
+	max-width: 300px;
+}
 
 .google-reviews__review {
 	display: flex;

@@ -1,8 +1,3 @@
-<?php
-$steps1_url = plugins_url('src/ao-steps/assets/steps1.webp', dirname(__FILE__, 2));
-$steps2_url = plugins_url('src/ao-steps/assets/steps2.webp', dirname(__FILE__, 2));
-$steps3_url = plugins_url('src/ao-steps/assets/steps3.webp', dirname(__FILE__, 2));
-?>
 
 <section class="ao-steps">
     <div class="ao-steps__text">
@@ -13,7 +8,7 @@ $steps3_url = plugins_url('src/ao-steps/assets/steps3.webp', dirname(__FILE__, 2
     <div class="ao-steps__steps">
         <div class="ao-step">
             <div class="ao-step__img">
-                <img src="<?php echo esc_url($steps1_url); ?>" alt="Sharing Details">
+                <?php echo get_responsive_image('ao-steps/steps1', 'Sharing Details'); ?>
             </div>
             <div class="ao-step__content">
                 <div class="ao-step__title">
@@ -25,7 +20,7 @@ $steps3_url = plugins_url('src/ao-steps/assets/steps3.webp', dirname(__FILE__, 2
         </div>
         <div class="ao-step">
             <div class="ao-step__img">
-                <img src="<?php echo esc_url($steps2_url); ?>" alt="Get Cash Offer">
+                <?php echo get_responsive_image('ao-steps/steps2', 'Get Cash Offer'); ?>
             </div>
             <div class="ao-step__content">
                 <div class="ao-step__title">
@@ -37,7 +32,7 @@ $steps3_url = plugins_url('src/ao-steps/assets/steps3.webp', dirname(__FILE__, 2
         </div>
         <div class="ao-step">
             <div class="ao-step__img">
-                <img src="<?php echo esc_url($steps3_url); ?>" alt="Get Paid">
+                <?php echo get_responsive_image('ao-steps/steps3', 'Get Paid'); ?>
             </div>
             <div class="ao-step__content">
                 <div class="ao-step__title">

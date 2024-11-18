@@ -35,9 +35,7 @@ $phoneNumber = isset($attributes['phoneNumber']) ? esc_html($attributes['phoneNu
 
 $formId = isset($attributes['formId']) ? esc_attr($attributes['formId']) : '1';
 
-$background_image_url = esc_url(plugins_url('src/carrot-hero/assets/background-' . $selected_market . '.webp', dirname(__FILE__, 2)));
-$carrot_hero_url = esc_url(plugins_url('src/carrot-hero/assets/carrot-hero.webp', dirname(__FILE__, 2)));
-$bbb_url = esc_url(plugins_url('src/carrot-hero/assets/bbb.svg', dirname(__FILE__, 2)));
+$background_image_url = 'carrot-hero/background-' . $selected_market;
 ?>
 
 <style>
@@ -46,7 +44,10 @@ $bbb_url = esc_url(plugins_url('src/carrot-hero/assets/bbb.svg', dirname(__FILE_
         --primary-dark-color: <?php echo esc_attr($primary_dark_color); ?>;
         --dark-color: #212529;
         --hero-gradient: <?php echo esc_attr($hero_gradient); ?>;
-        --background-image: url('<?php echo $background_image_url; ?>');
+
+        --background-image-small: url('<?php echo get_image_url($background_image_url, 768); ?>');
+        --background-image-medium: url('<?php echo get_image_url($background_image_url, 1024); ?>');
+        --background-image-large: url('<?php echo get_image_url($background_image_url, 2048); ?>');
     }
 </style>
 
@@ -60,13 +61,8 @@ $bbb_url = esc_url(plugins_url('src/carrot-hero/assets/bbb.svg', dirname(__FILE_
             Call Us! <a class="call-btn" href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a>
         </div>
         <div class="kc-hero__content">
-            <img
-                class="hero-headline-image"
-                src="<?php echo esc_url($carrot_hero_url); ?>"
-                alt="Sell Your Home Fast and Easy" />
-            <img class="bbb-logo"
-                src="<?php echo esc_url($bbb_url); ?>"
-                alt="" />
+            <?php echo get_responsive_image('carrot-hero/carrot-hero', 'Sell Your Home Fast and Easy', 'hero-headline-image'); ?>
+            <?php echo get_responsive_image('carrot-hero/bbb', 'Logo', 'bbb-logo'); ?>
             <h3>
                 We buy houses in any condition. No realtors, no fees, no commissions,
                 no repairs & not even cleaning.

@@ -21,6 +21,9 @@
 	font-size: 1.5rem;
 	line-height: 1.5;
 }
+.never-lowball img{
+	max-width: 16.5625rem;
+}
 
 @media (min-width: 1024px) {
 	.never-lowball__content {

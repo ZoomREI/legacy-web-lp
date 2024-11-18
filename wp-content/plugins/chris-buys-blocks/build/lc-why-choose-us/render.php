@@ -1,16 +1,5 @@
 <?php
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
-
-$hassle_free_url = plugins_url('src/lc-why-choose-us/assets/hassle-free.webp', dirname(__FILE__, 2));
-$discreet_sale_url = plugins_url('src/lc-why-choose-us/assets/discreet-sale.webp', dirname(__FILE__, 2));
-$immediate_cash_url = plugins_url('src/lc-why-choose-us/assets/immediate-cash.webp', dirname(__FILE__, 2));
-
-$testimonee_url = plugins_url('src/lc-why-choose-us/assets/testimonee.webp', dirname(__FILE__, 2));
-
-$star_icon_url = plugins_url('src/lc-why-choose-us/assets/star.svg', dirname(__FILE__, 2));
-$arrow_icon_url = plugins_url('src/lc-why-choose-us/assets/cta-arrow.svg', dirname(__FILE__, 2));
-$check_url = plugins_url('src/lc-why-choose-us/assets/check-circle.svg', dirname(__FILE__, 2));
-$verified_check_url = plugins_url('src/lc-why-choose-us/assets/verified-check-circle.svg', dirname(__FILE__, 2));
 ?>
 
 <section class="lc-why-choose-us">
@@ -28,15 +17,15 @@ $verified_check_url = plugins_url('src/lc-why-choose-us/assets/verified-check-ci
                         <p>Sometimes in life, changes come out of the blue and a drawn-out property sale can feel overwhelming and complicated.</p>
                         <p>But with us, <strong>you won’t need to worry about paperwork, fees, extensive repairs, or volatile property chains.</strong></p>
                         <ul>
-                            <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark">
+                            <li><?php echo get_responsive_image('lc-why-choose-us/check-circle', 'checkmark'); ?>
                                 <span> Direct cash purchase &nbsp;-&nbsp;<strong>no property chains</strong></span>
                             </li>
-                            <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span><strong>No cleaning or repairs</strong>&nbsp;needed</span></li>
-                            <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span><strong>No paperwork</strong>&nbsp;or extra fees</span></li>
+                            <li><?php echo get_responsive_image('lc-why-choose-us/check-circle', 'checkmark'); ?><span><strong>No cleaning or repairs</strong>&nbsp;needed</span></li>
+                            <li><?php echo get_responsive_image('lc-why-choose-us/check-circle', 'checkmark'); ?><span><strong>No paperwork</strong>&nbsp;or extra fees</span></li>
                         </ul>
                     </div>
                     <div class="lc-why-choose-us__image">
-                        <img src="<?php echo esc_html($hassle_free_url); ?>" alt="Hassle-Free Solution">
+                        <?php echo get_responsive_image('lc-why-choose-us/hassle-free', 'Hassle-Free Solution'); ?>
                     </div>
                 </div>
                 <div class="lc-why-choose-us__item">
@@ -45,25 +34,25 @@ $verified_check_url = plugins_url('src/lc-why-choose-us/assets/verified-check-ci
                         <p>Whatever your circumstances, <strong>we’ll make selling your property as simple as possible.</strong></p>
                         <blockquote>"I was going through something very difficult at the time health-wise and needed cash. I was dreading a long sales process, but John made it easy."</blockquote>
                         <div class="lc-why-choose-us__testimonial">
-                            <img class="lc-why-choose-us__testimonee" src="<?php echo esc_url($testimonee_url); ?>" alt="Leigh Williams">
+                            <?php echo get_responsive_image('lc-why-choose-us/testimonee', 'Leigh Williams', 'lc-why-choose-us__testimonee'); ?>
                             <div class="lc-why-choose-us__testimonial--content">
                                 <div class="lc-hero__reviews-stars-wrapper">
-                                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
                                 </div>
                                 <blockquote>
                                     <p>"The <strong>customer service experience with <?php echo esc_html($selectedName) ?> was outstanding.</strong> From beginning to end, the process of selling my home was exemplary."</p>
                                     <cite>
-                                        Leigh Williams <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark"> <span class="verified">Verified customer</span></cite>
+                                        Leigh Williams <?php echo get_responsive_image('lc-why-choose-us/verified-check-circle', 'checkmark'); ?> <span class="verified">Verified customer</span></cite>
                                 </blockquote>
                             </div>
                         </div>
                     </div>
                     <div class="lc-why-choose-us__image">
-                        <img src="<?php echo esc_html($discreet_sale_url); ?>" alt="Discreet Sales">
+                        <?php echo get_responsive_image('lc-why-choose-us/discreet-sale', 'Discreet Sales'); ?>
                     </div>
                 </div>
                 <div class="lc-why-choose-us__item">
@@ -71,13 +60,13 @@ $verified_check_url = plugins_url('src/lc-why-choose-us/assets/verified-check-ci
                         <h3>You Get An Immediate Cash Offer For Your Property</h3>
                         <p>We’re experts in closing fast home sales, but we pride ourselves on making sure you’re comfortable every step of the way. With us, you get to choose when the closing occurs.</p>
                         <ul>
-                            <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"><span> Get an <strong>instant, competitive cash offer</strong></span></li>
-                            <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"> <span>We buy properties in <strong>as-is condition with no repricing</strong></span></li>
-                            <li><img src="<?php echo esc_url($check_url); ?>" alt="checkmark"> <span>We cover all typical closing costs</span></li>
+                            <li><?php echo get_responsive_image('lc-why-choose-us/check-circle', 'checkmark'); ?><span> Get an <strong>instant, competitive cash offer</strong></span></li>
+                            <li><?php echo get_responsive_image('lc-why-choose-us/check-circle', 'checkmark'); ?> <span>We buy properties in <strong>as-is condition with no repricing</strong></span></li>
+                            <li><?php echo get_responsive_image('lc-why-choose-us/check-circle', 'checkmark'); ?> <span>We cover all typical closing costs</span></li>
                         </ul>
                     </div>
                     <div class="lc-why-choose-us__image">
-                        <img src="<?php echo esc_html($immediate_cash_url); ?>" alt="Immediate Cash Offer">
+                        <?php echo get_responsive_image('lc-why-choose-us/immediate-cash', 'Immediate Cash Offer'); ?>
                     </div>
                 </div>
             </div>
@@ -88,14 +77,14 @@ $verified_check_url = plugins_url('src/lc-why-choose-us/assets/verified-check-ci
             </div>
         </div>
         <div class="lc-why-choose-us__cta">
-            <a class="lc-why-choose-us__cta--button cta-btn" href="#lc-form">GET MY CASH OFFER NOW <img src="<?php echo esc_url($arrow_icon_url); ?>" alt="Arrow"></a>
+            <a class="lc-why-choose-us__cta--button cta-btn" href="#lc-form">GET MY CASH OFFER NOW  <?php echo get_responsive_image('lc-why-choose-us/cta-arrow', 'Arrow'); ?></a>
             <div class="lc-hero__reviews">
                 <div class="lc-hero__reviews-stars-wrapper">
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                    <span class="lc-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
+                    <span class="lc-hero__star"><?php echo get_responsive_image('lc-why-choose-us/star', 'star'); ?></span>
                 </div>
                 <div class="lc-hero__reviews-text">
                     <p>Rated <strong>4.7/5</strong> | Based on <strong>100+</strong> reviews</p>

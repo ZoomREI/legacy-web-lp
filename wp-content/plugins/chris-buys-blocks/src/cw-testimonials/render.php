@@ -1,17 +1,5 @@
 <?php
 $selectedName = isset($attributes['selectedName']) ? $attributes['selectedName'] : 'Chris';
-
-$nataly_lebedev_url = plugins_url('src/cw-testimonials/assets/nataly-lebedev.webp', dirname(__FILE__, 2));
-$darren_pilch_url = plugins_url('src/cw-testimonials/assets/darren-pilch.webp', dirname(__FILE__, 2));
-$liv_skyler_url = plugins_url('src/cw-testimonials/assets/liv-skyler.webp', dirname(__FILE__, 2));
-$shaked_elnatan_url = plugins_url('src/cw-testimonials/assets/shaked-elnatan.webp', dirname(__FILE__, 2));
-$leigh_williams_url = plugins_url('src/cw-testimonials/assets/leigh-williams.webp', dirname(__FILE__, 2));
-$gregory_marks_url = plugins_url('src/cw-testimonials/assets/gregory-marks.webp', dirname(__FILE__, 2));
-
-$arrow_prev_url = plugins_url('src/cw-testimonials/assets/arrow-p.svg', dirname(__FILE__, 2));
-$arrow_next_url = plugins_url('src/cw-testimonials/assets/arrow-n.svg', dirname(__FILE__, 2));
-$star_icon_url = plugins_url('src/cw-testimonials/assets/star.svg', dirname(__FILE__, 2));
-$verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-circle.svg', dirname(__FILE__, 2));
 ?>
 
 <section id='reviews' class="cw-testimonials">
@@ -21,161 +9,6 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
     </div>
     <p class="cw-testimonials__text">Fast sales, helpful & professional, zero hassle. 96% of sellers love our service - here’s what our clients have to say.</p>
 
-    <!--   
-    <div class="cw-testimonials__testimonials">
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_1_url); ?>" alt="Nataly Lebedev">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                         Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>“In a day and age where professionals in the service industry never seem to answer their phones or return calls, <?php echo esc_html($selectedName) ?> promptly responded to my initial call, and was always available during the entire selling process."</p>
-                </blockquote>
-            </div>
-        </div>
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_2_url); ?>" alt="Darren Pilch">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                       Darren Pilch <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>"I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. He made a reasonable offer and the sale went quickly with prompt payment."</p>
-                </blockquote>
-            </div>
-        </div>
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_3_url); ?>" alt="Liv Skyler">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                     Liv Skyler<span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
-                </blockquote>
-            </div>
-        </div>
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_1_url); ?>" alt="Nataly Lebedev">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                         Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>“In a day and age where professionals in the service industry never seem to answer their phones or return calls, <?php echo esc_html($selectedName) ?> promptly responded to my initial call, and was always available during the entire selling process."</p>
-                </blockquote>
-            </div>
-        </div>
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_2_url); ?>" alt="Darren Pilch">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                       Darren Pilch <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>"I am quite happy with the easy, fast, stress-free process of dealing with <?php echo esc_html($selectedName) ?>. I needed to rehab this property that sat vacant too long. He made a reasonable offer and the sale went quickly with prompt payment."</p>
-                </blockquote>
-            </div>
-        </div>
-        <div class="cw-testimonials__testimonial">
-            <div class="cw-testimonials__person">
-                <img class="cw-testimonials__testimonee" src="<?php echo esc_url($testimonee_3_url); ?>" alt="Liv Skyler">
-                <div class="cw-testimonials__person--about">
-                     <div class="cw-hero__reviews-stars-wrapper">
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                         <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                     </div>
-                     <cite>
-                     Liv Skyler<span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
-                     </cite>
-                </div>
-            </div>
-            <div class="cw-testimonials__testimonial--content">
-                <blockquote>
-                    <p>"We are very grateful for Chris and his team's work. They were always professional and reliable, <?php echo esc_html($selectedName) ?> answered my first call right away and kept me updated throughout the whole selling process.”</p>
-                </blockquote>
-            </div>
-        </div>
-
-    </div>
-    <div class="carousel-nav">
-        <div class="carousel-btn-next">
-           <img class="" src="<?php echo esc_url($arrow_next_url); ?>" alt="arrow">
-        </div>
-        <div class="carousel-btn-prev">
-            <img class="" src="<?php echo esc_url($arrow_prev_url); ?>" alt="arrow">
-        </div>
-    </div>
-    <div class="cw-carousel-dots">
-            <span class="cw-dot"></span>
-            <span class="cw-dot"></span>
-            <span class="cw-dot"></span>
-            <span class="cw-dot"></span>
-            <span class="cw-dot"></span>
-            <span class="cw-dot"></span>
-     </div> -->
-
-
-    <!-- ----------------------------------------------------------------------------- -->
     <div class='_carousel-wrapper'>
 
         <div class="_carousel-container">
@@ -183,17 +16,17 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 <div class="_carousel-slide">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
-                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($nataly_lebedev_url); ?>" alt="Nataly Lebedev">
+                            <?php echo get_responsive_image('cw-testimonials/nataly-lebedev', 'Icon', 'cw-testimonials__testimonee'); ?>
                             <div class="cw-testimonials__person--about">
                                 <div class="cw-hero__reviews-stars-wrapper">
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
                                 </div>
                                 <cite>
-                                    Nataly Lebedev <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                    Nataly Lebedev <span class="verified"> <?php echo get_responsive_image('cw-testimonials/verified-check-circle', 'checkmark'); ?>Verified customer</span>
                                 </cite>
                             </div>
                         </div>
@@ -207,17 +40,17 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 <div class="_carousel-slide ">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
-                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($liv_skyler_url); ?>" alt="Liv Skyler">
+                            <?php echo get_responsive_image('cw-testimonials/liv-skyler', 'Liv Skyler', 'cw-testimonials__testimonee'); ?>
                             <div class="cw-testimonials__person--about">
                                 <div class="cw-hero__reviews-stars-wrapper">
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
                                 </div>
                                 <cite>
-                                    Liv Skyler <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                    Liv Skyler <span class="verified"> <?php echo get_responsive_image('cw-testimonials/verified-check-circle', 'checkmark'); ?>Verified customer</span>
                                 </cite>
                             </div>
                         </div>
@@ -231,17 +64,17 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 <div class="_carousel-slide">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
-                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($darren_pilch_url); ?>" alt="Darren Pilch">
+                            <?php echo get_responsive_image('cw-testimonials/darren-pilch', 'Darren Pilch', 'cw-testimonials__testimonee'); ?>
                             <div class="cw-testimonials__person--about">
                                 <div class="cw-hero__reviews-stars-wrapper">
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
                                 </div>
                                 <cite>
-                                    Darren Pilch<span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                    Darren Pilch<span class="verified"> <?php echo get_responsive_image('cw-testimonials/verified-check-circle', 'checkmark'); ?>Verified customer</span>
                                 </cite>
                             </div>
                         </div>
@@ -255,17 +88,17 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 <div class="_carousel-slide">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
-                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($shaked_elnatan_url); ?>" alt="Shaked Elnatan">
+                            <?php echo get_responsive_image('cw-testimonials/shaked-elnatan', 'Shaked Elnatan', 'cw-testimonials__testimonee'); ?>
                             <div class="cw-testimonials__person--about">
                                 <div class="cw-hero__reviews-stars-wrapper">
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
                                 </div>
                                 <cite>
-                                    Shaked Elnatan <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                    Shaked Elnatan <span class="verified"> <?php echo get_responsive_image('cw-testimonials/verified-check-circle', 'checkmark'); ?>Verified customer</span>
                                 </cite>
                             </div>
                         </div>
@@ -279,17 +112,17 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 <div class="_carousel-slide">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
-                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($leigh_williams_url); ?>" alt="Leigh Williams">
+                            <?php echo get_responsive_image('cw-testimonials/leigh-williams', 'Leigh Williams', 'cw-testimonials__testimonee'); ?>
                             <div class="cw-testimonials__person--about">
                                 <div class="cw-hero__reviews-stars-wrapper">
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
                                 </div>
                                 <cite>
-                                    Leigh Williams<span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                    Leigh Williams<span class="verified"> <?php echo get_responsive_image('cw-testimonials/verified-check-circle', 'checkmark'); ?>Verified customer</span>
                                 </cite>
                             </div>
                         </div>
@@ -303,17 +136,17 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
                 <div class="_carousel-slide ">
                     <div class="cw-testimonials__testimonial">
                         <div class="cw-testimonials__person">
-                            <img class="cw-testimonials__testimonee" src="<?php echo esc_url($gregory_marks_url); ?>" alt="Gregory Marks">
+                            <?php echo get_responsive_image('cw-testimonials/gregory-marks', 'Gregory Marks', 'cw-testimonials__testimonee'); ?>
                             <div class="cw-testimonials__person--about">
                                 <div class="cw-hero__reviews-stars-wrapper">
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
-                                    <span class="cw-hero__star"><img src="<?php echo esc_url($star_icon_url); ?>" alt="star"></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
+                                    <span class="cw-hero__star"><?php echo get_responsive_image('cw-testimonials/star', 'star'); ?></span>
                                 </div>
                                 <cite>
-                                    Gregory Marks <span class="verified"> <img src="<?php echo esc_url($verified_check_url); ?>" alt="checkmark">Verified customer</span>
+                                    Gregory Marks <span class="verified"> <?php echo get_responsive_image('cw-testimonials/verified-check-circle', 'checkmark'); ?>Verified customer</span>
                                 </cite>
                             </div>
                         </div>
@@ -330,10 +163,10 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
 
         <div class="_carousel-controls">
             <button id="prevButton">
-                <img class="" src="<?php echo esc_url($arrow_prev_url); ?>" alt="arrow">
+                <?php echo get_responsive_image('cw-testimonials/arrow-p', 'arrow'); ?>
             </button>
             <button id="nextButton">
-                <img class="" src="<?php echo esc_url($arrow_next_url); ?>" alt="arrow">
+                <?php echo get_responsive_image('cw-testimonials/arrow-n', 'arrow'); ?>
             </button>
         </div>
 
@@ -347,14 +180,5 @@ $verified_check_url = plugins_url('src/cw-testimonials/assets/verified-check-cir
         </div>
 
     </div>
-    <!-- <div class="cw-dots"> -->
-    <!-- ----------------------------------------------------------------------------- -->
-
-    <!-- ---------------------------------------------------------0 -->
-    <!-- ---------------------------------------------------------0 -->
-    <!-- ---------------------------------------------------------0 -->
-    <!-- ---------------------------------------------------------0 -->
-
-    <!-- ---------------------------------------------------------0 -->
-    <!-- ---------------------------------------------------------0 -->
+   
 </section>

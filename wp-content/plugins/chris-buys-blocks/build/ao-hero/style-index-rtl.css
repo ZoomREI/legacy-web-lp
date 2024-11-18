@@ -3,7 +3,7 @@
   \***************************************************************************************************************************************************************************/
 .ao-hero-wrapper {
 	position: relative;
-	background-image: var(--background-image);
+	background-image: var(--background-image-small);
 	background-size: cover;
 	background-position: 100% center;
 	overflow: hidden;
@@ -11,6 +11,17 @@
 	z-index: 0;
 	display: flex;
 	justify-content: center;
+}
+@media (min-width: 768px) {
+	.ao-hero-wrapper {
+		background-image: var(--background-image-medium);
+	}
+}
+
+@media (min-width: 1024px) {
+	.ao-hero-wrapper {
+		background-image: var(--background-image-large);
+	}
 }
 
 .ao-hero-wrapper::before {

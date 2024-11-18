@@ -1,9 +1,3 @@
-<?php
-$step_arrow_url = plugins_url('src/cw-steps/assets/step-arrow.svg', dirname(__FILE__, 2));
-$steps1_url = plugins_url('src/cw-steps/assets/st_1.svg', dirname(__FILE__, 2));
-$steps2_url = plugins_url('src/cw-steps/assets/st_2.svg', dirname(__FILE__, 2));
-$steps3_url = plugins_url('src/cw-steps/assets/st_3.svg', dirname(__FILE__, 2));
-?>
 
 <section class="cw-steps">
     <div class="cw-steps__text">
@@ -14,12 +8,12 @@ $steps3_url = plugins_url('src/cw-steps/assets/st_3.svg', dirname(__FILE__, 2));
     <div class="cw-steps__steps">
         <div class="cw-step">
             <div class="cw-step__img">
-                <img src="<?php echo esc_url($steps1_url); ?>" alt="Sharing Details">
+                <?php echo get_responsive_image('cw-steps/st_1', 'Sharing Details'); ?>
             </div>
             <div class="cw-step__content">
                 <div class="cw-step__title">
                     <div class="cw-step__number">1
-                        <img src="<?php echo esc_url($step_arrow_url); ?>" alt="" class="cw-step__number--arrow">
+                        <?php echo get_responsive_image('cw-steps/step-arrow', 'Icon', 'cw-step__number--arrow'); ?>
                     </div>
                     <h3>Get An Immediate Cash Offer</h3>
                 </div>
@@ -28,12 +22,12 @@ $steps3_url = plugins_url('src/cw-steps/assets/st_3.svg', dirname(__FILE__, 2));
         </div>
         <div class="cw-step">
             <div class="cw-step__img">
-                <img src="<?php echo esc_url($steps2_url); ?>" alt="Get Cash Offer">
+                <?php echo get_responsive_image('cw-steps/st_2', 'Get Cash Offer'); ?>
             </div>
             <div class="cw-step__content">
                 <div class="cw-step__title">
                     <div class="cw-step__number">2
-                       <img src="<?php echo esc_url($step_arrow_url); ?>" alt="" class="cw-step__number--arrow">
+                        <?php echo get_responsive_image('cw-steps/step-arrow', 'Icon', 'cw-step__number--arrow'); ?>
                     </div>
                     <h3>Let Us Do The Hard Work</h3>
                 </div>
@@ -42,7 +36,7 @@ $steps3_url = plugins_url('src/cw-steps/assets/st_3.svg', dirname(__FILE__, 2));
         </div>
         <div class="cw-step">
             <div class="cw-step__img">
-                <img src="<?php echo esc_url($steps3_url); ?>" alt="Get Paid">
+                <?php echo get_responsive_image('cw-steps/st_3', 'Get Paid'); ?>
             </div>
             <div class="cw-step__content">
                 <div class="cw-step__title">

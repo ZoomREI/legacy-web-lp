@@ -106,4 +106,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('doctor-homes-inline');
 }, 0);
 
-// add_filter('should_load_separate_core_block_assets', '__return_true');
+add_filter('should_load_separate_core_block_assets', '__return_true');
+
+include_once plugin_dir_path(__FILE__) . 'includes/image-helper.php';
