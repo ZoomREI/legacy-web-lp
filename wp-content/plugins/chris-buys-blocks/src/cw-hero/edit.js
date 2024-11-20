@@ -10,8 +10,6 @@ import {
 } from "@wordpress/components";
 import "./editor.css";
 
-const ALLOWED_BLOCKS = ["gravityforms/form"];
-
 // The edit function, which renders the block in the Gutenberg editor
 export default function Edit({ attributes, setAttributes }) {
 	const { selectedMarket } = attributes;
@@ -43,7 +41,7 @@ export default function Edit({ attributes, setAttributes }) {
 			{/* Block Content */}
 			<div>
 				<h3>{__("CW Hero Placeholder", "chris-buys-blocks")}</h3>
-				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+				<InnerBlocks />
 			</div>
 		</div>
 	);

@@ -28,7 +28,17 @@ if ($selectedMarket === "the Bay Area") {
         </div>
         <h1 class="cw-hero__title">We Buy ANY House In <span>ANY Condition, On YOUR Timeline</span></h1>
         <div id="cw-form" class="cw-hero__form">
+            <div class="cw-hero__form-title">
+                <span>Get Your Offer In Record Time</span>
+            </div>
+            <div class="cw-hero__form-subtitle">
+                <span>Fill out the form. We’ll contact you ASAP.</span>
+            </div>
             <?php echo $content; ?>
+
+            <div class="lead-form__disclaimer">
+                <p>Your Information is safe & secure</p>
+            </div>
         </div>
         <h3 class="cw-hero__subtitle">House to sell in <?php echo esc_html($selectedMarket); ?>? <strong>Get a cash offer in just 7 minutes</strong>, and get the sale closed as soon as you want to.</h3>
         <ul class="cw-hero__bullet-points">

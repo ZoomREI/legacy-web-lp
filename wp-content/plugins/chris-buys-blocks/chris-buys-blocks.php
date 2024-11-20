@@ -79,6 +79,8 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		's2-form-cw',
 		's2-form-nhp',
 		's2-as-seen-on-carousel',
+  
+		'lead-form',
 	];
 
 	foreach ($blocks as $block) {
