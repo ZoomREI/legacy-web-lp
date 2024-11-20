@@ -79,6 +79,38 @@ async function copySVGs(srcDir, destDir) {
 	}
 }
 
+async function copyGIFs(srcDir, destDir) {
+	try {
+		const files = await fs.readdir(srcDir);
+		const gifFiles = files.filter((file) => file.endsWith(".gif"));
+
+		await Promise.all(
+			gifFiles.map(async (gif) => {
+				const srcFilePath = path.join(srcDir, gif);
+				const destFilePath = path.join(destDir, gif);
+				const lastModified = (await fs.stat(srcFilePath)).mtimeMs;
+				const relativeGifPath = path.relative(__dirname, srcFilePath);
+
+				// Skip copying if file is up-to-date
+				if (
+					manifest[relativeGifPath] &&
+					manifest[relativeGifPath].lastModified === lastModified
+				) {
+					console.log(`Skipped copying ${gif}, already up-to-date.`);
+					return;
+				}
+
+				// Copy file and update manifest
+				await fs.copyFile(srcFilePath, destFilePath);
+				manifest[relativeGifPath] = { lastModified };
+				console.log(`Copied ${gif} to ${destDir}`);
+			}),
+		);
+	} catch (error) {
+		console.error("Error copying GIFs:", error);
+	}
+}
+
 async function renameFileIfNeeded(filePath) {
 	const dir = path.dirname(filePath);
 	const originalName = path.basename(filePath);
@@ -120,6 +152,7 @@ async function processImages() {
 
 			await fs.mkdir(outputDir, { recursive: true });
 			await copySVGs(inputDir, outputDir);
+			await copyGIFs(inputDir, outputDir);
 
 			const images = await fs.readdir(inputDir);
 
