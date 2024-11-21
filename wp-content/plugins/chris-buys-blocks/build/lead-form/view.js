@@ -2,6 +2,83 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/lead-form/modules/form_helpers.js":
+/*!***********************************************!*\
+  !*** ./src/lead-form/modules/form_helpers.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getRedirectParams: () => (/* binding */ getRedirectParams),
+/* harmony export */   populateUtms: () => (/* binding */ populateUtms)
+/* harmony export */ });
+function populateUtms(form, formData) {
+  let utms = {
+    'utm_source': 'utm',
+    'utm_term': 'utm',
+    'utm_campaign': 'utm',
+    'utm_medium': 'utm',
+    'utm_content': 'utm',
+    'device': 'utm',
+    'gclid': 'utm',
+    'fbclid': 'utm',
+    'msclkid': 'utm',
+    'page_url': () => {
+      return document.location.href;
+    },
+    'lead_source': () => {
+      return localStorage.getItem('Initial_Lead_Source') || '';
+    },
+    'timestamp': () => {
+      return new Date().getTime();
+    },
+    'client_id': () => {
+      return '??';
+    },
+    'session_id': () => {
+      return '??';
+    },
+    'form_name': form.name
+  };
+  let getParams = new URLSearchParams(window.location.search);
+  Object.keys(utms).forEach(function (utmName) {
+    if (utms[utmName] === 'get') {
+      if (getParams.get(utmName)) {
+        formData.set(utmName, getParams.get(utmName));
+      }
+    } else if (utms[utmName] === 'utm') {
+      let utmFromQuery = getParams.get(utmName);
+      let utmFromSession = sessionStorage.getItem(formConfig.storagePrefix + utmName);
+      if (utmFromQuery) {
+        formData.set(utmName, utmFromQuery);
+      } else if (utmFromSession) {
+        formData.set(utmName, utmFromSession);
+      }
+    } else if (typeof utms[utmName] === 'function') {
+      formData.set(utmName, utms[utmName]());
+    } else {
+      formData.set(utmName, utms[utmName]);
+    }
+  });
+  return formData;
+}
+function getRedirectParams(formData, queries) {
+  let query = {};
+  queries.forEach(function (fieldData) {
+    let inputName = fieldData.field;
+    let propName = fieldData.key;
+    if (inputName === 'country') {
+      query[propName] = 'United States';
+    } else if (formData.get(inputName)) {
+      query[propName] = formData.get(inputName);
+    }
+  });
+  return new URLSearchParams(query).toString();
+}
+
+/***/ }),
+
 /***/ "./src/lead-form/modules/helpers.js":
 /*!******************************************!*\
   !*** ./src/lead-form/modules/helpers.js ***!
@@ -13,6 +90,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   dynamicListener: () => (/* binding */ dynamicListener),
 /* harmony export */   fadeIn: () => (/* binding */ fadeIn),
 /* harmony export */   fadeOut: () => (/* binding */ fadeOut),
+/* harmony export */   sessionStorageUTM: () => (/* binding */ sessionStorageUTM),
 /* harmony export */   slideDown: () => (/* binding */ slideDown),
 /* harmony export */   slideUp: () => (/* binding */ slideUp),
 /* harmony export */   trigger: () => (/* binding */ trigger)
@@ -181,6 +259,48 @@ function fadeIn(el, timeout, display = 'block', afterFunc = false) {
 }
 function fadeOut(el, timeout, afterFunc = false) {
   animateOpacity(el, timeout, '', 0, afterFunc);
+}
+function sessionStorageUTM() {
+  const paramsMap = {
+    utm_source: "source",
+    utm_campaign: "campaign",
+    utm_term: "keyword",
+    utm_medium: "medium",
+    utm_content: "content",
+    device: "device",
+    gclid: "gclid",
+    fbclid: "fbclid",
+    msclkid: "msclkid"
+  };
+  function getQueryParams() {
+    const query = window.location.search.substring(1);
+    const vars = query.split("&");
+    const queryParams = {};
+    for (let i = 0; i < vars.length; i++) {
+      const pair = vars[i].split("=");
+      if (pair.length > 0) {
+        const paramName = decodeURIComponent(pair[0]);
+        const paramValue = decodeURIComponent(pair[1] || "");
+        if (paramsMap.hasOwnProperty(paramName)) {
+          const standardizedKey = paramsMap[paramName];
+          if (!queryParams.hasOwnProperty(standardizedKey)) {
+            queryParams[standardizedKey] = paramValue;
+          }
+        }
+      }
+    }
+    return queryParams;
+  }
+  function storeParams(params) {
+    for (const key in params) {
+      if (params.hasOwnProperty(key)) {
+        sessionStorage.setItem(formConfig.storagePrefix + key, params[key]);
+      }
+    }
+  }
+  if (Object.keys(getQueryParams()).length > 0) {
+    storeParams(getQueryParams());
+  }
 }
 
 /***/ }),
@@ -1263,9 +1383,11 @@ var __webpack_exports__ = {};
   \*******************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/helpers */ "./src/lead-form/modules/helpers.js");
-/* harmony import */ var _modules_validate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/validate */ "./src/lead-form/modules/validate.js");
-/* harmony import */ var _modules_telInputMask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/telInputMask */ "./src/lead-form/modules/telInputMask.js");
-/* harmony import */ var _modules_inputSelect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/inputSelect */ "./src/lead-form/modules/inputSelect.js");
+/* harmony import */ var _modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form_helpers */ "./src/lead-form/modules/form_helpers.js");
+/* harmony import */ var _modules_validate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/validate */ "./src/lead-form/modules/validate.js");
+/* harmony import */ var _modules_telInputMask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/telInputMask */ "./src/lead-form/modules/telInputMask.js");
+/* harmony import */ var _modules_inputSelect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/inputSelect */ "./src/lead-form/modules/inputSelect.js");
+
 
 
 
@@ -1278,73 +1400,9 @@ function leadFormCallback() {
   let leadFormConfig = JSON.parse(document.getElementById('form-config-' + leadForm.id).innerHTML);
   let phoneInput = leadForm.querySelector('[data-validation="tel-mask"]');
   leadForm.classList.add('is-initialized');
-  console.log(JSON.stringify(leadFormConfig));
-  function populateUtms(formData) {
-    let utms = {
-      'utm_source': 'utm',
-      'utm_term': 'utm',
-      'utm_campaign': 'utm',
-      'utm_medium': 'utm',
-      'utm_content': 'utm',
-      'device': 'utm',
-      'gclid': 'utm',
-      'fbclid': 'utm',
-      'msclkid': 'utm',
-      'page_url': () => {
-        return document.location.href;
-      },
-      'lead_source': () => {
-        return localStorage.getItem('Initial_Lead_Source') || '';
-      },
-      'timestamp': () => {
-        return new Date().getTime();
-      },
-      'client_id': () => {
-        return '??';
-      },
-      'session_id': () => {
-        return '??';
-      },
-      'form_name': leadForm.name
-    };
-    let getParams = new URLSearchParams(window.location.search);
-    Object.keys(utms).forEach(function (utmName) {
-      if (utms[utmName] === 'get') {
-        if (getParams.get(utmName)) {
-          formData.set(utmName, getParams.get(utmName));
-        }
-      } else if (utms[utmName] === 'utm') {
-        let utmFromQuery = getParams.get(utmName);
-        let utmFromSession = sessionStorage.getItem(formConfig.storagePrefix + utmName);
-        if (utmFromQuery) {
-          formData.set(utmName, utmFromQuery);
-        } else if (utmFromSession) {
-          formData.set(utmName, utmFromSession);
-        }
-      } else if (typeof utms[utmName] === 'function') {
-        formData.set(utmName, utms[utmName]());
-      } else {
-        formData.set(utmName, utms[utmName]);
-      }
-    });
-    return formData;
-  }
-  function getRedirectParams(formData) {
-    let query = {};
-    leadFormConfig.query.forEach(function (fieldData) {
-      let inputName = fieldData.field;
-      let propName = fieldData.key;
-      if (inputName === 'country') {
-        query[propName] = 'United States';
-      } else if (formData.get(inputName)) {
-        query[propName] = formData.get(inputName);
-      }
-    });
-    return new URLSearchParams(query).toString();
-  }
   function sendAjax() {
     let xhr = new XMLHttpRequest();
-    let formData = populateUtms(new FormData(leadForm));
+    let formData = (0,_modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__.populateUtms)(leadForm, new FormData(leadForm));
     let formBtn = leadForm.querySelector('[type="submit"]');
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
@@ -1368,7 +1426,7 @@ function leadFormCallback() {
     xhr.onload = function () {
       if (xhr.status === 200) {
         if (leadFormConfig.redirect) {
-          let redirectParams = getRedirectParams(formData);
+          let redirectParams = (0,_modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__.getRedirectParams)(formData, leadFormConfig.query);
           document.location.href = leadFormConfig.redirect + (redirectParams ? '?' + redirectParams : '');
         }
       }
@@ -1403,62 +1461,19 @@ function leadFormCallback() {
       });
     }
   }
-  (0,_modules_telInputMask__WEBPACK_IMPORTED_MODULE_2__.telInputMask)(phoneInput, {
+  (0,_modules_telInputMask__WEBPACK_IMPORTED_MODULE_3__.telInputMask)(phoneInput, {
     mask: '(xxx) xxx - xxxx',
     hiddenInput: true
   });
-  (0,_modules_validate__WEBPACK_IMPORTED_MODULE_1__.validate)(leadForm, {
+  (0,_modules_validate__WEBPACK_IMPORTED_MODULE_2__.validate)(leadForm, {
     submitFunction: sendAjax,
     trackErrors: true
   });
   initAddress();
-  (0,_modules_inputSelect__WEBPACK_IMPORTED_MODULE_3__.inputSelect)();
-}
-window.leadFormCallback = leadFormCallback;
-function sessionStorageUTM() {
-  const paramsMap = {
-    utm_source: "source",
-    utm_campaign: "campaign",
-    utm_term: "keyword",
-    utm_medium: "medium",
-    utm_content: "content",
-    device: "device",
-    gclid: "gclid",
-    fbclid: "fbclid",
-    msclkid: "msclkid"
-  };
-  function getQueryParams() {
-    const query = window.location.search.substring(1);
-    const vars = query.split("&");
-    const queryParams = {};
-    for (let i = 0; i < vars.length; i++) {
-      const pair = vars[i].split("=");
-      if (pair.length > 0) {
-        const paramName = decodeURIComponent(pair[0]);
-        const paramValue = decodeURIComponent(pair[1] || "");
-        if (paramsMap.hasOwnProperty(paramName)) {
-          const standardizedKey = paramsMap[paramName];
-          if (!queryParams.hasOwnProperty(standardizedKey)) {
-            queryParams[standardizedKey] = paramValue;
-          }
-        }
-      }
-    }
-    return queryParams;
-  }
-  function storeParams(params) {
-    for (const key in params) {
-      if (params.hasOwnProperty(key)) {
-        sessionStorage.setItem(formConfig.storagePrefix + key, params[key]);
-      }
-    }
-  }
-  if (Object.keys(getQueryParams()).length > 0) {
-    storeParams(getQueryParams());
-  }
+  (0,_modules_inputSelect__WEBPACK_IMPORTED_MODULE_4__.inputSelect)();
 }
 document.addEventListener("DOMContentLoaded", function () {
-  sessionStorageUTM();
+  (0,_modules_helpers__WEBPACK_IMPORTED_MODULE_0__.sessionStorageUTM)();
   loadScript(`https://maps.googleapis.com/maps/api/js?key=${formConfig.googleMapsApiKey}&libraries=places`, leadFormCallback);
 });
 /******/ })()
