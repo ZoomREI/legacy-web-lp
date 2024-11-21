@@ -8,6 +8,12 @@ function chris_buys_homes_enqueue_assets()
     wp_enqueue_script('lead-source', get_template_directory_uri() . '/src/js/lead-source.js', array(), null, true);
     wp_enqueue_script('params-persister', get_template_directory_uri() . '/src/js/params-persister.js', array(), null, true);
     wp_enqueue_script('chrisbuyshomes-events-handler', get_template_directory_uri() . '/src/js/events-handler.js', array(), null, true);
+
+
+    wp_localize_script('chrisbuyshomes-events-handler', 'formConfig', array(
+        'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
+        'storagePrefix' => 'chrisbuys_',
+    ));
 }
 add_action('wp_enqueue_scripts', 'chris_buys_homes_enqueue_assets');
 
