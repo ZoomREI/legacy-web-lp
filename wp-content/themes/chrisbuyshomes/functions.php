@@ -387,24 +387,38 @@ function handle_lead_form_v2(WP_REST_Request $request){
                 "key" => "Phone"
             ],
             [
+                "field" => "propertyAddress",
+                "key" => "Property Address"
+            ],
+            [
                 "field" => "utm_source",
+                "default" => "",
                 "key" => "AdWords - Source"
             ],
             [
                 "field" => "utm_campaign",
+                "default" => "",
                 "key" => "AdWords - Campaign"
             ],
             [
-                "field" => "??",
+                "field" => "utm_term",
+                "default" => "",
                 "key" => "AdWords - Keyword"
             ],
             [
-                "field" => "??",
+                "field" => "device",
+                "default" => "",
                 "key" => "AdWords - Device"
             ],
             [
                 "field" => "gclid",
+                "default" => "",
                 "key" => "Google Click ID"
+            ],
+            [
+                "field" => "page_url",
+                "default" => "",
+                "key" => "UTM LeadSource"
             ],
             [
                 "field" => "email",
@@ -491,9 +505,9 @@ function handle_lead_form_v2(WP_REST_Request $request){
     
         if(!empty($fieldData)) {
             $response = wp_remote_post($webhook['url'], array(
-                'body' => http_build_query($fieldData),
+                'body' => json_encode($fieldData),
                 'headers' => array(
-                    'Content-Type' => 'application/x-www-form-urlencoded'
+                    'Content-Type' => 'application/json',
                 ),
             ));
 
