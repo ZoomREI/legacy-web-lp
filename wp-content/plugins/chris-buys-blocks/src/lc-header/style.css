@@ -54,6 +54,20 @@
 .lc-header__phone--icon img {
 	max-width: 0.625rem;
 }
+.contact-phone {
+	position: fixed;
+	right: 1rem;
+	bottom: 20vh;
+	z-index: 99;
+	background-color: white;
+	border-radius: 50%;
+	padding: 0.125rem;
+}
+
+.contact-phone img {
+	width: 3rem;
+	height: auto;
+}
 
 @media (min-width: 1024px) {
 	.lc-header__phone--icon {
@@ -62,6 +76,10 @@
 
 	.lc-header__phone--icon img {
 		max-width: none;
+	}
+
+	.lc-header .contact-phone{
+		display: none !important;
 	}
 }
 
