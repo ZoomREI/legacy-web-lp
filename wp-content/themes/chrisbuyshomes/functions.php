@@ -1,5 +1,6 @@
 <?php
-
+define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
+define('CRM_WEBHOOK_URL', 'https://workflow-automation.podio.com/catch/2kt203ir6i3uk64');
 // Enqueue Scripts and Styles
 function chris_buys_homes_enqueue_assets()
 {
@@ -7,6 +8,7 @@ function chris_buys_homes_enqueue_assets()
 
     wp_enqueue_style('chrisbuyshomes-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
     // wp_enqueue_script('scripts', get_template_directory_uri() . '/src/js/script.js', array(), true);
+    wp_enqueue_script('lead-source', get_template_directory_uri() . '/src/js/lead-source.js', array(), null, true);
     wp_enqueue_script('gf-full-address', get_template_directory_uri() . '/src/js/full-address-field.js', array(), true);
     wp_enqueue_script('chrisbuyshomes-events-handler', get_template_directory_uri() . '/src/js/events-handler.js', array(), null, true);
     if (is_page(123)) {
@@ -23,6 +25,11 @@ function chris_buys_homes_enqueue_assets()
     //     'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
     //     'crmWebhookUrl' => CRM_WEBHOOK_URL,
     // ));
+    wp_localize_script('chrisbuyshomes-events-handler', 'formConfig', array(
+        'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
+        'crmWebhookUrl' => CRM_WEBHOOK_URL,
+        'storagePrefix' => 'chrisbuys_',
+    ));
 }
 add_action('wp_enqueue_scripts', 'chris_buys_homes_enqueue_assets');
 
@@ -351,6 +358,168 @@ function handle_form_submission(WP_REST_Request $request)
         return new WP_REST_Response('Error sending data to webhook', 500);
     }
 
+    return new WP_REST_Response('Form submitted successfully', 200);
+}
+
+
+
+// Register the REST route
+add_action('rest_api_init', function () {
+    register_rest_route('custom/v1', '/lead-form-v2', array(
+        'methods' => 'POST',
+        'callback' => 'handle_lead_form_v2',
+        'permission_callback' => '__return_true', // Allow public access
+    ));
+});
+
+// Define the form submission handler
+function handle_lead_form_v2(WP_REST_Request $request){
+    $form_data = $request->get_params();
+    $webhooks = $form_data['webhooks'] ? json_decode($form_data['webhooks'], true) : [];
+    $presets = [
+        'cms' => [
+            [
+                "field" => "fullName",
+                "key" => "Name"
+            ],
+            [
+                "field" => "phone",
+                "key" => "Phone"
+            ],
+            [
+                "field" => "propertyAddress",
+                "key" => "Property Address"
+            ],
+            [
+                "field" => "utm_source",
+                "default" => "",
+                "key" => "AdWords - Source"
+            ],
+            [
+                "field" => "utm_campaign",
+                "default" => "",
+                "key" => "AdWords - Campaign"
+            ],
+            [
+                "field" => "utm_term",
+                "default" => "",
+                "key" => "AdWords - Keyword"
+            ],
+            [
+                "field" => "device",
+                "default" => "",
+                "key" => "AdWords - Device"
+            ],
+            [
+                "field" => "gclid",
+                "default" => "",
+                "key" => "Google Click ID"
+            ],
+            [
+                "field" => "page_url",
+                "default" => "",
+                "key" => "UTM LeadSource"
+            ],
+            [
+                "field" => "email",
+                "key" => "Email"
+            ]
+        ],
+        'sgtm' => [
+            [
+                "field" => "",
+                "default" => "lead",
+                "key" => "event"
+            ],
+            [
+                "field" => "entry_id",
+                "key" => "eventId"
+            ],
+            [
+                "field" => "fullName",
+                "key" => "fullName"
+            ],
+            [
+                "field" => "phone",
+                "key" => "phone"
+            ],
+            [
+                "field" => "email",
+                "key" => "email"
+            ],
+            [
+                "field" => "street",
+                "key" => "street"
+            ],
+            [
+                "field" => "city",
+                "key" => "city"
+            ],
+            [
+                "field" => "zipcode",
+                "key" => "zipcode"
+            ],
+            [
+                "field" => "country",
+                "key" => "country"
+            ],
+            [
+                "field" => "country",
+                "default" => "United States",
+                "key" => "country"
+            ],
+            [
+                "field" => "page_url",
+                "key" => "page_url"
+            ],
+        ],
+    ];
+    $fieldDatas = [];
+    foreach ($webhooks as $webhook){
+        if(!$webhook['url'] || ($webhook['usePreset'] ? empty($presets[$webhook['fieldsPreset']]) : empty($webhook['fieldsMapping']))){
+            continue;
+        }
+        $fieldData = [];
+        
+        if($webhook['usePreset']){
+            $mapping = $presets[$webhook['fieldsPreset']];
+        } else {
+            $mapping = $webhook['fieldsMapping'];
+        }
+        
+        foreach ($mapping as $field){
+            if(!$field['field'] || !$field['key']){
+                continue;
+            }
+            if(isset($form_data[$field['field']])) {
+                $fieldData[$field['key']] = $form_data[$field['field']];
+            } elseif (isset($field['default'])){
+                $fieldData[$field['key']] = $field['default'];
+            }
+        }
+    
+        $fieldDatas[] = [
+            'url' => $webhook['url'],
+            'body' => $fieldData
+        ];
+    
+        if(!empty($fieldData)) {
+            $response = wp_remote_post($webhook['url'], array(
+                'body' => json_encode($fieldData),
+                'headers' => array(
+                    'Content-Type' => 'application/json',
+                ),
+            ));
+
+            if (is_wp_error($response)) {
+                return new WP_REST_Response('Error sending data to webhook', 500);
+            }
+        }
+        
+    }
+    wp_send_json_success($fieldDatas);
+    
+    
     return new WP_REST_Response('Form submitted successfully', 200);
 }
 

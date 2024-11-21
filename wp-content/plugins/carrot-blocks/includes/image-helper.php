@@ -134,6 +134,9 @@ function cb_get_image_url($image_name, $size = null, $extension = 'webp')
     if ($extension !== 'svg') {
         $extensions_to_try[] = 'svg';
     }
+    if ($extension !== 'gif') {
+        $extensions_to_try[] = 'gif';
+    }
     
     foreach ($extensions_to_try as $ext) {
         // If size is specified, attempt to get that size
