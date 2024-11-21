@@ -491,9 +491,9 @@ function handle_lead_form_v2(WP_REST_Request $request){
     
         if(!empty($fieldData)) {
             $response = wp_remote_post($webhook['url'], array(
-                'body' => json_encode($fieldData),
+                'body' => http_build_query($fieldData),
                 'headers' => array(
-                    'Content-Type' => 'application/json',
+                    'Content-Type' => 'application/x-www-form-urlencoded'
                 ),
             ));
 
