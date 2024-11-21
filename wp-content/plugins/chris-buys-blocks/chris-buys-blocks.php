@@ -80,6 +80,7 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		's2-form-nhp',
 		's2-as-seen-on-carousel',
   
+		'cw-hero-v2',
 		'lead-form',
 	];
 

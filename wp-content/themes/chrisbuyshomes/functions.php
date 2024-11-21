@@ -1,35 +1,13 @@
 <?php
-define('GOOGLE_MAPS_API_KEY', 'AIzaSyCwwLF50kEF6wS1rTEqTDPfTXcSlF9REuI');
-define('CRM_WEBHOOK_URL', 'https://workflow-automation.podio.com/catch/2kt203ir6i3uk64');
 // Enqueue Scripts and Styles
 function chris_buys_homes_enqueue_assets()
 {
     $style_version = filemtime(get_template_directory() . '/dist/style.css');
-
     wp_enqueue_style('chrisbuyshomes-styles', get_template_directory_uri() . '/dist/style.css', array(), $style_version);
-    // wp_enqueue_script('scripts', get_template_directory_uri() . '/src/js/script.js', array(), true);
-    wp_enqueue_script('lead-source', get_template_directory_uri() . '/src/js/lead-source.js', array(), null, true);
     wp_enqueue_script('gf-full-address', get_template_directory_uri() . '/src/js/full-address-field.js', array(), true);
+    wp_enqueue_script('lead-source', get_template_directory_uri() . '/src/js/lead-source.js', array(), null, true);
+    wp_enqueue_script('params-persister', get_template_directory_uri() . '/src/js/params-persister.js', array(), null, true);
     wp_enqueue_script('chrisbuyshomes-events-handler', get_template_directory_uri() . '/src/js/events-handler.js', array(), null, true);
-    if (is_page(123)) {
-        wp_enqueue_script('dynamic-headings', get_template_directory_uri() . '/src/js/dynamic-headings.js', array(), true);
-    }
-    // wp_enqueue_script('doctor-homes-menu', get_template_directory_uri() . '/src/js/menu.js', array(), null, true);
-    // wp_enqueue_script('doctor-homes-mobile-menu', get_template_directory_uri() . '/src/js/mobile-menu.js', array(), null, true);
-
-    // if (is_single()) {
-    //     wp_enqueue_script('share-bar-js', get_template_directory_uri() . '/src/js/share-bar.js', array(), '1.0.0', true);
-    // }
-
-    // wp_localize_script('scripts', 'formConfig', array(
-    //     'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
-    //     'crmWebhookUrl' => CRM_WEBHOOK_URL,
-    // ));
-    wp_localize_script('chrisbuyshomes-events-handler', 'formConfig', array(
-        'googleMapsApiKey' => GOOGLE_MAPS_API_KEY,
-        'crmWebhookUrl' => CRM_WEBHOOK_URL,
-        'storagePrefix' => 'chrisbuys_',
-    ));
 }
 add_action('wp_enqueue_scripts', 'chris_buys_homes_enqueue_assets');
 
@@ -373,7 +351,8 @@ add_action('rest_api_init', function () {
 });
 
 // Define the form submission handler
-function handle_lead_form_v2(WP_REST_Request $request){
+function handle_lead_form_v2(WP_REST_Request $request)
+{
     $form_data = $request->get_params();
     $webhooks = $form_data['webhooks'] ? json_decode($form_data['webhooks'], true) : [];
     $presets = [
@@ -475,35 +454,35 @@ function handle_lead_form_v2(WP_REST_Request $request){
         ],
     ];
     $fieldDatas = [];
-    foreach ($webhooks as $webhook){
-        if(!$webhook['url'] || ($webhook['usePreset'] ? empty($presets[$webhook['fieldsPreset']]) : empty($webhook['fieldsMapping']))){
+    foreach ($webhooks as $webhook) {
+        if (!$webhook['url'] || ($webhook['usePreset'] ? empty($presets[$webhook['fieldsPreset']]) : empty($webhook['fieldsMapping']))) {
             continue;
         }
         $fieldData = [];
-        
-        if($webhook['usePreset']){
+
+        if ($webhook['usePreset']) {
             $mapping = $presets[$webhook['fieldsPreset']];
         } else {
             $mapping = $webhook['fieldsMapping'];
         }
-        
-        foreach ($mapping as $field){
-            if(!$field['field'] || !$field['key']){
+
+        foreach ($mapping as $field) {
+            if (!$field['field'] || !$field['key']) {
                 continue;
             }
-            if(isset($form_data[$field['field']])) {
+            if (isset($form_data[$field['field']])) {
                 $fieldData[$field['key']] = $form_data[$field['field']];
-            } elseif (isset($field['default'])){
+            } elseif (isset($field['default'])) {
                 $fieldData[$field['key']] = $field['default'];
             }
         }
-    
+
         $fieldDatas[] = [
             'url' => $webhook['url'],
             'body' => $fieldData
         ];
-    
-        if(!empty($fieldData)) {
+
+        if (!empty($fieldData)) {
             $response = wp_remote_post($webhook['url'], array(
                 'body' => json_encode($fieldData),
                 'headers' => array(
@@ -515,11 +494,10 @@ function handle_lead_form_v2(WP_REST_Request $request){
                 return new WP_REST_Response('Error sending data to webhook', 500);
             }
         }
-        
     }
     wp_send_json_success($fieldDatas);
-    
-    
+
+
     return new WP_REST_Response('Form submitted successfully', 200);
 }
 
