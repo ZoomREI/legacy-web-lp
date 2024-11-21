@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "chris-buys/cw-hero",
+	"name": "chris-buys/cw-hero-v2",
 	"version": "0.1.0",
-	"title": "cw Hero",
+	"title": "cw Hero v2",
 	"category": "widgets",
 	"icon": "superhero-alt",
 	"description": "The Hero Section of the cw landing-page.",
