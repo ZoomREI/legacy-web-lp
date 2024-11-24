@@ -100,7 +100,7 @@ function loadCallback() {
 
 		// Push the event
 		window.dataLayer.push({
-			event: "Lead_Step_2",
+			event: "lead_step_2",
 		});
 
 		// Show thank you page
