@@ -83,8 +83,16 @@ function loadCallback() {
 	})
 
 	jQuery(document).bind('gform_confirmation_loaded', function(event, formId){
-		pagesInstance.show('thanks')
-		console.log('success')
+		// Initialize dataLayer if it doesn't exist
+		window.dataLayer = window.dataLayer || [];
+		
+		// Push the event
+		window.dataLayer.push({
+			'event': 'Lead_Step_2'
+		});
+		
+		// Show thank you page
+		pagesInstance.show('thanks');
 	});
 }
 
