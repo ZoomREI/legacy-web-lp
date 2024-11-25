@@ -1,0 +1,11 @@
+.wp-block-chris-buys-nhp-exit-popup {
+	padding-block: 1.5rem !important;
+	background-color: #004c8d;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	margin-block: 1rem !important;
+}

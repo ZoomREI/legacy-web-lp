@@ -83,7 +83,8 @@ function chris_buys_blocks_chris_buys_blocks_block_init()
 		'cw-hero-v2',
 		'lead-form',
         
-        'exit-popup'
+        'exit-popup',
+        'nhp-exit-popup'
 	];
 
 	foreach ($blocks as $block) {
