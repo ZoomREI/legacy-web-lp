@@ -2,7 +2,7 @@
 $popupId = substr(wp_generate_uuid4(), 0, 8);;
 ?>
 
-<div class="exit-popup" id="<?= $popupId ?>" style="--check-circle: url('<?php echo get_image_url('exit-popup/check-circle', 768); ?>');">
+<div class="exit-popup" id="<?= $popupId ?>" style="display: none; --check-circle: url('<?php echo get_image_url('exit-popup/check-circle', 768); ?>');">
     <div class="exit-popup__img">
         <?php echo get_responsive_image('exit-popup/bg', 'Background image'); ?>
     </div>
