@@ -1393,87 +1393,92 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function leadFormCallback() {
-  let leadForm = document.querySelector('.lead-form:not(.is-initialized)');
-  if (!leadForm) {
+  let leadForms = document.querySelectorAll('.lead-form:not(.is-initialized)');
+  if (!leadForms.length) {
     return;
   }
-  let leadFormConfig = JSON.parse(document.getElementById('form-config-' + leadForm.id).innerHTML);
-  let phoneInput = leadForm.querySelector('[data-validation="tel-mask"]');
-  leadForm.classList.add('is-initialized');
-  function sendAjax() {
-    let xhr = new XMLHttpRequest();
-    let formData = (0,_modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__.populateUtms)(leadForm, new FormData(leadForm));
-    let formBtn = leadForm.querySelector('[type="submit"]');
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "submitStep1",
-      formName: leadForm.name,
-      fullName: formData.get('fullName'),
-      street: formData.get('street'),
-      city: formData.get('city'),
-      state: formData.get('state'),
-      country: "US",
-      zipcode: formData.get('zipcode'),
-      email: formData.get('email'),
-      phone: formData.get('phone')
-    });
-    if (formBtn) {
-      formBtn.classList.add('is-loading');
-      formBtn.setAttribute('disabled', 'disabled');
-    }
-    formData.append('webhooks', JSON.stringify(leadFormConfig.webhooks));
-    xhr.open('post', leadFormConfig.handler);
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        if (leadFormConfig.redirect) {
-          let redirectParams = (0,_modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__.getRedirectParams)(formData, leadFormConfig.query);
-          document.location.href = leadFormConfig.redirect + (redirectParams ? '?' + redirectParams : '');
-        }
-      }
-    };
-    xhr.send(formData);
-  }
-  function initAddress() {
-    let addressInput = leadForm.querySelector('[data-validation="address-autocomplete"]');
-    let addressInputBtn = leadForm.querySelector('[type="submit"]');
-    let autocomplete = new google.maps.places.Autocomplete(addressInput, {
-      types: ["address"],
-      componentRestrictions: {
-        country: "us"
-      }
-    });
-    let inputStreet = leadForm.querySelector('[name="street"]');
-    let inputCity = leadForm.querySelector('[name="city"]');
-    let inputState = leadForm.querySelector('[name="state"]');
-    let inputZipcode = leadForm.querySelector('[name="zipcode"]');
-    addressInput.autocompleteInstance = autocomplete;
-    autocomplete.addListener("place_changed", function () {
-      if (addressInput.isValid()) {
-        inputStreet.value = addressInput.dataset.street;
-        inputCity.value = addressInput.dataset.city;
-        inputState.value = addressInput.dataset.state;
-        inputZipcode.value = addressInput.dataset.zipcode;
-      }
-    });
-    if (addressInputBtn) {
-      addressInputBtn.addEventListener('click', function (e) {
-        addressInput.closest('.input').classList.remove('is-error');
+  leadForms.forEach(function (leadForm) {
+    let leadFormConfig = JSON.parse(document.getElementById('form-config-' + leadForm.id).innerHTML);
+    let phoneInput = leadForm.querySelector('[data-validation="tel-mask"]');
+    leadForm.classList.add('is-initialized');
+    function sendAjax() {
+      let xhr = new XMLHttpRequest();
+      let formData = (0,_modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__.populateUtms)(leadForm, new FormData(leadForm));
+      let formBtn = leadForm.querySelector('[type="submit"]');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "submitStep1",
+        formName: leadForm.name,
+        fullName: formData.get('fullName'),
+        street: formData.get('street'),
+        city: formData.get('city'),
+        state: formData.get('state'),
+        country: "US",
+        zipcode: formData.get('zipcode'),
+        email: formData.get('email'),
+        phone: formData.get('phone')
       });
+      (0,_modules_helpers__WEBPACK_IMPORTED_MODULE_0__.trigger)(leadForm, 'lead-form-submit');
+      if (formBtn) {
+        formBtn.classList.add('is-loading');
+        formBtn.setAttribute('disabled', 'disabled');
+      }
+      formData.append('webhooks', JSON.stringify(leadFormConfig.webhooks));
+      xhr.open('post', leadFormConfig.handler);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          if (leadFormConfig.redirect) {
+            let redirectParams = (0,_modules_form_helpers__WEBPACK_IMPORTED_MODULE_1__.getRedirectParams)(formData, leadFormConfig.query);
+            document.location.href = leadFormConfig.redirect + (redirectParams ? '?' + redirectParams : '');
+          }
+        }
+      };
+      xhr.send(formData);
     }
-  }
-  (0,_modules_telInputMask__WEBPACK_IMPORTED_MODULE_3__.telInputMask)(phoneInput, {
-    mask: '(xxx) xxx - xxxx',
-    hiddenInput: true
+    function initAddress() {
+      let addressInput = leadForm.querySelector('[data-validation="address-autocomplete"]');
+      let addressInputBtn = leadForm.querySelector('[type="submit"]');
+      let autocomplete = new google.maps.places.Autocomplete(addressInput, {
+        types: ["address"],
+        componentRestrictions: {
+          country: "us"
+        }
+      });
+      let inputStreet = leadForm.querySelector('[name="street"]');
+      let inputCity = leadForm.querySelector('[name="city"]');
+      let inputState = leadForm.querySelector('[name="state"]');
+      let inputZipcode = leadForm.querySelector('[name="zipcode"]');
+      addressInput.autocompleteInstance = autocomplete;
+      autocomplete.addListener("place_changed", function () {
+        if (addressInput.isValid()) {
+          inputStreet.value = addressInput.dataset.street;
+          inputCity.value = addressInput.dataset.city;
+          inputState.value = addressInput.dataset.state;
+          inputZipcode.value = addressInput.dataset.zipcode;
+        }
+        (0,_modules_helpers__WEBPACK_IMPORTED_MODULE_0__.trigger)(leadForm, 'lead-form-interaction');
+      });
+      if (addressInputBtn) {
+        addressInputBtn.addEventListener('click', function (e) {
+          addressInput.closest('.input').classList.remove('is-error');
+        });
+      }
+    }
+    (0,_modules_telInputMask__WEBPACK_IMPORTED_MODULE_3__.telInputMask)(phoneInput, {
+      mask: '(xxx) xxx - xxxx',
+      hiddenInput: true
+    });
+    (0,_modules_validate__WEBPACK_IMPORTED_MODULE_2__.validate)(leadForm, {
+      submitFunction: sendAjax,
+      trackErrors: true
+    });
+    initAddress();
+    (0,_modules_inputSelect__WEBPACK_IMPORTED_MODULE_4__.inputSelect)();
   });
-  (0,_modules_validate__WEBPACK_IMPORTED_MODULE_2__.validate)(leadForm, {
-    submitFunction: sendAjax,
-    trackErrors: true
-  });
-  initAddress();
-  (0,_modules_inputSelect__WEBPACK_IMPORTED_MODULE_4__.inputSelect)();
 }
 document.addEventListener("DOMContentLoaded", function () {
   (0,_modules_helpers__WEBPACK_IMPORTED_MODULE_0__.sessionStorageUTM)();
+  console.log();
   loadScript(`https://maps.googleapis.com/maps/api/js?key=${formConfig.googleMapsApiKey}&libraries=places`, leadFormCallback);
 });
 /******/ })()

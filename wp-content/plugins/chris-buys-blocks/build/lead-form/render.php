@@ -45,23 +45,25 @@ $form_config = [
 </form>
 
 <script>
-  let validationErrors = {
-    "required": "This field is required",
-    "invalid": "This field is invalid",
+  if(typeof validationErrors === 'undefined') {
+    let validationErrors = {
+      "required": "This field is required",
+      "invalid": "This field is invalid",
 
-    "address-autocomplete": {
-      "addressAutocomplete": "Please re-enter and select your address from the dropdown"
-    },
-    "email": {
-      "regex": "The E-mail must be a valid email address.",
-      "required": "E-mail is required."
-    },
-    "name": {
-      "required": "Please enter your full name."
-    },
-    "tel-mask": {
-      "required": "Please enter your phone number.",
-      "telMask": "Phone number is invalid."
-    },
+      "address-autocomplete": {
+        "addressAutocomplete": "Please re-enter and select your address from the dropdown"
+      },
+      "email": {
+        "regex": "The E-mail must be a valid email address.",
+        "required": "E-mail is required."
+      },
+      "name": {
+        "required": "Please enter your full name."
+      },
+      "tel-mask": {
+        "required": "Please enter your phone number.",
+        "telMask": "Phone number is invalid."
+      },
+    }
   }
 </script>
