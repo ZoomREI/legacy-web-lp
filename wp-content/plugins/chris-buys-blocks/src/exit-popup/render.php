@@ -19,7 +19,7 @@ $popupId = substr(wp_generate_uuid4(), 0, 8);;
                 <li>Close on your terms—no hidden fees or repairs</li>
             </ul>
         </div>
-        <div class="exit-popup__form">
+        <div class="exit-popup__form" data-form-name="popup-form-v1">
             <?php echo $content; ?>
         </div>
     </div>

@@ -19,6 +19,17 @@
     right: 0.875rem;
     opacity: 1;
 }
+.is-compact .exit-popup > .f-button.is-close-btn {
+    --f-button-color: #000;
+    --f-button-hover-color: #000;
+    --f-button-bg: transparent;
+    --f-button-active-bg: transparent;
+    --f-button-hover-bg: transparent;
+    --f-button-svg-width: 0.875rem;
+    --f-button-svg-height: 0.875rem;
+    top: 0.25rem;
+    right: 0.25rem;
+}
 .exit-popup__img > img {
     width: 100%;
     height: 100%;

@@ -13,6 +13,8 @@ function exitPopupCallback() {
     popupEl.classList.add('is-initialized')
 
     function showPopup() {
+      popupShown = true;
+
       Fancybox.show([{
         src: '#'+popupId,
         type: 'inline',
@@ -39,20 +41,38 @@ function exitPopupCallback() {
     let prevY = 0
     document.addEventListener('mousemove', (event) => {
       if (!popupShown && event.clientY < prevY && event.clientY <= 5) {
-        popupShown = true;
         showPopup();
       }
       prevY = event.clientY
     });
-    window.addEventListener('beforeunload', (event) => {
-      if (!popupShown) {
-        popupShown = true;
-        showPopup();
 
-        event.preventDefault();
-        event.returnValue = 'Don’t leave without a cash offer!';
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    const screenHeight = window.innerHeight;
+    window.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = e.timeStamp;
+    });
+    window.addEventListener('touchend', function(e) {
+      if (popupShown) return;
+
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchEndTime = e.timeStamp;
+
+      const deltaY = touchStartY - touchEndY; // Positive if scrolling up
+      const deltaTime = touchEndTime - touchStartTime; // Time in ms
+
+      const speed = deltaY / deltaTime; // Scroll speed in px/ms
+
+      // Set thresholds
+      const distanceThreshold = screenHeight * 0.3; // 20% of screen height
+      const speedThreshold = .8; // px/ms
+
+      if (deltaY < 0 && Math.abs(deltaY) > distanceThreshold && Math.abs(speed) > speedThreshold) {
+        showPopup()
       }
     });
+
     popupEl.addEventListener('lead-form-interaction', function () {
       window.dataLayer.push({
         event: 'popup_interaction',

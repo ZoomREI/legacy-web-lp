@@ -13,6 +13,7 @@ function leadFormCallback() {
     leadForms.forEach(function (leadForm) {
         let leadFormConfig = JSON.parse(document.getElementById('form-config-'+leadForm.id).innerHTML)
         let phoneInput = leadForm.querySelector('[data-validation="tel-mask"]')
+        let formName = leadForm.closest('[data-form-name]') ? leadForm.closest('[data-form-name]').dataset.formName : leadForm.name
 
         leadForm.classList.add('is-initialized')
 
@@ -24,7 +25,7 @@ function leadFormCallback() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 event: "submitStep1",
-                formName: leadForm.name,
+                formName: formName,
                 fullName: formData.get('fullName'),
                 street: formData.get('street'),
                 city: formData.get('city'),
@@ -98,6 +99,6 @@ function leadFormCallback() {
 
 document.addEventListener("DOMContentLoaded", function () {
     sessionStorageUTM()
-    console.log()
+
     loadScript(`https://maps.googleapis.com/maps/api/js?key=${formConfig.googleMapsApiKey}&libraries=places`, leadFormCallback);
 });
